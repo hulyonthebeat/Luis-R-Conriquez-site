@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Luis R Conriquez"
+version = "1.0.0"
+id = "artifacts/luisrc"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24999
+
+[services.development]
+run = "pnpm --filter @workspace/luisrc run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/luisrc", "run", "build" ]
+publicDir = "artifacts/luisrc/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24999"
+BASE_PATH = "/"

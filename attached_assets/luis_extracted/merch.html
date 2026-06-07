@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tienda — Luis R Conriquez</title>
+<meta name="description" content="Tienda oficial de Luis R Conriquez. Merch de gira, ediciones limitadas y vinilos. Bélico Tour 2026.">
+<meta property="og:title" content="Tienda Oficial — Luis R Conriquez">
+<meta property="og:description" content="Merch oficial, ediciones limitadas y vinilos.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0b0d'/%3E%3Ctext x='16' y='23' font-family='Arial Black,sans-serif' font-size='20' font-weight='900' fill='%23c2a15b' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/interior.css">
+<style>
+.merch-feat { position:relative; overflow:hidden; min-height: clamp(320px,42vw,520px); display:flex; align-items:flex-end; padding: clamp(28px,4vw,56px); }
+.merch-feat image-slot { position:absolute; inset:0; width:100%; height:100%; z-index:0; }
+.merch-feat .scrim { position:absolute; inset:0; z-index:1; background:linear-gradient(90deg, rgba(6,7,8,0.85), rgba(6,7,8,0.2) 70%); }
+.merch-feat .c { position:relative; z-index:2; max-width: 540px; }
+.merch-feat h2 { font-family:var(--serif); font-weight:800; text-transform:uppercase; line-height:0.98; font-size:clamp(36px,5.2vw,78px); margin:14px 0 18px; letter-spacing:0.012em; }
+.shop-banner { display:flex; align-items:center; justify-content:space-between; gap:24px; padding: clamp(24px,3vw,40px); flex-wrap:wrap; }
+.shop-banner h3 { font-family:var(--serif); font-weight:800; text-transform:uppercase; font-size:clamp(22px,2.8vw,38px); line-height:1.02; letter-spacing:0.012em; }
+</style>
+</head>
+<body data-page="merch">
+<div id="nav"></div>
+
+<main>
+  <section class="page-hero" data-screen-label="Merch Hero">
+    <div class="wrap">
+      <span class="eyebrow" data-reveal>Tienda oficial</span>
+      <h1 class="display h-xl chrome" data-reveal style="--d:.05s">Merch</h1>
+      <p class="lede" data-reveal style="--d:.1s">Piezas oficiales de la marca Luis R Conriquez. Ediciones limitadas, merch de gira y coleccionables.</p>
+    </div>
+  </section>
+
+  <!-- Featured drop -->
+  <section class="section section--tight" data-screen-label="Featured Drop">
+    <div class="wrap">
+      <div class="merch-feat panel" data-reveal>
+        <image-slot id="merch-feat" placeholder="Imagen de campaña · Bélico Tour '26"></image-slot>
+        <div class="scrim"></div>
+        <div class="c">
+          <span class="eyebrow">Drop destacado</span>
+          <h2>Bélico<br>Tour '26</h2>
+          <p class="lede">La colección oficial de gira. Disponible por tiempo limitado mientras dure el existencia.</p>
+          <a href="#grid" class="btn btn--gold btn--lg" style="margin-top:24px">Ver colección</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Grid -->
+  <section class="section section--tight" id="grid" data-screen-label="Merch Grid">
+    <div class="wrap">
+      <div class="shead" data-reveal>
+        <div><span class="kicker-num">Colección</span><h2 class="section-title" style="margin-top:12px">Productos</h2></div>
+      </div>
+      <div class="grid-4" id="merchGrid" data-reveal></div>
+    </div>
+  </section>
+
+  <!-- External shop handoff -->
+  <section class="section section--tight" data-screen-label="Shop Handoff">
+    <div class="wrap">
+      <div class="shop-banner panel" data-reveal>
+        <div>
+          <span class="eyebrow">Tienda completa</span>
+          <h3 style="margin-top:12px">Explora el catálogo completo</h3>
+        </div>
+        <a href="#" class="btn btn--primary btn--lg">Ir a la tienda oficial</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="footer"></div>
+
+<script src="assets/data.js"></script>
+<script>
+window.PAGE_RENDER = function () {
+  document.querySelector('#merchGrid').innerHTML = window.MERCH.map(m => `
+    <div class="merch-card">
+      <div class="ph">
+        <div class="imgph" data-label="${m.name}"></div>
+        <span class="price">${m.price}</span>
+        <a href="#" class="btn btn--primary btn--sm btn--block add">Añadir</a>
+      </div>
+      <div class="nm"><h4>${m.name}</h4><span class="tag">${m.tag}</span></div>
+    </div>`).join("");
+};
+</script>
+<script src="assets/app.js"></script>
+<script src="assets/image-slot.js"></script>
+</body>
+</html>

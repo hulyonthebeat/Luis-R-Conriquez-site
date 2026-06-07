@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Videos — Luis R Conriquez</title>
+<meta name="description" content="Videos oficiales de Luis R Conriquez. Mira los visuales más recientes y el catálogo completo de videos musicales.">
+<meta property="og:title" content="Videos — Luis R Conriquez">
+<meta property="og:description" content="Videos oficiales, visualizers y presentaciones en vivo.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0b0d'/%3E%3Ctext x='16' y='23' font-family='Arial Black,sans-serif' font-size='20' font-weight='900' fill='%23c2a15b' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/interior.css">
+</head>
+<body data-page="videos">
+<div id="nav"></div>
+
+<main>
+  <section class="page-hero" data-screen-label="Videos Hero">
+    <div class="wrap">
+      <span class="eyebrow" data-reveal>Visuales oficiales</span>
+      <h1 class="display h-xl chrome" data-reveal style="--d:.05s">Videos</h1>
+      <p class="lede" data-reveal style="--d:.1s">Videos oficiales, visualizers y momentos en vivo. El mundo de Luis R Conriquez en movimiento.</p>
+    </div>
+  </section>
+
+  <section class="section section--tight" data-screen-label="Featured Video">
+    <div class="wrap">
+      <div class="vfeat panel" data-reveal id="vfeat">
+        <image-slot id="videos-feat" placeholder="Thumbnail · Video destacado (16:9)"></image-slot>
+        <div class="vfeat-overlay">
+          <span class="tag" id="vfeatTag"></span>
+          <div class="play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="vfeat-meta"><h3 id="vfeatTitle"></h3><span class="tag" id="vfeatDur"></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight" data-screen-label="Video Grid">
+    <div class="wrap">
+      <div class="shead" data-reveal>
+        <div><span class="kicker-num">Catálogo</span><h2 class="section-title" style="margin-top:12px">Todos los videos</h2></div>
+      </div>
+      <div class="grid-3" id="vGrid" data-reveal></div>
+    </div>
+  </section>
+</main>
+
+<div id="footer"></div>
+
+<script src="assets/data.js"></script>
+<script>
+window.PAGE_RENDER = function () {
+  const feat = window.VIDEOS.find(v => v.featured) || window.VIDEOS[0];
+  document.querySelector('#vfeatTag').textContent = `${feat.meta} · ${feat.views} vistas`;
+  document.querySelector('#vfeatTitle').textContent = feat.title;
+  document.querySelector('#vfeatDur').textContent = feat.duration;
+  document.querySelector('#vGrid').innerHTML = window.VIDEOS.filter(v => !v.featured).map(v => `
+    <div class="vcard">
+      <div class="thumb">
+        <div class="imgph" data-label="${v.title}"></div>
+        <span class="dur">${v.duration}</span>
+        <div class="pico"><span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></div>
+      </div>
+      <h4>${v.title}</h4><span class="tag">${v.meta} · ${v.views}</span>
+    </div>`).join("");
+};
+</script>
+<script src="assets/app.js"></script>
+<script src="assets/image-slot.js"></script>
+</body>
+</html>

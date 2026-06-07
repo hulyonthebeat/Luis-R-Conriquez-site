@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biografía — Luis R Conriquez</title>
+<meta name="description" content="La historia de Luis R Conriquez: del rancho al escenario mundial. Biografía oficial, identidad artística y trayectoria del Rey de los Corridos Bélicos.">
+<meta property="og:title" content="Biografía — Luis R Conriquez">
+<meta property="og:description" content="La historia oficial del Rey de los Corridos Bélicos.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0b0d'/%3E%3Ctext x='16' y='23' font-family='Arial Black,sans-serif' font-size='20' font-weight='900' fill='%23c2a15b' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/interior.css">
+</head>
+<body data-page="about">
+<div id="nav"></div>
+
+<main>
+  <section class="page-hero" data-screen-label="About Hero">
+    <div class="wrap">
+      <div class="about-hero">
+        <div data-reveal>
+          <span class="eyebrow">Biografía oficial</span>
+          <h1 class="display h-xl" style="margin-top:18px"><span class="chrome">El Rey de los</span><br><span class="gold-text">Corridos Bélicos</span></h1>
+          <p class="lede" style="margin-top:22px">De los ranchos de Sonora a los escenarios más grandes de Norteamérica. La historia de un sonido que se volvió movimiento.</p>
+        </div>
+        <div class="portrait" data-reveal style="--d:.1s"><image-slot id="about-portrait" placeholder="Retrato editorial (3:4)"></image-slot></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class="section section--tight" data-screen-label="Story">
+    <div class="wrap">
+      <div class="bio-block" data-reveal>
+        <p><strong>Luis R Conriquez</strong> nació y se forjó entre el polvo, el ganado y la música de banda del norte de México. Lo que empezó como corridos grabados en un teléfono se convirtió en uno de los fenómenos más poderosos del regional mexicano contemporáneo.</p>
+        <p>Su sello es inconfundible: una voz grave y autoritaria, arreglos cinematográficos de tololoche y metales, y narrativas crudas que retratan el poder, la lealtad y la vida en la frontera. Bautizado por sus fans como <em>El Rey de los Corridos Bélicos</em>, redefinió el género para una generación que lo escucha en cada esquina del continente.</p>
+        <p>Al frente de <strong>Kartel Music</strong>, no solo construyó una carrera — construyó una plataforma para toda una nueva ola de artistas. Hoy llena arenas en Estados Unidos y México, acumula miles de millones de reproducciones y mantiene intacto lo que lo hizo grande: la autenticidad.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="section section--tight" data-screen-label="About Stats">
+    <div class="wrap">
+      <div class="grid-4" id="aboutStats" data-reveal style="gap:32px"></div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="section section--tight" data-screen-label="Timeline">
+    <div class="wrap">
+      <div class="shead" data-reveal>
+        <div><span class="kicker-num">Trayectoria</span><h2 class="section-title" style="margin-top:12px">Hitos</h2></div>
+      </div>
+      <div class="timeline" data-reveal id="timeline"></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--tight" data-screen-label="About CTA">
+    <div class="wrap" style="text-align:center">
+      <h2 class="section-title" data-reveal>Esto apenas empieza</h2>
+      <div class="hero-ctas" data-reveal style="justify-content:center;margin-top:30px;display:flex;gap:14px;flex-wrap:wrap">
+        <a href="music.html" class="btn btn--primary btn--lg">Escuchar la música</a>
+        <a href="shows.html" class="btn btn--lg">Ver fechas de gira</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="footer"></div>
+
+<script src="assets/data.js"></script>
+<script>
+window.PAGE_RENDER = function () {
+  document.querySelector('#aboutStats').innerHTML = window.STATS.map(s =>
+    `<div class="stat"><div class="n chrome" style="font-family:var(--display);font-weight:900;font-stretch:125%;font-size:clamp(38px,5vw,68px);line-height:0.85">${s.n}</div><div class="l" style="font-family:var(--narrow);text-transform:uppercase;letter-spacing:0.16em;font-size:12px;color:var(--text-mute);margin-top:12px">${s.l}</div></div>`).join("");
+
+  const TL = [
+    { yr: "2020", t: "El comienzo", d: "Primeras grabaciones independientes que se vuelven virales en plataformas digitales." },
+    { yr: "2021", t: "Kartel Music", d: "Funda su propio sello y empieza a impulsar a una nueva generación de artistas del género." },
+    { yr: "2023", t: "Salto global", d: "Entra a los charts internacionales y agota presentaciones en Estados Unidos y México." },
+    { yr: "2024", t: "Récords de streaming", d: "Supera miles de millones de reproducciones y consolida el sonido bélico moderno." },
+    { yr: "2025", t: "Corridos Bélicos Vol. IV", d: "Lanza su trabajo más ambicioso y encabeza la gira más grande de su carrera." },
+  ];
+  document.querySelector('#timeline').innerHTML = TL.map(r => `
+    <div class="tl-row"><div class="yr">${r.yr}</div><div class="ev"><h4>${r.t}</h4><p>${r.d}</p></div></div>`).join("");
+};
+</script>
+<script src="assets/app.js"></script>
+<script src="assets/image-slot.js"></script>
+</body>
+</html>

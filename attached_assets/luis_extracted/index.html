@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luis R Conriquez — Sitio Oficial · Corridos Bélicos</title>
+<meta name="description" content="Sitio oficial de Luis R Conriquez. Escucha el nuevo álbum Corridos Bélicos Vol. IV, mira los videos oficiales, consigue boletos para la gira y la tienda oficial.">
+<meta property="og:title" content="Luis R Conriquez — Sitio Oficial">
+<meta property="og:description" content="El Rey de los Corridos Bélicos. Música, videos, gira y tienda oficial.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0b0d'/%3E%3Ctext x='16' y='23' font-family='Arial Black,sans-serif' font-size='20' font-weight='900' fill='%23c2a15b' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+/* ============ HERO = the video player itself ============ */
+.hero { position: relative; min-height: 100svh; display: flex; align-items: center;
+  padding-top: calc(var(--nav-h) + clamp(18px,3vw,34px)); padding-bottom: clamp(26px,4vw,52px); }
+.hero .wrap { width: 100%; }
+.hero-top { text-align: center; margin-bottom: clamp(18px,2.6vw,30px); }
+.hero-top .eyebrow { justify-content: center; }
+.hero-name { font-family: var(--serif); font-weight: 800; text-transform: uppercase;
+  font-size: clamp(24px, 4.4vw, 58px); line-height: 0.96; letter-spacing: 0.03em; margin-top: 14px; }
+
+/* the player — dominant, centered, gold-framed 16:9 */
+.hero-player {
+  position: relative; aspect-ratio: 16 / 9;
+  width: min(1180px, 100%, calc((100svh - 392px) * 1.7778));
+  margin: 0 auto; overflow: hidden; cursor: pointer; background: #000;
+  border: 1px solid var(--hairline-2);
+  box-shadow: 0 60px 130px -50px rgba(0,0,0,0.95), 0 0 0 1px rgba(194,161,91,0.18) inset;
+}
+.hero-player::before { content:""; position:absolute; inset:10px; border:1px solid rgba(194,161,91,0.30); z-index:3; pointer-events:none; transition: inset .4s var(--ease); }
+.hero-player:hover::before { inset:14px; }
+.hero-poster { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
+.hero-player .pscrim { position:absolute; inset:0; z-index:1; pointer-events:none;
+  background: linear-gradient(180deg, rgba(6,7,8,0.25), transparent 38%, rgba(6,7,8,0.78)); }
+.hero-play { position:absolute; inset:0; z-index:2; display:grid; place-items:center; }
+.hero-play span { width: clamp(74px,8vw,108px); height: clamp(74px,8vw,108px); border-radius:50%;
+  border:1px solid var(--silver); background: rgba(10,11,13,0.42); backdrop-filter: blur(8px);
+  display:grid; place-items:center; transition: all .4s var(--ease); box-shadow: 0 0 50px rgba(0,0,0,0.5); }
+.hero-player:hover .hero-play span { background: var(--silver); transform: scale(1.07); }
+.hero-play svg { width:36%; height:36%; color:#fff; margin-left:5px; transition: color .4s var(--ease); }
+.hero-player:hover .hero-play svg { color: var(--ink); }
+.hero-pmeta { position:absolute; z-index:2; left:0; bottom:0; padding: clamp(18px,2.4vw,34px); pointer-events:none; }
+.hero-pmeta .tag { color: var(--gold); }
+.hero-pmeta h2 { font-family:var(--serif); font-weight:800; text-transform:uppercase; line-height:0.96;
+  font-size: clamp(28px,4.4vw,60px); letter-spacing:0.012em; margin-top:8px; }
+.hero-player iframe { position:absolute; inset:0; width:100%; height:100%; border:0; z-index:4; }
+
+.hero-actions { display:flex; justify-content:center; align-items:center; gap:14px;
+  margin-top: clamp(20px,3vw,34px); flex-wrap:wrap; }
+.hero-actions .hero-socials { display:flex; gap:12px; }
+.hero-actions .hero-socials a { width:42px; height:42px; border:1px solid var(--hairline-2); display:grid; place-items:center; color:var(--text-soft); transition: all .3s var(--ease); }
+.hero-actions .hero-socials a:hover { color:var(--ink); background:var(--silver); border-color:var(--silver); transform:translateY(-3px); }
+.hero-actions .hero-socials svg { width:17px; height:17px; }
+@media (max-width:620px){ .hero-actions .hero-socials { width:100%; justify-content:center; margin-top:4px; } }
+
+/* ============ section header (Tito-style: centered label + rule) ============ */
+.band-head { text-align:center; margin-bottom: clamp(38px,5vw,64px); }
+.band-head h2 { font-family:var(--serif); font-weight:800; text-transform:uppercase; font-size: clamp(30px,5.2vw,68px); line-height:0.98; letter-spacing:0.012em; }
+.band-head .sub { font-family:var(--narrow); text-transform:uppercase; letter-spacing:0.3em; font-size: clamp(11px,1.1vw,13px); color:var(--gold); font-weight:600; margin-top:14px; }
+.band-head--left { text-align:left; }
+
+/* ============ STREAMING SPOTLIGHT ("Escuchar en …") ============ */
+.listen { display:grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(28px,5vw,72px); align-items:center; }
+.listen .cover { aspect-ratio:1; box-shadow: 0 40px 90px -30px rgba(0,0,0,0.9); }
+.listen .cover .imgph { width:100%; height:100%; }
+.listen .info .eyebrow { margin-bottom:14px; }
+.listen .info h3 { font-family:var(--serif); font-weight:800; text-transform:uppercase; line-height:0.96; font-size: clamp(34px,5vw,72px); margin: 6px 0 8px; letter-spacing:0.012em; }
+.listen .info .feat { color:var(--text-soft); font-family:var(--narrow); letter-spacing:0.04em; font-size: clamp(14px,1.4vw,17px); margin-bottom: 28px; }
+.listen-rows { display:flex; flex-direction:column; }
+.listen-row { display:flex; align-items:center; gap:18px; padding: 17px 6px; border-top:1px solid var(--hairline); transition: padding-left .35s var(--ease), background .35s var(--ease); }
+.listen-row:last-child{ border-bottom:1px solid var(--hairline); }
+.listen-row:hover { padding-left:16px; background:linear-gradient(90deg, rgba(255,255,255,0.03), transparent); }
+.listen-row .lr-icon { width:30px; color:var(--silver); display:grid; place-items:center; flex:none; }
+.listen-row .lr-icon svg { width:24px; height:24px; }
+.listen-row:hover .lr-icon { color:var(--gold); }
+.listen-row .lr-label { font-family:var(--narrow); font-size: clamp(15px,1.5vw,19px); letter-spacing:0.02em; color:var(--text-soft); flex:1; }
+.listen-row .lr-label b { color:#fff; font-weight:600; }
+.listen-row .lr-arrow { color:var(--text-mute); transition: transform .35s var(--ease), color .35s var(--ease); }
+.listen-row .lr-arrow svg { width:18px; height:18px; }
+.listen-row:hover .lr-arrow { color:var(--gold); transform: translateX(5px); }
+@media (max-width:760px){ .listen{ grid-template-columns:1fr; } .listen .cover{ max-width:380px; } }
+
+/* ============ MÚSICA grid ============ */
+.disc-grid { display:grid; grid-template-columns: repeat(6,1fr); gap: clamp(12px,1.4vw,20px); }
+.disc { text-align:center; }
+.disc .cover { aspect-ratio:1; position:relative; overflow:hidden; }
+.disc .cover .imgph { width:100%; height:100%; transition: transform .6s var(--ease); }
+.disc:hover .cover .imgph { transform: scale(1.06); }
+.disc .cover .play { position:absolute; inset:0; z-index:3; display:grid; place-items:center; opacity:0; background:rgba(6,7,8,0.45); transition:opacity .35s var(--ease); }
+.disc:hover .cover .play { opacity:1; }
+.disc .cover .play span { width:48px;height:48px;border-radius:50%;border:1px solid var(--silver);background:rgba(10,11,13,0.4);display:grid;place-items:center; }
+.disc .cover .play svg { width:18px;height:18px;color:#fff;margin-left:3px; }
+.disc h4 { font-family:var(--narrow); font-weight:600; font-size:14px; margin-top:13px; }
+.disc .escuchar { font-family:var(--narrow); text-transform:uppercase; letter-spacing:0.18em; font-size:11px; color:var(--gold); font-weight:700; margin-top:6px; display:inline-block; }
+@media (max-width:1024px){ .disc-grid{ grid-template-columns:repeat(3,1fr);} }
+@media (max-width:560px){ .disc-grid{ grid-template-columns:repeat(2,1fr);} }
+
+/* ============ VIDEOS ============ */
+.vmain { position: relative; aspect-ratio: 16/9; overflow:hidden; cursor:pointer; margin-bottom: clamp(18px,2.4vw,30px); }
+.vmain image-slot { width:100%; height:100%; }
+.vmain .ov { position:absolute; inset:0; z-index:3; display:flex; flex-direction:column; justify-content:space-between; padding: clamp(20px,3vw,40px); background: linear-gradient(180deg, rgba(6,7,8,0.2), transparent 38%, rgba(6,7,8,0.88)); pointer-events:none; }
+.vmain .play-btn { width: clamp(64px,7vw,96px); height: clamp(64px,7vw,96px); border-radius:50%; border:1px solid var(--hairline-2); background: rgba(10,11,13,0.4); backdrop-filter: blur(8px); display:grid; place-items:center; margin:auto; transition: all .4s var(--ease); }
+.vmain:hover .play-btn { background: var(--silver); border-color:var(--silver); transform: scale(1.06); }
+.vmain .play-btn svg { width: 38%; height:38%; color:#fff; margin-left:4px; transition: color .4s var(--ease); }
+.vmain:hover .play-btn svg { color: var(--ink); }
+.vmain .vm-meta h3 { font-family:var(--serif); font-weight:800; text-transform:uppercase; font-size: clamp(26px,4vw,56px); line-height:0.96; letter-spacing:0.012em; }
+.vmain .vm-meta .feat { font-family:var(--narrow); color:var(--text-soft); letter-spacing:0.04em; font-size:14px; margin-top:8px; }
+.vrow { display:grid; grid-template-columns: repeat(4,1fr); gap: clamp(14px,1.6vw,22px); }
+.vrow .vcard { cursor:pointer; }
+.vrow .vcard .thumb { position:relative; aspect-ratio:16/9; overflow:hidden; }
+.vrow .vcard .thumb .imgph { width:100%; height:100%; transition:transform .6s var(--ease); }
+.vrow .vcard:hover .thumb .imgph { transform:scale(1.05); }
+.vrow .vcard .thumb .dur { position:absolute; bottom:8px; right:8px; background:rgba(0,0,0,0.72); padding:3px 8px; font-family:var(--narrow); font-size:11px; letter-spacing:0.08em; z-index:2;}
+.vrow .vcard .thumb .pico { position:absolute; inset:0; display:grid; place-items:center; opacity:0; transition:opacity .35s var(--ease); z-index:2;}
+.vrow .vcard:hover .thumb .pico { opacity:1; }
+.vrow .vcard .thumb .pico span { width:50px;height:50px;border-radius:50%;background:rgba(10,11,13,0.5);backdrop-filter:blur(6px);border:1px solid var(--hairline-2);display:grid;place-items:center;}
+.vrow .vcard .thumb .pico svg{ width:18px;height:18px;color:#fff;margin-left:3px;}
+.vrow .vcard h4 { font-family:var(--serif); font-weight:700; text-transform:uppercase; font-size:16px; margin-top:13px; line-height:1; letter-spacing:0.01em; }
+.vrow .vcard .feat { display:block; font-family:var(--narrow); color:var(--text-mute); font-size:13px; margin-top:7px; letter-spacing:0.03em; }
+.vrow .vcard .mini { display:flex; gap:8px; margin-top:11px; }
+.vrow .vcard .mini a { color:var(--text-soft); transition:color .25s; }
+.vrow .vcard .mini a:hover { color:var(--gold); }
+.vrow .vcard .mini svg { width:15px;height:15px; }
+@media (max-width:860px){ .vrow{ grid-template-columns:repeat(2,1fr);} }
+
+/* ============ MERCH (minimal) ============ */
+.merch-band { position:relative; overflow:hidden; min-height: clamp(360px,46vw,560px); display:flex; align-items:center; justify-content:center; text-align:center; }
+.merch-band image-slot { position:absolute; inset:0; width:100%; height:100%; z-index:0; }
+.merch-band .scrim { position:absolute; inset:0; z-index:1; background: radial-gradient(80% 80% at 50% 50%, rgba(6,7,8,0.45), rgba(6,7,8,0.82)); }
+.merch-band .c { position:relative; z-index:2; padding: clamp(30px,5vw,60px); }
+.merch-band .sub { font-family:var(--narrow); text-transform:uppercase; letter-spacing:0.3em; font-size: clamp(11px,1.1vw,13px); color:var(--gold); font-weight:600; }
+.merch-band h2 { font-family:var(--serif); font-weight:800; text-transform:uppercase; font-size: clamp(38px,7vw,104px); line-height:0.92; margin: 16px 0; letter-spacing:0.012em; }
+.merch-band p { font-family:var(--serif); color:var(--silver); font-size: clamp(16px,1.8vw,22px); margin-bottom: 30px; font-weight:500; }
+
+/* ============ SHOWS ============ */
+.show-row { display:grid; grid-template-columns: 132px 1fr auto; align-items:center; gap: 24px; padding: 26px 8px; border-top:1px solid var(--hairline); transition: background .35s var(--ease), padding-left .35s var(--ease); }
+.show-row:last-child{ border-bottom:1px solid var(--hairline); }
+.show-row:hover { background: linear-gradient(90deg, rgba(255,255,255,0.03), transparent); padding-left: 18px; }
+.show-date { display:flex; align-items:baseline; gap:8px; }
+.show-date .d { font-family:var(--display); font-weight:900; font-size: 40px; line-height:0.8; }
+.show-date .m { font-family:var(--narrow); text-transform:uppercase; letter-spacing:0.16em; font-size:13px; color:var(--gold); }
+.show-where .city { font-family:var(--serif); font-weight:700; text-transform:uppercase; font-size: clamp(18px,2vw,25px); line-height:1; letter-spacing:0.01em; }
+.show-where .venue { color: var(--text-soft); font-size:14px; margin-top:6px; font-family:var(--narrow); letter-spacing:0.04em;}
+.show-row .soldout { opacity:0.55; pointer-events:none; }
+@media (max-width:680px){
+  .show-row{ grid-template-columns: 64px 1fr; gap:16px; padding:20px 4px; }
+  .show-row .btn { grid-column: 1 / -1; }
+  .show-date .d{ font-size:30px; } .show-date{ flex-direction:column; gap:2px;}
+}
+
+/* ============ RECONOCIMIENTOS ============ */
+.awards { display:grid; grid-template-columns: repeat(4,1fr); gap: clamp(16px,2vw,26px); }
+.award { text-align:center; }
+.award .frame { aspect-ratio: 3/4; position:relative; overflow:hidden; border:1px solid var(--hairline-2); }
+.award .frame::after { content:""; position:absolute; inset:8px; border:1px solid rgba(194,161,91,0.35); pointer-events:none; z-index:2; }
+.award .frame .imgph { width:100%; height:100%; }
+.award .yr { font-family:var(--display); font-weight:900; color:var(--gold); font-size:20px; margin-top:16px; }
+.award h4 { font-family:var(--serif); font-weight:700; text-transform:uppercase; font-size:17px; margin-top:8px; letter-spacing:0.01em; }
+.award p { font-family:var(--narrow); color:var(--text-soft); font-size:13px; margin-top:7px; letter-spacing:0.02em; }
+@media (max-width:820px){ .awards{ grid-template-columns:repeat(2,1fr);} }
+
+/* ============ BTS gallery ============ */
+.bts-grid { display:grid; grid-template-columns: repeat(4,1fr); gap: 14px; }
+.bts-grid image-slot { width:100%; height:100%; }
+.bts-img { width:100%; height:100%; object-fit:cover; transition: transform .6s var(--ease); }
+.bts-cell:hover .bts-img { transform: scale(1.05); }
+.bts-cell { position:relative; overflow:hidden; aspect-ratio: 3/4; }
+.bts-cell::after { content:""; position:absolute; left:0; right:0; bottom:0; height:46%; background:linear-gradient(transparent, rgba(6,7,8,0.82)); z-index:2; pointer-events:none; }
+.bts-cell .lbl { position:absolute; left:0; right:0; bottom:0; z-index:3; padding:16px; pointer-events:none; }
+.bts-cell .lbl .tag { color: var(--silver); }
+@media (max-width:760px){ .bts-grid{ grid-template-columns:repeat(2,1fr); } }
+
+/* ============ SUSCRÍBETE ============ */
+.news-band { display:grid; grid-template-columns: 0.8fr 1.2fr; gap: 0; border:1px solid var(--hairline); overflow:hidden; }
+.news-band .art { position:relative; min-height: 360px; background: #120a0c center/cover no-repeat; }
+.news-band .art::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg, transparent, rgba(6,7,8,0.5)); }
+.news-band .form-side { padding: clamp(30px,4vw,60px); display:flex; flex-direction:column; justify-content:center; background: rgba(10,11,13,0.5); }
+.news-band h2 { font-family:var(--serif); font-weight:800; text-transform:uppercase; font-size: clamp(28px,3.6vw,50px); line-height:0.98; letter-spacing:0.012em; }
+.news-band p { color:var(--text-soft); margin: 16px 0 28px; max-width:46ch; }
+.news-band form { display:grid; gap:12px; }
+.news-band .nf-row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.news-band input { background: rgba(22,26,32,0.6); border:1px solid var(--hairline-2); color:var(--text); padding:15px 18px; font-family:var(--narrow); font-size:15px; }
+.news-band input:focus { outline:none; border-color:var(--gold); }
+.news-band input::placeholder{ color:var(--text-mute); }
+.news-band .terms { font-family:var(--narrow); font-size:12px; color:var(--text-mute); letter-spacing:0.03em; margin-top:6px; }
+.news-band .ok { color:var(--gold); font-family:var(--narrow); letter-spacing:0.1em; min-height:18px; text-transform:uppercase; font-size:13px; margin-top:8px; }
+@media (max-width:760px){ .news-band{ grid-template-columns:1fr; } .news-band .art{ min-height:220px; } .news-band .nf-row{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body data-page="home">
+<div id="nav"></div>
+
+<main>
+  <!-- HERO = the latest video -->
+  <section class="hero" data-screen-label="Hero">
+    <div class="wrap">
+      <div class="hero-top" data-reveal>
+        <span class="eyebrow eyebrow--center">Nuevo video oficial</span>
+        <h1 class="hero-name chrome">Luis R Conriquez</h1>
+      </div>
+      <div class="hero-player" id="heroPlayer" data-reveal style="--d:.08s">
+        <img class="hero-poster" id="heroPoster" alt="JGL — Video Oficial" loading="eager"
+          src="https://i.ytimg.com/vi/Lq_1LuXMFbE/maxresdefault.jpg"
+          onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/Lq_1LuXMFbE/hqdefault.jpg';">
+        <div class="pscrim"></div>
+        <div class="hero-play"><span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></div>
+        <div class="hero-pmeta"><span class="tag">Video Oficial</span><h2>JGL</h2></div>
+      </div>
+      <div class="hero-actions" data-reveal style="--d:.14s">
+        <a href="music.html" class="btn btn--gold btn--lg">Escuchar ahora</a>
+        <a href="shows.html" class="btn btn--lg">Boletos</a>
+        <div class="hero-socials" id="heroSocials"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÚSICA -->
+  <section class="section section--tight" id="musica" data-screen-label="Música">
+    <div class="wrap">
+      <div class="band-head" data-reveal>
+        <h2>Música de la buena</h2>
+        <div class="sub">Discografía oficial</div>
+      </div>
+      <div class="disc-grid" id="discGrid" data-reveal></div>
+      <div style="text-align:center;margin-top:clamp(36px,4vw,56px)" data-reveal>
+        <a href="music.html" class="btn btn--lg">Ver toda la música</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MERCH -->
+  <section class="section" id="merch" data-screen-label="Merch">
+    <div class="wrap">
+      <div class="merch-band panel" data-reveal>
+        <image-slot id="home-merch" placeholder="Imagen de campaña merch"></image-slot>
+        <div class="scrim"></div>
+        <div class="c">
+          <div class="sub">La merch oficial</div>
+          <h2>No te quedes<br>sin la tuya</h2>
+          <p>Bélico Tour '26 — edición limitada.</p>
+          <a href="merch.html" class="btn btn--gold btn--lg">Toda la merch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOWS -->
+  <section class="section section--tight" id="shows" data-screen-label="Shows">
+    <div class="wrap">
+      <div class="band-head" data-reveal>
+        <h2>Shows</h2>
+        <div class="sub">Gira 2026</div>
+      </div>
+      <div id="showList" data-reveal></div>
+      <div style="text-align:center;margin-top:clamp(36px,4vw,56px)" data-reveal>
+        <a href="shows.html" class="btn btn--gold btn--lg">Todas las fechas</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECONOCIMIENTOS -->
+  <section class="section section--tight" id="reconocimientos" data-screen-label="Reconocimientos">
+    <div class="wrap">
+      <div class="band-head" data-reveal>
+        <h2>Reconocimientos</h2>
+        <div class="sub">Premios & prensa</div>
+      </div>
+      <div class="awards" id="awardsGrid" data-reveal></div>
+    </div>
+  </section>
+
+  <!-- BTS -->
+  <section class="section section--tight" id="bts" data-screen-label="BTS">
+    <div class="wrap">
+      <div class="band-head" data-reveal>
+        <h2>Behind the scenes</h2>
+        <div class="sub">Andamo' detrás de cámara</div>
+      </div>
+      <div class="bts-grid" id="btsGrid" data-reveal></div>
+    </div>
+  </section>
+
+  <!-- SUSCRÍBETE -->
+  <section class="section section--tight" id="suscribete" data-screen-label="Suscríbete">
+    <div class="wrap">
+      <div class="news-band" data-reveal>
+        <div class="art" id="newsArt"></div>
+        <div class="form-side">
+          <span class="eyebrow">Acceso oficial</span>
+          <h2 style="margin-top:14px">Suscríbete para que estés al tanto de todo</h2>
+          <p>Lanzamientos, preventas y fechas antes que nadie. Directo del equipo de Luis R Conriquez.</p>
+          <form id="newsForm">
+            <div class="nf-row">
+              <input type="text" required placeholder="Nombre" aria-label="Nombre">
+              <input type="email" required placeholder="Correo electrónico" aria-label="Correo">
+            </div>
+            <button type="submit" class="btn btn--gold btn--block">Suscribirme</button>
+            <p class="terms">Al suscribirte aceptas recibir correos de Kartel Music. Términos y Condiciones.</p>
+            <p class="ok" id="newsOk"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="footer"></div>
+
+<script src="assets/data.js"></script>
+<script>
+window.PAGE_RENDER = function () {
+  const $ = (s) => document.querySelector(s);
+  const I = window.ICON;
+
+  // hero socials
+  $("#heroSocials").innerHTML = (window.SOCIALS||[]).slice(0,5).map(x => `<a href="${x.url}" aria-label="${x.label}">${I[x.id]||""}</a>`).join("");
+
+  // hero video — the player IS the hero; click to play inline with sound
+  const heroPlayer = $("#heroPlayer");
+  if (heroPlayer) heroPlayer.addEventListener("click", () => {
+    if (heroPlayer.dataset.playing) return;
+    heroPlayer.dataset.playing = "1";
+    heroPlayer.insertAdjacentHTML("beforeend",
+      '<iframe title="JGL — Video Oficial" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen src="https://www.youtube-nocookie.com/embed/Lq_1LuXMFbE?autoplay=1&rel=0&playsinline=1&modestbranding=1"></iframe>');
+    heroPlayer.style.cursor = "default";
+  });
+
+  // música grid (6)
+  $("#discGrid").innerHTML = window.RELEASES.slice(0,6).map(r => `
+    <div class="disc">
+      <div class="cover"><div class="imgph" data-label="${r.title}"></div>
+        <div class="play"><span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></div>
+      </div>
+      <h4>${r.title}</h4><a class="escuchar" href="music.html">Escuchar</a>
+    </div>`).join("");
+
+  // shows (5)
+  $("#showList").innerHTML = window.SHOWS.slice(0,5).map(s => {
+    const d = window.fmtDate(s.date); const st = window.SHOW_STATUS[s.status];
+    return `<div class="show-row">
+      <div class="show-date"><span class="d">${d.day}</span><span class="m">${d.mon}</span></div>
+      <div class="show-where"><div class="city">${s.city}</div><div class="venue">${s.venue} · ${d.dow}</div></div>
+      <a href="${s.ticket}" class="btn ${st.cls} btn--sm">${st.label}</a>
+    </div>`;
+  }).join("");
+
+  // awards
+  $("#awardsGrid").innerHTML = (window.AWARDS||[]).map(a => `
+    <div class="award">
+      <div class="frame"><div class="imgph" data-label="${a.title}"></div></div>
+      <div class="yr">${a.year}</div><h4>${a.title}</h4><p>${a.detail}</p>
+    </div>`).join("");
+
+  // bts gallery
+  $("#btsGrid").innerHTML = window.GALLERY.map(g => `
+    <div class="bts-cell ${g.span||""}"><img class="bts-img" src="${g.img}" alt="${g.label}" loading="lazy">
+      <div class="lbl"><span class="tag">${g.label}</span></div>
+    </div>`).join("");
+
+  // newsletter art — framed oxblood-cross
+  $("#newsArt").style.backgroundImage = "url('assets/oxblood-cross.jpg')";
+  const form = $("#newsForm");
+  if (form) form.addEventListener("submit", (e)=>{ e.preventDefault(); $("#newsOk").textContent = "✓ Estás dentro del convoy."; form.reset(); });
+};
+</script>
+<script src="assets/app.js"></script>
+<script src="assets/image-slot.js"></script>
+</body>
+</html>

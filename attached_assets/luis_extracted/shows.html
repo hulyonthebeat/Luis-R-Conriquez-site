@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fechas de Gira — Luis R Conriquez</title>
+<meta name="description" content="Fechas de la gira 2026 de Luis R Conriquez. Consigue boletos oficiales para los shows en Estados Unidos y México.">
+<meta property="og:title" content="Fechas de Gira — Luis R Conriquez">
+<meta property="og:description" content="Gira 2026. Boletos oficiales para todas las fechas.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0b0d'/%3E%3Ctext x='16' y='23' font-family='Arial Black,sans-serif' font-size='20' font-weight='900' fill='%23c2a15b' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/interior.css">
+</head>
+<body data-page="shows">
+<div id="nav"></div>
+
+<main>
+  <section class="page-hero" data-screen-label="Shows Hero">
+    <div class="wrap">
+      <span class="eyebrow" data-reveal>En vivo · 2026</span>
+      <h1 class="display h-xl chrome" data-reveal style="--d:.05s">Fechas<br>de Gira</h1>
+      <p class="lede" data-reveal style="--d:.1s">El convoy bélico recorre Estados Unidos y México. Consigue tus boletos oficiales antes de que se agoten.</p>
+      <div class="meta-line" data-reveal style="--d:.15s">
+        <div class="m"><span class="v chrome" id="mTotal">—</span><span class="k">Fechas</span></div>
+        <div class="m"><span class="v chrome" id="mCities">—</span><span class="k">Ciudades</span></div>
+        <div class="m"><span class="v gold-text">2</span><span class="k">Países</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight" data-screen-label="Shows List">
+    <div class="wrap">
+      <div class="shows-filter" data-reveal>
+        <button class="chip active" data-f="all">Todas</button>
+        <button class="chip" data-f="us">Estados Unidos</button>
+        <button class="chip" data-f="mx">México</button>
+      </div>
+      <div id="showList" data-reveal></div>
+      <div class="empty" id="emptyState" style="display:none">
+        <h3>Sin fechas por ahora</h3>
+        <p class="lede" style="margin-inline:auto">No hay shows anunciados en esta región. Suscríbete para enterarte primero cuando se anuncien nuevas fechas.</p>
+        <a href="index.html#news" class="btn btn--gold" style="margin-top:26px">Avísame</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="footer"></div>
+
+<script src="assets/data.js"></script>
+<script>
+window.PAGE_RENDER = function () {
+  const isMX = (s) => /MX|México|Guadalajara|Monterrey/.test(s.city);
+  const list = document.querySelector('#showList');
+  const empty = document.querySelector('#emptyState');
+
+  function rowHTML(s) {
+    const d = window.fmtDate(s.date); const st = window.SHOW_STATUS[s.status];
+    return `<div class="show-row">
+      <div class="show-date"><span class="d">${d.day}</span><span class="m">${d.mon}</span></div>
+      <div class="show-where"><div class="city">${s.city}</div><div class="venue">${s.venue} · ${d.dow} · ${d.year}</div></div>
+      <a href="${s.ticket}" class="btn ${st.cls} btn--sm">${st.label}</a>
+    </div>`;
+  }
+  function render(filter) {
+    let rows = window.SHOWS;
+    if (filter === 'us') rows = rows.filter(s => !isMX(s));
+    if (filter === 'mx') rows = rows.filter(s => isMX(s));
+    list.innerHTML = rows.map(rowHTML).join("");
+    empty.style.display = rows.length ? 'none' : 'block';
+    list.style.display = rows.length ? 'block' : 'none';
+  }
+  document.querySelector('#mTotal').textContent = window.SHOWS.length;
+  document.querySelector('#mCities').textContent = new Set(window.SHOWS.map(s=>s.city)).size;
+  render('all');
+
+  document.querySelectorAll('.chip').forEach(c => c.addEventListener('click', () => {
+    document.querySelectorAll('.chip').forEach(x => x.classList.remove('active'));
+    c.classList.add('active');
+    render(c.dataset.f);
+  }));
+};
+</script>
+<script src="assets/app.js"></script>
+<script src="assets/image-slot.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "7gg5GZnhq5hAihbOr4VAR"
+uri = "file://artifacts/luisrc/public/media/album-vol4.png"
+type = "image"
+title = "album cover vol4"
+
+[[generated]]
+id = "LnvIlJ6m1d-9tIF87Qgxf"
+uri = "file://artifacts/luisrc/public/media/merch-hoodie.png"
+type = "image"
+title = "merch hoodie"
+
+[[generated]]
+id = "vGjPOv3QgkJ_cw64dzPrE"
+uri = "file://artifacts/luisrc/public/media/merch-shirt.png"
+type = "image"
+title = "merch shirt"
+
+[[generated]]
+id = "uu0GffJ21MJgZqixdlztl"
+uri = "file://artifacts/luisrc/public/media/merch-hat.png"
+type = "image"
+title = "merch hat"
+
+[[generated]]
+id = "Xl7KwnlRL9r-vxCA4CVcT"
+uri = "file://artifacts/luisrc/public/media/merch-vinyl.png"
+type = "image"
+title = "merch vinyl"
