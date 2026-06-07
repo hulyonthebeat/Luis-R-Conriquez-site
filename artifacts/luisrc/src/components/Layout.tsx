@@ -118,9 +118,6 @@ export function Layout({ children }: { children: ReactNode }) {
                 </a>
               ))}
             </div>
-            <Link href="/shows" className="btn btn--gold btn--sm">
-              Boletos
-            </Link>
           </div>
         </div>
       </header>
