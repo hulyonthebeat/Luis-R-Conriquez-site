@@ -3,7 +3,7 @@ import { Reveal } from "@/components/site/Reveal";
 import { Newsletter } from "@/components/site/Newsletter";
 import {
   BandHead,
-  DiscCard,
+  LatestHitCard,
   ShowRow,
   AwardCard,
   GalleryTile,
@@ -68,9 +68,9 @@ export default function Home() {
       <section className="section section--tight" id="musica">
         <div className="wrap">
           <BandHead title="Música de la buena" sub="Discografía oficial" />
-          <Reveal className="disc-grid">
-            {releases.slice(0, 6).map((r) => (
-              <DiscCard key={r.id} release={r} />
+          <Reveal className="lh-grid">
+            {releases.slice(0, 4).map((r) => (
+              <LatestHitCard key={r.id} release={r} />
             ))}
           </Reveal>
           <Reveal>

@@ -1,4 +1,3 @@
-import { Link } from "wouter";
 import { Icon } from "@/components/site/Icons";
 import { Img } from "@/components/site/Img";
 import { Reveal } from "@/components/site/Reveal";
@@ -19,25 +18,6 @@ export function BandHead({ title, sub }: { title: string; sub: string }) {
       <h2>{title}</h2>
       <div className="sub">{sub}</div>
     </Reveal>
-  );
-}
-
-export function DiscCard({ release }: { release: Release }) {
-  return (
-    <div className="disc">
-      <div className="cover">
-        <Img label={release.title} src={mediaUrl(release.cover)} />
-        <div className="play">
-          <span>
-            <Icon id="play" />
-          </span>
-        </div>
-      </div>
-      <h4>{release.title}</h4>
-      <Link className="escuchar" href="/musica">
-        Escuchar
-      </Link>
-    </div>
   );
 }
 
