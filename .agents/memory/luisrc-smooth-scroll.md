@@ -15,4 +15,7 @@ The `luisrc` site drives page scrolling through a single Lenis instance created 
 
 **Compatibility:** Lenis here smooths the real document scroll (no transformed wrapper), so framer-motion `whileInView` and `window.scrollY` listeners keep working normally.
 
-**GPU hints:** avoid persistent `will-change: transform` on `.smoke-bg` — it is sized to the full document height, so a permanent compositor layer wastes GPU texture memory on long pages. A bare `transform: translateZ(0)` is the accepted middle ground.
+**Scroll-jank causes found on this site (and fixes):**
+- Do NOT force-promote `.smoke-bg` to its own layer (`will-change`/`translateZ(0)`). It is sized to the full document height, so promotion creates a huge GPU texture that hurts more than it helps. Leave it in the normal paint layer.
+- The autoplay/muted/loop hero `<video>` keeps decoding even when scrolled off-screen, stealing frames during scroll. Pause it via IntersectionObserver when out of view, resume when back in.
+- Avoid `mix-blend-mode` on `position:fixed` full-viewport overlays (the film grain). A blend mode forces the browser to re-composite the whole viewport every scroll frame. Use a plain low-opacity overlay + `translateZ(0)` instead; on a near-black theme the visual difference is negligible.

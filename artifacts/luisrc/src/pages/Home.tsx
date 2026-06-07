@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 import { Reveal } from "@/components/site/Reveal";
 import { Newsletter } from "@/components/site/Newsletter";
@@ -16,11 +17,29 @@ const heroNav = navLinks.filter((n) => n.href !== "/");
 const heroSocials = socials.slice(0, 6);
 
 export default function Home() {
+  const heroVideoRef = useRef<HTMLVideoElement | null>(null);
+
+  /* pause the hero video while it's scrolled out of view to keep scrolling smooth */
+  useEffect(() => {
+    const v = heroVideoRef.current;
+    if (!v) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) v.play().catch(() => {});
+        else v.pause();
+      },
+      { threshold: 0.05 },
+    );
+    io.observe(v);
+    return () => io.disconnect();
+  }, []);
+
   return (
     <>
       {/* HERO = the latest video, sole focal point */}
       <section className="hero hero--video">
         <video
+          ref={heroVideoRef}
           className="hero-video-frame"
           src={mediaUrl(heroVideo.file)}
           poster={mediaUrl(heroVideo.poster)}
