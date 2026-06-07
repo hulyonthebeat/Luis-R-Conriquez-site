@@ -154,13 +154,6 @@ export function Layout({ children }: { children: ReactNode }) {
             );
           })}
         </nav>
-        <div className="mm-foot">
-          {socials.map((s) => (
-            <a key={s.id} className="social" href={s.url} aria-label={s.label}>
-              <Icon id={s.id} />
-            </a>
-          ))}
-        </div>
       </div>
 
       <main>{children}</main>
