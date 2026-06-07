@@ -705,7 +705,7 @@ body.menu-open .mobile-menu { opacity: 1; pointer-events: auto; }
 .lh-grid { display:grid; grid-template-columns:repeat(4,1fr); gap: clamp(16px,2vw,30px); }
 .lh-card { display:flex; flex-direction:column; }
 .lh-card .cover { aspect-ratio:1; position:relative; overflow:hidden; border:1px solid var(--hairline);
-  box-shadow: 0 36px 80px -36px rgba(0,0,0,0.9); }
+  border-radius: 10px; box-shadow: 0 36px 80px -36px rgba(0,0,0,0.9); }
 .lh-card .cover .imgph { width:100%; height:100%; transition: transform .7s var(--ease); }
 .lh-card:hover .cover .imgph { transform: scale(1.05); }
 .lh-name { font-family:var(--display); font-weight:800; font-stretch:110%; text-transform:uppercase;
