@@ -1,0 +1,1 @@
+- [Vite + Tailwind v4 gotchas](vite-tailwind-gotchas.md) — font @import must be first line; restart web workflow to clear stale Vite dep-optimize after adding Radix; verify with typecheck not build

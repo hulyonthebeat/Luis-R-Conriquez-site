@@ -1,6 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap');
 @plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
@@ -40,72 +40,82 @@
 }
 
 :root {
-  /* Default to dark palette for light mode too, forced dark theme */
-  --background: 0 0% 4%;
-  --foreground: 0 0% 100%;
-  --border: 0 0% 15%;
-  --card: 0 0% 6%;
-  --card-foreground: 0 0% 100%;
-  --card-border: 0 0% 15%;
+  --background: 0 0% 3%;
+  --foreground: 0 0% 98%;
+  --border: 0 0% 12%;
+  --card: 0 0% 5%;
+  --card-foreground: 0 0% 98%;
+  --card-border: 0 0% 12%;
   --sidebar: 0 0% 4%;
   --sidebar-foreground: 0 0% 100%;
   --sidebar-border: 0 0% 15%;
-  --sidebar-primary: 43 65% 52%;
+  --sidebar-primary: 43 45% 55%;
   --sidebar-primary-foreground: 0 0% 0%;
   --sidebar-accent: 0 0% 15%;
   --sidebar-accent-foreground: 0 0% 100%;
-  --sidebar-ring: 43 65% 52%;
+  --sidebar-ring: 43 45% 55%;
   --popover: 0 0% 6%;
   --popover-foreground: 0 0% 100%;
   --popover-border: 0 0% 15%;
-  --primary: 43 65% 52%;
-  --primary-foreground: 0 0% 0%;
-  --secondary: 351 68% 17%;
-  --secondary-foreground: 0 0% 100%;
+  
+  /* Muted Gold */
+  --primary: 41 40% 60%;
+  --primary-foreground: 0 0% 5%;
+  
+  --secondary: 0 0% 12%;
+  --secondary-foreground: 0 0% 98%;
+  
   --muted: 0 0% 15%;
   --muted-foreground: 0 0% 60%;
-  --accent: 351 68% 17%;
+  
+  --accent: 0 0% 15%;
   --accent-foreground: 0 0% 100%;
+  
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
-  --input: 0 0% 20%;
-  --ring: 43 65% 52%;
+  --input: 0 0% 15%;
+  --ring: 41 40% 60%;
 
   --app-font-sans: 'Inter', sans-serif;
   --app-font-serif: 'Cinzel', serif;
-  --radius: .5rem;
+  --radius: 0rem; /* Sharp edges for raw feel */
 }
 
 .dark {
-  --background: 0 0% 4%;
-  --foreground: 0 0% 100%;
-  --border: 0 0% 15%;
-  --card: 0 0% 6%;
-  --card-foreground: 0 0% 100%;
-  --card-border: 0 0% 15%;
+  --background: 0 0% 3%;
+  --foreground: 0 0% 98%;
+  --border: 0 0% 12%;
+  --card: 0 0% 5%;
+  --card-foreground: 0 0% 98%;
+  --card-border: 0 0% 12%;
   --sidebar: 0 0% 4%;
   --sidebar-foreground: 0 0% 100%;
   --sidebar-border: 0 0% 15%;
-  --sidebar-primary: 43 65% 52%;
+  --sidebar-primary: 43 45% 55%;
   --sidebar-primary-foreground: 0 0% 0%;
   --sidebar-accent: 0 0% 15%;
   --sidebar-accent-foreground: 0 0% 100%;
-  --sidebar-ring: 43 65% 52%;
+  --sidebar-ring: 43 45% 55%;
   --popover: 0 0% 6%;
   --popover-foreground: 0 0% 100%;
   --popover-border: 0 0% 15%;
-  --primary: 43 65% 52%;
-  --primary-foreground: 0 0% 0%;
-  --secondary: 351 68% 17%;
-  --secondary-foreground: 0 0% 100%;
+  
+  --primary: 41 40% 60%;
+  --primary-foreground: 0 0% 5%;
+  
+  --secondary: 0 0% 12%;
+  --secondary-foreground: 0 0% 98%;
+  
   --muted: 0 0% 15%;
   --muted-foreground: 0 0% 60%;
-  --accent: 351 68% 17%;
+  
+  --accent: 0 0% 15%;
   --accent-foreground: 0 0% 100%;
+  
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
-  --input: 0 0% 20%;
-  --ring: 43 65% 52%;
+  --input: 0 0% 15%;
+  --ring: 41 40% 60%;
 }
 
 @layer base {
@@ -113,9 +123,38 @@
     @apply border-border;
   }
   body {
-    @apply font-sans antialiased bg-background text-foreground;
+    @apply font-sans antialiased bg-background text-foreground selection:bg-primary selection:text-black;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif;
   }
+}
+
+/* Texture overlays */
+.bg-noise {
+  position: relative;
+}
+.bg-noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
+  opacity: 0.8;
+  mix-blend-mode: overlay;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
 }

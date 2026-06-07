@@ -1,0 +1,270 @@
+You are a world-class product designer and senior front-end engineer.
+
+I want you to design and generate a premium official website for Mexican artist Luis R Conriquez.
+
+This project will be built in Replit, pushed to GitHub, and deployed on Vercel, so everything you create must be production-ready, clean, modular, and easy to run.
+
+OVERALL GOAL
+Create a visually striking, modern, mobile-first official artist website that feels in the same universe as Peso Pluma’s and Tito Double P’s official sites, but is clearly original and tailored to Luis R Conriquez.
+
+Do NOT copy their layout literally.
+Borrow the level of polish, mood, conversion flow, and premium music-artist energy.
+The result should feel darker, more powerful, more raw, and more authoritative.
+
+BRAND DIRECTION
+Luis R Conriquez should feel:
+- cinematic
+- dark
+- metallic
+- gritty
+- nocturnal
+- premium
+- high-status
+- road/tour/stage-driven
+- corridos bélicos energy with modern luxury execution
+
+VISUAL STYLE
+Use a visual system built around:
+- black, charcoal, gunmetal, smoke, chrome, silver
+- optional subtle accent colors: deep red, dark green, or muted gold
+- oversized typography
+- high-contrast hero imagery
+- layered textures, subtle gradients, soft glows, tasteful motion
+- editorial-style spacing
+- bold, premium, modern design
+- minimal clutter
+- immersive but fast-loading presentation
+
+DO NOT make it feel like:
+- a generic band template
+- a Shopify storefront homepage
+- a blog
+- a corporate site
+- a direct clone of Peso Pluma or Tito Double P
+
+PRIMARY USER GOALS
+The site should help fans:
+1. Listen to the latest release
+2. Watch official music videos
+3. Buy tickets to shows
+4. Shop merch
+5. Explore Luis’s world, brand, and identity
+6. Subscribe for updates
+
+SITE ARCHITECTURE
+Create the following pages/routes:
+- /
+- /music
+- /shows
+- /videos
+- /merch
+- /about
+
+OPTIONAL stretch routes if useful:
+- /press
+- /gallery
+
+HOMEPAGE STRUCTURE
+Build the homepage as a flagship artist landing experience with the following sections in this exact strategic order:
+
+1. HERO
+- Full-screen or near full-screen hero
+- Strong artist image or motion background
+- Luis R Conriquez name/logo lockup
+- Primary CTA: Listen Now
+- Secondary CTA: Tour Dates
+- Tertiary CTA: Shop Merch
+- Immediate premium, official, cinematic impact
+
+2. LATEST RELEASE SPOTLIGHT
+- Featured single, EP, or album module
+- Cover art, title, short supporting copy
+- Streaming buttons for Spotify, Apple Music, YouTube, Amazon Music, Deezer
+- Should feel like the main active campaign area
+
+3. FEATURED VIDEO
+- Highlight one official music video or latest visual release
+- Large thumbnail or embedded video module
+- Secondary grid for additional videos if it helps
+
+4. TOUR / SHOWS
+- Clear date list or card-based layout
+- Date, city, venue, and official ticket CTA
+- Strong scannability on mobile
+- This section must feel premium and easy to browse
+
+5. MUSIC HIGHLIGHTS
+- Curated releases or top songs
+- Avoid overcrowding
+- Use a visually strong grid or cards
+- This should feel selective, not like dumping the full discography
+
+6. MERCH TEASER
+- Show a few featured merch items or placeholders
+- Strong CTA into the merch page
+- Should feel integrated into the artist world, not separated from it
+
+7. RECOGNITION / STATUS / PRESS
+- A premium strip or section for achievements, media recognition, tour credibility, or key artist positioning
+- Design this elegantly, not like a corporate press page
+
+8. BTS / GALLERY
+- Behind-the-scenes photography, tour moments, studio images, backstage energy
+- Use a mood-rich editorial gallery layout
+
+9. NEWSLETTER / FAN SIGNUP
+- Simple but premium email capture
+- Heading should feel exclusive and official
+- Keep it minimal and high-end
+
+10. FOOTER
+- Social links
+- management/contact placeholders
+- policies / privacy / terms
+- copyright
+- final official brand statement
+
+PAGE REQUIREMENTS
+
+MUSIC PAGE
+- Dedicated page for featured releases
+- Hero area for newest release
+- Grid/list of selected releases
+- Streaming links on every release card
+- Consistent, premium presentation
+
+SHOWS PAGE
+- Clean route specifically for live dates
+- Must be easy to update
+- Strong CTA hierarchy
+- Empty state design if there are no shows
+
+VIDEOS PAGE
+- Featured video first
+- Then a clean grid of official videos
+- Optimized layout for thumbnails and embeds
+
+MERCH PAGE
+- High-end placeholder storefront or featured merch collection layout
+- Allow for either:
+  a) internal merch cards
+  b) external shop link handoff
+- Make this page feel premium, not generic ecommerce
+
+ABOUT PAGE
+- Tell Luis R Conriquez’s story with strong visual rhythm
+- Should feel like an official artist profile, not a Wikipedia page
+- Include room for biography, artistic identity, career highlights, and imagery
+
+TECH STACK
+Use:
+- Next.js (latest stable version)
+- App Router
+- TypeScript
+- Tailwind CSS
+- Framer Motion for subtle animation
+- clean reusable React components
+- responsive/mobile-first implementation
+- production-ready file structure
+
+OPTIONAL UI HELPERS
+You may use:
+- shadcn/ui if helpful
+- lucide-react for icons
+
+DO NOT use bloated or unnecessary dependencies.
+
+CODE QUALITY RULES
+- Clean, readable, modular code
+- Reusable components
+- Good naming conventions
+- No messy inline styles if avoidable
+- No unnecessary complexity
+- No fake backend dependencies
+- No placeholder lorem ipsum
+- Keep the code easy to edit in Replit
+- Make the app easy to deploy to Vercel
+
+DATA STRUCTURE
+Create content as editable local data files, not hardcoded all over the UI.
+
+Use files like:
+- data/site.ts
+- data/releases.ts
+- data/shows.ts
+- data/videos.ts
+- data/socials.ts
+- data/press.ts
+
+Use realistic placeholder content structure for now, so I can later replace text, links, images, and dates easily.
+
+DESIGN / UX RULES
+- Mobile-first always
+- Strong spacing and hierarchy
+- Premium hover states
+- Smooth but restrained motion
+- Fast perceived load
+- Avoid visual clutter
+- Every section should have a purpose
+- The homepage must feel like a star’s official site
+- Buttons and CTAs must feel deliberate and high-conversion
+- The design should feel like music, nightlife, status, and momentum
+
+PERFORMANCE RULES
+- Optimize for Vercel deployment
+- Use Next.js Image where appropriate
+- Avoid heavy, unnecessary animations
+- Keep performance strong on mobile
+- Use efficient component structure
+- Minimize layout shift
+
+SEO + META REQUIREMENTS
+Set up:
+- page titles
+- meta descriptions
+- Open Graph metadata
+- Twitter metadata
+- favicon support
+- good semantic structure
+- crawlable text content
+- clean route-level metadata
+
+CONTENT TONE
+The copy should feel:
+- premium
+- official
+- confident
+- current
+- musical
+- concise
+- culturally aware
+- not corporate
+- not cheesy
+- not overly verbose
+
+LANGUAGE
+Primary language should be Spanish-forward with flexibility for bilingual presentation where useful.
+Keep the voice authentic for Luis R Conriquez’s audience.
+
+DELIVERABLES
+I want you to produce this in the following order:
+
+1. Briefly summarize the creative direction
+2. Generate the full Next.js project structure
+3. Generate all core files
+4. Build the homepage first
+5. Build the remaining pages
+6. Add reusable components
+7. Add data files with realistic placeholders
+8. Add metadata and SEO scaffolding
+9. Add a clean README with setup instructions for Replit, GitHub, and Vercel deployment
+10. Explain how to run locally and deploy
+
+IMPORTANT FINAL INSTRUCTION
+Do not stop at wireframes or design notes.
+Actually generate the code for the full project.
+
+Start by giving me:
+A) a concise creative direction summary
+B) the project folder structure
+C) the full codebase

@@ -14,13 +14,17 @@ export default function Shows() {
               <div className="text-xl font-serif">{show.city}</div>
               <div className="text-sm text-white/50">{show.venue}</div>
             </div>
-            <Button 
-              variant={show.status === 'soldout' ? 'outline' : 'default'}
-              disabled={show.status === 'soldout'}
-              className="w-full md:w-auto uppercase tracking-widest"
-            >
-              {show.status === 'soldout' ? 'Agotado' : show.status === 'few' ? 'Últimos Boletos' : 'Boletos'}
-            </Button>
+            {show.status === 'soldout' ? (
+              <Button variant="outline" disabled className="w-full md:w-auto uppercase tracking-widest">
+                Agotado
+              </Button>
+            ) : (
+              <Button className="w-full md:w-auto uppercase tracking-widest" asChild>
+                <a href={show.ticket} target="_blank" rel="noopener noreferrer">
+                  {show.status === 'few' ? 'Últimos Boletos' : 'Boletos'}
+                </a>
+              </Button>
+            )}
           </div>
         ))}
       </div>

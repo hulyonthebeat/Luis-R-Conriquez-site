@@ -6,6 +6,19 @@ export const site = {
   booking: "booking@kartelmusic.com"
 };
 
+// Plataformas de streaming del lanzamiento destacado. Reemplaza con los enlaces oficiales.
+export const streaming = {
+  spotify: "https://open.spotify.com/search/Luis%20R%20Conriquez",
+  apple: "https://music.apple.com/search?term=Luis%20R%20Conriquez",
+  youtube: "https://www.youtube.com/@luisrconriquez"
+};
+
+// Enlaces legales del pie de página. Reemplaza con las URLs reales.
+export const legalLinks = {
+  terms: "#",
+  privacy: "#"
+};
+
 export const releases = [
   {
     title: "Corridos Bélicos, Vol. IV",
@@ -34,15 +47,16 @@ export const videos = [
   { title: "Detrás del Bélico", meta: "Documental · Ep. 01", views: "3.1M", duration: "12:20", thumb: "backstage-beer.jpg" }
 ];
 
+// Reemplaza cada `ticket` con la URL real de venta de boletos.
 export const shows = [
-  { date: "2026-06-19", city: "Los Ángeles, CA", venue: "Crypto.com Arena", status: "few" },
-  { date: "2026-06-27", city: "Phoenix, AZ", venue: "Footprint Center", status: "open" },
-  { date: "2026-07-04", city: "Las Vegas, NV", venue: "T-Mobile Arena", status: "open" },
-  { date: "2026-07-11", city: "Houston, TX", venue: "Toyota Center", status: "soldout" },
-  { date: "2026-07-18", city: "Chicago, IL", venue: "United Center", status: "open" },
-  { date: "2026-08-01", city: "Guadalajara, MX", venue: "Arena VFG", status: "few" },
-  { date: "2026-08-08", city: "Monterrey, MX", venue: "Arena Monterrey", status: "open" },
-  { date: "2026-08-15", city: "Ciudad de México", venue: "Palacio de los Deportes", status: "open" }
+  { date: "2026-06-19", city: "Los Ángeles, CA", venue: "Crypto.com Arena", status: "few", ticket: "#" },
+  { date: "2026-06-27", city: "Phoenix, AZ", venue: "Footprint Center", status: "open", ticket: "#" },
+  { date: "2026-07-04", city: "Las Vegas, NV", venue: "T-Mobile Arena", status: "open", ticket: "#" },
+  { date: "2026-07-11", city: "Houston, TX", venue: "Toyota Center", status: "soldout", ticket: "#" },
+  { date: "2026-07-18", city: "Chicago, IL", venue: "United Center", status: "open", ticket: "#" },
+  { date: "2026-08-01", city: "Guadalajara, MX", venue: "Arena VFG", status: "few", ticket: "#" },
+  { date: "2026-08-08", city: "Monterrey, MX", venue: "Arena Monterrey", status: "open", ticket: "#" },
+  { date: "2026-08-15", city: "Ciudad de México", venue: "Palacio de los Deportes", status: "open", ticket: "#" }
 ];
 
 export const merch = [
@@ -73,10 +87,11 @@ export const awards = [
   { title: "YouTube", detail: "Botón de Diamante · 10M suscriptores", year: 2024 }
 ];
 
+// Reemplaza cada `url` con el perfil oficial verificado.
 export const socials = [
-  { label: "Instagram", handle: "@luisrconriquez" },
-  { label: "YouTube", handle: "Luis R Conriquez" },
-  { label: "Spotify", handle: "Luis R Conriquez" },
-  { label: "TikTok", handle: "@luisrconriquez" },
-  { label: "X", handle: "@luisrconriquez" }
+  { label: "Instagram", handle: "@luisrconriquez", url: "https://www.instagram.com/luisrconriquez" },
+  { label: "YouTube", handle: "Luis R Conriquez", url: "https://www.youtube.com/@luisrconriquez" },
+  { label: "Spotify", handle: "Luis R Conriquez", url: "https://open.spotify.com/search/Luis%20R%20Conriquez" },
+  { label: "TikTok", handle: "@luisrconriquez", url: "https://www.tiktok.com/@luisrconriquez" },
+  { label: "X", handle: "@luisrconriquez", url: "https://x.com/luisrconriquez" }
 ];

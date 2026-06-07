@@ -1,44 +1,46 @@
-# [Project name]
+# Luis R Conriquez — Official Website
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+The official artist website for **Luis R Conriquez** ("El Rey de los Corridos Bélicos", label: Kartel Music) — a flagship, Spanish-language presentation site with discography, videos, tour dates, merch, and an editorial bio. Frontend-only (no backend/DB).
 
 ## Run & Operate
 
-- `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
+- `pnpm --filter @workspace/luisrc run dev` — run the website (the `artifacts/luisrc: web` workflow)
+- `pnpm --filter @workspace/luisrc run typecheck` — typecheck the site (use this to verify, NOT `build`, which needs workflow-provided `PORT`/`BASE_PATH`)
 - `pnpm run typecheck` — full typecheck across all packages
-- `pnpm run build` — typecheck + build all packages
-- `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
-- `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
-- Required env: `DATABASE_URL` — Postgres connection string
 
 ## Stack
 
 - pnpm workspaces, Node.js 24, TypeScript 5.9
-- API: Express 5
-- DB: PostgreSQL + Drizzle ORM
-- Validation: Zod (`zod/v4`), `drizzle-zod`
-- API codegen: Orval (from OpenAPI spec)
-- Build: esbuild (CJS bundle)
+- React + Vite SPA, Tailwind CSS v4, shadcn/ui components
+- Routing: `wouter` (base from `import.meta.env.BASE_URL`)
+- Animation: `framer-motion`
+- Icons: `react-icons/si` (brand) + `lucide-react`
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `artifacts/luisrc/src/data/content.ts` — **single source of truth for all site content**: site info, releases, videos, shows (+ ticket URLs), merch, press, stats, awards, socials (+ URLs), streaming links, legal links. Edit here to update text, links, dates.
+- `artifacts/luisrc/src/pages/` — `Home.tsx`, `Music.tsx`, `Videos.tsx`, `Shows.tsx`, `Merch.tsx`, `About.tsx`
+- `artifacts/luisrc/src/components/Layout.tsx` — header (nav + mobile menu) and footer
+- `artifacts/luisrc/src/index.css` — theme tokens + Google Fonts import
+- `artifacts/luisrc/public/media/` — all images, referenced via `${import.meta.env.BASE_URL}media/<file>`
+- `artifacts/luisrc/src/App.tsx` — router
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- **Frontend-only by design** — no backend, DB, or API. The newsletter form is a client-side success state only.
+- **Content is fully data-driven** from `content.ts` so text/links/dates/images can be swapped without touching components.
+- **Placeholder links** (tickets, legal) use `"#"` and are documented in `content.ts` for the owner to replace; socials/streaming use safe handle/search URLs.
+- Video playback uses YouTube embeds inside a shadcn `Dialog`; dialog triggers are real `<button>` elements for keyboard accessibility.
 
-## Product
+## Aesthetic
 
-_Describe the high-level user-facing capabilities of this app once they exist._
-
-## User preferences
-
-_Populate as you build — explicit user instructions worth remembering across sessions._
+Dark/charcoal backgrounds, muted gold accents, oversized blackletter/serif display type, grainy B&W cinematic photography, smoke/grain texture overlays, editorial spacing, restrained motion. Spanish-forward copy. No emojis.
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- In `index.css`, the Google Fonts `@import` MUST be the first line (before `@import "tailwindcss"`) — Tailwind v4 requires `url()` imports first.
+- Verify with `typecheck`, not `build` (build needs `PORT`/`BASE_PATH` from the workflow).
+- If a Vite "duplicate React / useRef null" runtime error appears after adding a Radix dependency, restart the `artifacts/luisrc: web` workflow to clear the stale dep-optimize cache.
 
 ## Pointers
 
