@@ -10,6 +10,7 @@ import {
   type Show,
   type Merch,
   type GalleryItem,
+  type Award,
 } from "@/data/content";
 
 export function BandHead({
@@ -90,15 +91,11 @@ export function ShowRow({ show, withYear }: { show: Show; withYear?: boolean }) 
   );
 }
 
-export function AwardCard({
-  award,
-}: {
-  award: { title: string; detail: string; year: string };
-}) {
+export function AwardCard({ award }: { award: Award }) {
   return (
     <div className="award">
       <div className="frame">
-        <Img label={award.title} />
+        <Img label={award.title} src={mediaUrl(award.img)} />
       </div>
       <div className="yr">{award.year}</div>
       <h4>{award.title}</h4>

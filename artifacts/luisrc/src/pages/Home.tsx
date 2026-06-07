@@ -140,7 +140,7 @@ export default function Home() {
           <BandHead title="Reconocimientos" sub="Premios & prensa" />
           <Reveal className="awards">
             {awards.map((a) => (
-              <AwardCard key={a.title} award={a} />
+              <AwardCard key={a.img} award={a} />
             ))}
           </Reveal>
         </div>

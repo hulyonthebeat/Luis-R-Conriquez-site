@@ -180,11 +180,12 @@ export const stats = [
   { n: "12M", l: "Oyentes mensuales" },
 ];
 
-export const awards = [
-  { title: "Billboard", detail: "Nominado · Regional Mexicano del Año", year: "2025" },
-  { title: "Premios Juventud", detail: "Mejor Corrido Bélico", year: "2025" },
-  { title: "Disco de Diamante", detail: "Corridos Bélicos Vol. III", year: "2024" },
-  { title: "YouTube", detail: "Botón de Diamante · 10M suscriptores", year: "2024" },
+export type Award = { title: string; detail: string; year: string; img: string };
+
+export const awards: Award[] = [
+  { title: "Billboard", detail: "Latin Artist on the Rise", year: "2022", img: "award-billboard-rise.jpg" },
+  { title: "Billboard Hot 100", detail: "Debut · «Si No Quieres No»", year: "2024", img: "award-billboard-hot100.jpg" },
+  { title: "Billboard", detail: "#1 Regional Mexican Airplay", year: "2024", img: "award-billboard-airplay.jpg" },
 ];
 
 export type Social = { id: SocialId; label: string; handle: string; url: string };
