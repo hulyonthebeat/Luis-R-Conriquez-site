@@ -84,7 +84,13 @@ export function ShowRow({ show, withYear }: { show: Show; withYear?: boolean }) 
           {show.note ? ` · ${show.note}` : ""}
         </div>
       </div>
-      <a href={show.ticket} className={`btn ${st.cls} btn--sm`}>
+      <a
+        href={show.ticket}
+        className={`btn ${st.cls} btn--sm`}
+        {...(show.ticket.startsWith("http")
+          ? { target: "_blank", rel: "noopener noreferrer" }
+          : {})}
+      >
         {st.label}
       </a>
     </div>
