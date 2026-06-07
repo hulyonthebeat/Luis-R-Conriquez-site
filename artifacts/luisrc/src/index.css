@@ -581,7 +581,7 @@ body.menu-open .mobile-menu { opacity: 1; pointer-events: auto; }
 .vrow .vcard { cursor:pointer; }
 .vrow .vcard .thumb { position:relative; aspect-ratio:16/9; overflow:hidden; border-radius:20px; }
 .vrow .vcard .thumb .imgph { width:100%; height:100%; transition:transform .6s var(--ease); }
-.vrow .vcard:hover .thumb .imgph { transform:scale(1.05); }
+@media (hover: hover) { .vrow .vcard:hover .thumb .imgph { transform:scale(1.05); } }
 .vrow .vcard .thumb .dur { position:absolute; bottom:8px; right:8px; background:rgba(0,0,0,0.72); padding:3px 8px; font-family:var(--narrow); font-size:11px; letter-spacing:0.08em; z-index:2;}
 .vrow .vcard .thumb .pico { position:absolute; inset:0; display:grid; place-items:center; opacity:0; transition:opacity .35s var(--ease); z-index:2;}
 .vrow .vcard:hover .thumb .pico { opacity:1; }
@@ -653,7 +653,7 @@ body.menu-open .mobile-menu { opacity: 1; pointer-events: auto; }
 /* ============ BTS gallery ============ */
 .bts-grid { display:grid; grid-template-columns: repeat(4,1fr); gap: 14px; }
 .bts-img { width:100%; height:100%; object-fit:cover; transition: transform .6s var(--ease); }
-.bts-cell:hover .bts-img { transform: scale(1.05); }
+@media (hover: hover) { .bts-cell:hover .bts-img { transform: scale(1.05); } }
 .bts-cell { position:relative; overflow:hidden; aspect-ratio: 3/4; border-radius:20px; }
 .bts-cell::after { content:""; position:absolute; left:0; right:0; bottom:0; height:46%; background:linear-gradient(transparent, rgba(6,7,8,0.82)); z-index:2; pointer-events:none; }
 .bts-cell .lbl { position:absolute; left:0; right:0; bottom:0; z-index:3; padding:16px; pointer-events:none; }
@@ -707,7 +707,7 @@ body.menu-open .mobile-menu { opacity: 1; pointer-events: auto; }
 /* release list card (music page) */
 .rel-card .cover { aspect-ratio:1; position:relative; overflow:hidden; border-radius:20px; }
 .rel-card .cover .imgph { width:100%; height:100%; transition: transform .6s var(--ease); }
-.rel-card:hover .cover .imgph { transform: scale(1.05); }
+@media (hover: hover) { .rel-card:hover .cover .imgph { transform: scale(1.05); } }
 .rel-card .cover .ov { position:absolute; inset:0; z-index:3; display:flex; align-items:flex-end; padding:14px; opacity:0; background:linear-gradient(transparent,rgba(6,7,8,0.88)); transition:opacity .4s var(--ease); }
 .rel-card:hover .cover .ov { opacity:1; }
 .rel-card .cover .ov .mini { display:flex; gap:8px; flex-wrap:wrap; }
@@ -727,7 +727,7 @@ body.menu-open .mobile-menu { opacity: 1; pointer-events: auto; }
 .lh-card .cover { aspect-ratio:1; position:relative; overflow:hidden; border:1px solid var(--hairline);
   border-radius: 20px; box-shadow: 0 36px 80px -36px rgba(0,0,0,0.9); }
 .lh-card .cover .imgph { width:100%; height:100%; transition: transform .7s var(--ease); }
-.lh-card:hover .cover .imgph { transform: scale(1.05); }
+@media (hover: hover) { .lh-card:hover .cover .imgph { transform: scale(1.05); } }
 .lh-name { font-family:var(--display); font-weight:800; font-stretch:110%; text-transform:uppercase;
   font-size:16px; line-height:1.05; margin-top:18px; }
 .lh-meta { display:block; margin-top:7px; color:var(--text-soft); font-size:13px; letter-spacing:0.04em; }
@@ -776,7 +776,7 @@ body.menu-open .mobile-menu { opacity: 1; pointer-events: auto; }
 .merch-card { display:block; }
 .merch-card .ph { aspect-ratio: 4/5; position:relative; overflow:hidden; border-radius:20px; }
 .merch-card .ph .imgph{ width:100%;height:100%; transition: transform .6s var(--ease); }
-.merch-card:hover .ph .imgph{ transform:scale(1.04); }
+@media (hover: hover) { .merch-card:hover .ph .imgph{ transform:scale(1.04); } }
 .merch-card .ph .price { position:absolute; top:12px; right:12px; z-index:2; background:rgba(6,7,8,0.82); padding:6px 11px; font-family:var(--narrow); font-weight:700; font-size:14px; border:1px solid var(--hairline-2);}
 .merch-card .ph .add { position:absolute; left:12px; right:12px; bottom:12px; z-index:2; opacity:0; transform:translateY(8px); transition: all .4s var(--ease); }
 .merch-card:hover .ph .add { opacity:1; transform:none; }
