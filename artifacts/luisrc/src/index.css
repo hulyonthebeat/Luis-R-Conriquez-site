@@ -421,17 +421,24 @@ body.menu-open .burger span:nth-child(3){ transform: translateY(-7px) rotate(-45
   opacity: 0; pointer-events: none; transition: opacity .4s var(--ease);
 }
 body.menu-open .mobile-menu { opacity: 1; pointer-events: auto; }
+.mobile-menu nav { display: flex; flex-direction: column; align-items: center; text-align: center; gap: clamp(8px, 2vh, 20px); }
 .mobile-menu a {
-  font-family: var(--serif); font-weight: 800;
-  text-transform: uppercase; font-size: clamp(17px, 4.4vw, 32px);
-  line-height: 1.06; color: var(--text-soft); padding: 6px 0;
-  border-bottom: 1px solid var(--hairline);
-  display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
-  overflow-wrap: anywhere;
-  transition: color .3s var(--ease), padding-left .3s var(--ease);
+  position: relative; display: inline-block;
+  font-family: var(--serif); font-weight: 700;
+  text-transform: none; letter-spacing: 0.01em;
+  font-size: clamp(20px, 5.2vw, 34px);
+  line-height: 1.1; color: var(--text-soft); padding: 4px 2px;
+  text-shadow: 0 2px 14px rgba(0,0,0,0.6);
+  transition: color .3s var(--ease);
 }
-.mobile-menu a span { flex: none; align-self: center; font-family: var(--narrow); font-size: 12px; letter-spacing: 0.12em; font-stretch:100%; color: var(--text-mute); font-weight: 600; }
-.mobile-menu a:hover, .mobile-menu a.active { color: #fff; padding-left: 12px; }
+.mobile-menu a::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px;
+  background: var(--gold); transform: scaleX(0); transform-origin: center;
+  transition: transform .35s var(--ease);
+}
+.mobile-menu a:hover, .mobile-menu a.active { color: #fff; }
+.mobile-menu a:hover::after, .mobile-menu a.active::after { transform: scaleX(1); }
+.mobile-menu a:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; color: #fff; }
 
 /* ============================================================
    FOOTER

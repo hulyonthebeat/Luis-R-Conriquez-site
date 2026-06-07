@@ -130,14 +130,13 @@ export function Layout({ children }: { children: ReactNode }) {
 
       <div className="mobile-menu" id="mobileMenu">
         <nav>
-          {navLinks.map((n, i) => {
+          {navLinks.map((n) => {
             const active =
               n.href === location || (n.href === "/" && location === "/");
             if (n.href.startsWith("/#")) {
               return (
                 <a key={n.key} href={n.href} onClick={handleNav(n.href)} className={active ? "active" : ""}>
                   {n.label}
-                  <span>0{i + 1}</span>
                 </a>
               );
             }
@@ -149,7 +148,6 @@ export function Layout({ children }: { children: ReactNode }) {
                 className={active ? "active" : ""}
               >
                 {n.label}
-                <span>0{i + 1}</span>
               </Link>
             );
           })}
