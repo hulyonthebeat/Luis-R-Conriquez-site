@@ -66,7 +66,7 @@ export default function Home() {
 
       {/* MÚSICA */}
       <section className="section section--tight" id="musica">
-        <div className="wrap">
+        <div className="wrap wrap--wide">
           <BandHead title="Música de la buena" gold />
           <Reveal className="lh-grid">
             {releases.slice(0, 4).map((r) => (
