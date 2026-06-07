@@ -454,8 +454,6 @@ body.menu-open .mobile-menu { opacity: 1; pointer-events: auto; }
   position:absolute; inset:0; width:100%; height:100%;
   object-fit:cover; object-position:center; z-index:0;
   border:0; pointer-events:none;
-  /* desaturated cinematic look */
-  filter: grayscale(1) contrast(1.08) brightness(0.92);
 }
 /* film grain layered directly over the video */
 .hero-grain {
