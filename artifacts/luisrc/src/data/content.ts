@@ -160,10 +160,10 @@ export type Merch = {
 };
 
 export const merch: Merch[] = [
-  { id: "m1", name: "Tour Hoodie — Negro", price: "$78", tag: "Bélico Tour '26", img: "merch-hoodie.png" },
-  { id: "m2", name: "Camiseta Convoy", price: "$42", tag: "Edición Limitada", img: "merch-shirt.png" },
-  { id: "m3", name: "Gorra Chrome Logo", price: "$38", tag: "Esencial", img: "merch-hat.png" },
-  { id: "m4", name: "Vinilo Vol. IV", price: "$54", tag: "Pre-orden", img: "merch-vinyl.png" },
+  { id: "m1", name: "Tour Hoodie — Negro", price: "$78", tag: "Bélico Tour '26", img: "merch-hoodie.webp" },
+  { id: "m2", name: "Camiseta Convoy", price: "$42", tag: "Edición Limitada", img: "merch-shirt.webp" },
+  { id: "m3", name: "Gorra Chrome Logo", price: "$38", tag: "Esencial", img: "merch-hat.webp" },
+  { id: "m4", name: "Vinilo Vol. IV", price: "$54", tag: "Pre-orden", img: "merch-vinyl.webp" },
 ];
 
 export const press = [
@@ -226,8 +226,8 @@ export const heroVideo = {
 /* Campaign / editorial imagery */
 export const media = {
   smoke: "smoke-texture.jpg",
-  logo: "logo.png",
-  kmusic: "kmusic.png",
+  logo: "logo.webp",
+  kmusic: "kmusic.webp",
   newsletterArt: "oxblood-cross.jpg",
   homeMerchBand: "duo-anuel.jpg",
   merchFeat: "portrait-throne.jpg",
