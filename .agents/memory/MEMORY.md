@@ -1,2 +1,3 @@
 - [Tailwind v4 font import](tailwind-v4-font-import.md) — load Google Fonts via index.html <link>, not CSS @import (Tailwind inlines tailwindcss before it, breaking the import).
 - [Vite + Tailwind v4 gotchas](vite-tailwind-gotchas.md) — restart web workflow to clear stale Vite dep-optimize after adding Radix; verify with typecheck not build.
+- [imgph placeholder label](imgph-placeholder-label.md) — luisrc .imgph ::after label must be position:absolute z-index:0 or it bleeds out of the cover when a real img is present

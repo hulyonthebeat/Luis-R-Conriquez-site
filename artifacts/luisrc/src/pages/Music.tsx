@@ -32,7 +32,7 @@ export default function Music() {
           <Reveal className="release-hero panel">
             <div className="cover">
               <Img
-                label="Portada · Corridos Bélicos Vol. IV"
+                label={`Portada · ${featured.title}`}
                 src={mediaUrl(featured.cover)}
                 eager
               />
@@ -40,17 +40,12 @@ export default function Music() {
             <div className="info">
               <div style={{ display: "flex", gap: 14, alignItems: "center", marginBottom: 6 }}>
                 <span className="eyebrow">Nuevo álbum</span>
-                <span className="tag">Álbum · 18 cortes · 2025</span>
+                <span className="tag">{`${featured.type} · ${featured.tracks} cortes · ${featured.year}`}</span>
               </div>
               <h2>
-                Corridos Bélicos
-                <br />
-                <span className="gold-text">Vol. IV</span>
+                <span className="gold-text">{featured.title}</span>
               </h2>
-              <p className="lede">
-                El nuevo capítulo. Dieciocho cortes grabados entre Hermosillo y Los Ángeles
-                — el sonido más crudo y monumental hasta la fecha.
-              </p>
+              {featured.copy && <p className="lede">{featured.copy}</p>}
               <div style={{ marginTop: 28 }}>
                 <StreamRow />
               </div>

@@ -309,6 +309,7 @@ body::after {
 }
 .imgph::after {
   content: attr(data-label);
+  position: absolute; left: 0; bottom: 0; z-index: 0;
   font-family: var(--narrow); font-size: 11px; letter-spacing: 0.25em;
   text-transform: uppercase; color: var(--text-mute);
   padding: 14px 16px;
