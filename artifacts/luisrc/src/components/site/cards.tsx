@@ -18,13 +18,13 @@ export function BandHead({
   gold,
 }: {
   title: string;
-  sub: string;
+  sub?: string;
   gold?: boolean;
 }) {
   return (
     <Reveal className={`band-head${gold ? " band-head--gold" : ""}`}>
       <h2>{title}</h2>
-      <div className="sub">{sub}</div>
+      {sub && <div className="sub">{sub}</div>}
     </Reveal>
   );
 }

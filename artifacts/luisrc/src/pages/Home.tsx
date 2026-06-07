@@ -67,7 +67,7 @@ export default function Home() {
       {/* MÚSICA */}
       <section className="section section--tight" id="musica">
         <div className="wrap">
-          <BandHead title="Música de la buena" sub="Discografía oficial" gold />
+          <BandHead title="Música de la buena" gold />
           <Reveal className="lh-grid">
             {releases.slice(0, 4).map((r) => (
               <LatestHitCard key={r.id} release={r} />
