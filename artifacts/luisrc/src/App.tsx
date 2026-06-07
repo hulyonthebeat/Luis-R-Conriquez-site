@@ -6,7 +6,6 @@ import NotFound from "@/pages/not-found";
 import { Layout } from "@/components/Layout";
 import Home from "@/pages/Home";
 import Music from "@/pages/Music";
-import Videos from "@/pages/Videos";
 import Shows from "@/pages/Shows";
 import Merch from "@/pages/Merch";
 
@@ -18,7 +17,6 @@ function Router() {
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/musica" component={Music} />
-        <Route path="/videos" component={Videos} />
         <Route path="/shows" component={Shows} />
         <Route path="/merch" component={Merch} />
         <Route component={NotFound} />

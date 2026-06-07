@@ -84,27 +84,6 @@ export const releases: Release[] = [
   },
 ];
 
-export type Video = {
-  id: string;
-  title: string;
-  meta: string;
-  views: string;
-  duration: string;
-  featured?: boolean;
-  youtubeId?: string;
-  /** filename in /media, or undefined for a labeled placeholder */
-  thumb?: string;
-};
-
-export const videos: Video[] = [
-  { id: "v1", title: "JGL", meta: "Video Oficial", views: "42M", duration: "3:48", featured: true, youtubeId: "Lq_1LuXMFbE", thumb: "live-mic-red.jpg" },
-  { id: "v2", title: "Modo Patrón", meta: "Video Oficial", views: "28M", duration: "3:12", thumb: "live-stadium.jpg" },
-  { id: "v3", title: "Convoy Nocturno", meta: "Visualizer", views: "11M", duration: "2:59", thumb: "stage-duo-night.jpg" },
-  { id: "v4", title: "La Neta", meta: "Video Oficial", views: "19M", duration: "3:33", thumb: "couch-luxury.jpg" },
-  { id: "v5", title: "Cruzando la Frontera", meta: "En Vivo · Arena CDMX", views: "7.4M", duration: "4:05", thumb: "bw-cobra-stage.jpg" },
-  { id: "v6", title: "Detrás del Bélico", meta: "Documental · Ep. 01", views: "3.1M", duration: "12:20", thumb: "backstage-beer.jpg" },
-];
-
 export type Show = {
   date: string;
   city: string;

@@ -7,7 +7,6 @@ import {
   fmtDate,
   platformUrls,
   type Release,
-  type Video,
   type Show,
   type Merch,
   type GalleryItem,
@@ -50,26 +49,6 @@ export function LatestHitCard({ release }: { release: Release }) {
       >
         Escuchar ahora
       </a>
-    </div>
-  );
-}
-
-export function VideoCard({ video }: { video: Video }) {
-  return (
-    <div className="vcard">
-      <div className="thumb">
-        <Img label={video.title} src={mediaUrl(video.thumb)} />
-        <span className="dur">{video.duration}</span>
-        <div className="pico">
-          <span>
-            <Icon id="play" />
-          </span>
-        </div>
-      </div>
-      <h4>{video.title}</h4>
-      <span className="tag">
-        {video.meta} · {video.views}
-      </span>
     </div>
   );
 }
