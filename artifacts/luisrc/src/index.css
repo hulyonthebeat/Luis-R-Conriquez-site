@@ -645,9 +645,7 @@ body.menu-open .mobile-menu { opacity: 1; pointer-events: auto; }
 @media (max-width:760px){ .bts-grid{ grid-template-columns:repeat(2,1fr); } }
 
 /* ============ SUSCRÍBETE ============ */
-.news-band { display:grid; grid-template-columns: 0.8fr 1.2fr; gap: 0; border:1px solid var(--hairline); overflow:hidden; }
-.news-band .art { position:relative; min-height: 360px; background: #120a0c center/cover no-repeat; }
-.news-band .art::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg, transparent, rgba(6,7,8,0.5)); }
+.news-band { display:grid; grid-template-columns: 1fr; gap: 0; border:1px solid var(--hairline); overflow:hidden; }
 .news-band .form-side { padding: clamp(30px,4vw,60px); display:flex; flex-direction:column; justify-content:center; background: rgba(10,11,13,0.5); }
 .news-band h2 { font-family:var(--serif); font-weight:800; text-transform:uppercase; font-size: clamp(28px,3.6vw,50px); line-height:0.98; letter-spacing:0.012em; }
 .news-band p { color:var(--text-soft); margin: 16px 0 28px; max-width:46ch; }
@@ -658,7 +656,7 @@ body.menu-open .mobile-menu { opacity: 1; pointer-events: auto; }
 .news-band input::placeholder{ color:var(--text-mute); }
 .news-band .terms { font-family:var(--narrow); font-size:12px; color:var(--text-mute); letter-spacing:0.03em; margin-top:6px; }
 .news-band .ok { color:var(--gold); font-family:var(--narrow); letter-spacing:0.1em; min-height:18px; text-transform:uppercase; font-size:13px; margin-top:8px; }
-@media (max-width:760px){ .news-band{ grid-template-columns:1fr; } .news-band .art{ min-height:220px; } .news-band .nf-row{ grid-template-columns:1fr; } }
+@media (max-width:760px){ .news-band .nf-row{ grid-template-columns:1fr; } }
 
 /* ============================================================
    INTERIOR PAGES

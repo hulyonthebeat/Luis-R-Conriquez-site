@@ -1,15 +1,9 @@
 import { useState } from "react";
-import { media } from "@/data/content";
-import { mediaUrl } from "@/lib/site";
 
 export function Newsletter() {
   const [ok, setOk] = useState("");
   return (
     <div className="news-band">
-      <div
-        className="art"
-        style={{ backgroundImage: `url(${mediaUrl(media.newsletterArt)})` }}
-      />
       <div className="form-side">
         <span className="eyebrow">Acceso oficial</span>
         <h2 style={{ marginTop: 14 }}>Suscríbete para que estés al tanto de todo</h2>

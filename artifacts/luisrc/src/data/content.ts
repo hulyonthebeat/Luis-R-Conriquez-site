@@ -227,7 +227,6 @@ export const heroVideo = {
 export const media = {
   logo: "logo.webp",
   kmusic: "kmusic.webp",
-  newsletterArt: "oxblood-cross.jpg",
   homeMerchBand: "duo-anuel.jpg",
   merchFeat: "portrait-throne.jpg",
   aboutPortrait: "portrait-1.jpg",
