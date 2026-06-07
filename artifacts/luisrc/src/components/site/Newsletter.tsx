@@ -4,38 +4,43 @@ export function Newsletter() {
   const [ok, setOk] = useState("");
   return (
     <div className="news-band">
-      <div className="form-side">
-        <span className="eyebrow">Acceso oficial</span>
-        <h2 style={{ marginTop: 14 }}>Suscríbete para que estés al tanto de todo</h2>
-        <p>
-          Lanzamientos, preventas y fechas antes que nadie. Directo del equipo de Luis R
-          Conriquez.
-        </p>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            setOk("✓ Estás dentro del convoy.");
-            e.currentTarget.reset();
-          }}
-        >
-          <div className="nf-row">
-            <input type="text" required placeholder="Nombre" aria-label="Nombre" />
-            <input
-              type="email"
-              required
-              placeholder="Correo electrónico"
-              aria-label="Correo"
-            />
-          </div>
-          <button type="submit" className="btn btn--gold btn--block">
-            Suscribirme
-          </button>
-          <p className="terms">
-            Al suscribirte aceptas recibir correos de Kartel Music. Términos y Condiciones.
-          </p>
-          <p className="ok">{ok}</p>
-        </form>
+      <div className="news-head">
+        <h2>Suscríbete para que estés al tanto de todo</h2>
+        <span className="news-mail" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4">
+            <rect x="3" y="5" width="18" height="14" rx="1.5" />
+            <path d="m3.5 6.5 8.5 6 8.5-6" />
+          </svg>
+        </span>
       </div>
+      <form
+        className="news-form"
+        onSubmit={(e) => {
+          e.preventDefault();
+          setOk("Estás dentro del convoy.");
+          e.currentTarget.reset();
+        }}
+      >
+        <input
+          type="text"
+          required
+          placeholder="Nombre completo*"
+          aria-label="Nombre completo"
+        />
+        <input
+          type="email"
+          placeholder="Correo electrónico"
+          aria-label="Correo electrónico"
+        />
+        <input type="tel" placeholder="Teléfono" aria-label="Teléfono" />
+        <input type="text" placeholder="País" aria-label="País" />
+        <button type="submit" className="btn btn--gold news-submit">
+          Suscribirme
+        </button>
+      </form>
+      <p className="ok" aria-live="polite">
+        {ok}
+      </p>
     </div>
   );
 }

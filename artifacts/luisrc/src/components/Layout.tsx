@@ -174,60 +174,32 @@ function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="footer">
-      <div className="wrap">
-        <Reveal as="div" className="footer-top">
-          <div className="footer-brand">
-            <div className="footer-brand-lockup">
-              <div className="display chrome">
-                Luis R
-                <br />
-                Conriquez
-              </div>
-              <img
-                className="footer-kmusic"
-                src={mediaUrl(media.kmusic)}
-                alt="K Music"
-                loading="lazy"
-              />
-            </div>
-            <p className="lede" style={{ marginTop: 22, maxWidth: "34ch" }}>
-              {site.tagline}. Sitio oficial — música, gira y la marca, directo desde la fuente.
-            </p>
-            <div className="socials" style={{ marginTop: 26 }}>
-              {socials.map((s) => (
-                <a key={s.id} className="social" href={s.url} aria-label={s.label}>
-                  <Icon id={s.id} />
-                </a>
-              ))}
-            </div>
-          </div>
-          <div className="footer-col">
-            <h4>Explorar</h4>
-            <Link href="/musica">Música</Link>
-            <Link href="/videos">Videos</Link>
-            <Link href="/shows">Fechas de gira</Link>
-            <Link href="/merch">Tienda oficial</Link>
-            <Link href="/acerca">Biografía</Link>
-          </div>
-          <div className="footer-col">
-            <h4>Contacto</h4>
-            <a href={`mailto:${site.email}`}>Management</a>
-            <a href={`mailto:${site.booking}`}>Booking</a>
-            <a href="#">Prensa</a>
-            <a href="#">{site.label}</a>
-          </div>
-        </Reveal>
-        <div className="footer-bottom">
-          <span>
-            © {year} {site.name} · {site.label}
-          </span>
-          <div className="legal">
-            <a href="#">Privacidad</a>
-            <a href="#">Términos</a>
-            <a href="#">Cookies</a>
-          </div>
-        </div>
-      </div>
+      <img
+        className="footer-mask footer-mask--left"
+        src={mediaUrl(media.logo)}
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+      />
+      <img
+        className="footer-mask footer-mask--right"
+        src={mediaUrl(media.logo)}
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+      />
+      <Reveal as="div" className="footer-center">
+        <p className="footer-copy">
+          {site.name} © {year}
+        </p>
+        <p className="footer-disclaimer">
+          Al proporcionar tu información, aceptas unirte a la comunidad y recibir
+          correos de {site.label}.
+        </p>
+        <a className="footer-legal" href="#">
+          Política de Privacidad y Términos de Servicio
+        </a>
+      </Reveal>
     </footer>
   );
 }
