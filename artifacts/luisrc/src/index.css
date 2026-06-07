@@ -479,6 +479,48 @@ body.menu-open .mobile-menu { opacity: 1; pointer-events: auto; }
   border:0; z-index:1; pointer-events:none;
 }
 
+/* Hero overlay: corner logo + socials, bottom nav */
+.hero-shade { position:absolute; inset:0; z-index:2; pointer-events:none;
+  background:
+    linear-gradient(180deg, rgba(6,7,8,0.58) 0%, rgba(6,7,8,0) 26%, rgba(6,7,8,0) 60%, rgba(6,7,8,0.78) 100%); }
+.hero-overlay { position:absolute; inset:0; z-index:3; display:flex; flex-direction:column;
+  justify-content:space-between; padding: clamp(20px,3.2vw,40px) clamp(20px,4vw,64px); }
+.hero-corner { display:flex; align-items:flex-start; justify-content:space-between; gap:18px; }
+.hero-logo { display:block; flex:none; }
+.hero-logo img { width: clamp(64px, 7vw, 104px); height:auto; display:block;
+  filter: drop-shadow(0 6px 26px rgba(0,0,0,0.6)); transition: transform .4s var(--ease); }
+.hero-logo:hover img { transform: scale(1.05); }
+.hero-socials { display:flex; align-items:center; gap: clamp(12px,1.4vw,20px); padding-top:6px; }
+.hero-socials a { color:var(--text-soft); transition: color .3s var(--ease), transform .3s var(--ease); }
+.hero-socials a:hover { color:var(--gold); transform:translateY(-2px); }
+.hero-socials svg { width:19px; height:19px; }
+
+.hero-nav { display:flex; align-items:center; justify-content:center; flex-wrap:wrap;
+  gap: clamp(20px,3.4vw,64px); padding-bottom: clamp(6px,1.4vw,18px); }
+.hero-nav a { font-family: var(--narrow); text-transform:uppercase;
+  letter-spacing:0.28em; font-size: clamp(11px,1.05vw,14px); font-weight:600;
+  color:var(--text-soft); position:relative; padding:6px 2px;
+  transition: color .3s var(--ease); }
+.hero-nav a::after { content:""; position:absolute; left:0; right:0; bottom:-2px; height:1px;
+  background:var(--gold); transform:scaleX(0); transform-origin:center; transition: transform .35s var(--ease); }
+.hero-nav a:hover { color:#fff; }
+.hero-nav a:hover::after { transform:scaleX(1); }
+.hero-nav a:focus-visible,
+.hero-socials a:focus-visible,
+.hero-logo:focus-visible { outline:2px solid var(--gold); outline-offset:4px; color:#fff; }
+
+@media (max-width: 640px) {
+  .hero-nav { gap:14px 18px; }
+  .hero-nav a { letter-spacing:0.16em; font-size:12px; padding:8px 4px; }
+  .hero-socials { gap:16px; }
+  .hero-socials a { padding:4px; }
+}
+
+/* On the home hero, the fixed top header stays hidden until the user scrolls
+   past the hero (its own logo/nav take over). It returns on scroll.
+   visibility:hidden also removes it from the tab order / a11y tree while hidden. */
+.nav--home-top { opacity:0; visibility:hidden; pointer-events:none; transform: translateY(-100%); }
+
 .hero-actions { display:flex; justify-content:center; align-items:center; gap:14px;
   margin-top: clamp(20px,3vw,34px); flex-wrap:wrap; }
 .hero-actions .hero-socials { display:flex; gap:12px; }

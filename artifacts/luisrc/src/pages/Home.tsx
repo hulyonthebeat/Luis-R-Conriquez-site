@@ -8,8 +8,12 @@ import {
   AwardCard,
   GalleryTile,
 } from "@/components/site/cards";
-import { releases, shows, awards, gallery, media, heroVideo } from "@/data/content";
+import { Icon } from "@/components/site/Icons";
+import { releases, shows, awards, gallery, media, heroVideo, socials, navLinks } from "@/data/content";
 import { mediaUrl } from "@/lib/site";
+
+const heroNav = navLinks.filter((n) => n.href !== "/");
+const heroSocials = socials.slice(0, 6);
 
 export default function Home() {
   return (
@@ -29,6 +33,36 @@ export default function Home() {
           allow="autoplay; encrypted-media; picture-in-picture"
           frameBorder={0}
         />
+        <div className="hero-shade" aria-hidden="true" />
+
+        <div className="hero-overlay">
+          <div className="hero-corner">
+            <Link href="/" className="hero-logo" aria-label="Luis R Conriquez — Inicio">
+              <img src={mediaUrl(media.logo)} alt="Luis R Conriquez" />
+            </Link>
+            <div className="hero-socials">
+              {heroSocials.map((s) => (
+                <a key={s.id} href={s.url} aria-label={s.label} target="_blank" rel="noreferrer">
+                  <Icon id={s.id} />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <nav className="hero-nav" aria-label="Navegación principal">
+            {heroNav.map((n) =>
+              n.href.startsWith("/#") ? (
+                <a key={n.key} href={n.href.slice(1)}>
+                  {n.label}
+                </a>
+              ) : (
+                <Link key={n.key} href={n.href}>
+                  {n.label}
+                </Link>
+              ),
+            )}
+          </nav>
+        </div>
       </section>
 
       {/* MÚSICA */}

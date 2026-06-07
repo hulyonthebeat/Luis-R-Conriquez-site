@@ -77,7 +77,11 @@ export function Layout({ children }: { children: ReactNode }) {
         style={{ backgroundImage: `url(${mediaUrl(media.smoke)})` }}
       />
 
-      <header className={`nav${scrolled ? " scrolled" : ""}`} id="siteNav">
+      <header
+        className={`nav${scrolled ? " scrolled" : ""}${location === "/" && !scrolled ? " nav--home-top" : ""}`}
+        id="siteNav"
+        aria-hidden={location === "/" && !scrolled ? true : undefined}
+      >
         <div className="wrap">
           <div className="nav-left">
             <button

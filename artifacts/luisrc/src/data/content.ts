@@ -175,6 +175,7 @@ export const heroVideo = {
 /* Campaign / editorial imagery */
 export const media = {
   smoke: "smoke-texture.jpg",
+  logo: "logo.png",
   newsletterArt: "oxblood-cross.jpg",
   homeMerchBand: "duo-anuel.jpg",
   merchFeat: "portrait-throne.jpg",
