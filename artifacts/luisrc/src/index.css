@@ -432,7 +432,7 @@ body.menu-open .mobile-menu { opacity: 1; pointer-events: auto; }
 .footer { position:relative; overflow:hidden; background: linear-gradient(180deg, rgba(8,9,11,0.55), rgba(6,7,8,0.92)); border-top: 1px solid var(--hairline); padding: clamp(56px,8vw,104px) clamp(20px,5vw,90px); }
 .footer-mask { position:absolute; top:50%; transform:translateY(-50%); height: clamp(96px,14vw,180px); width:auto; opacity:0.9; pointer-events:none; user-select:none; filter: drop-shadow(0 8px 26px rgba(0,0,0,0.6)); }
 .footer-mask--left { left: clamp(14px,4vw,80px); }
-.footer-mask--right { right: clamp(14px,4vw,80px); }
+.footer-mask--right { right: clamp(14px,4vw,80px); height: clamp(118px,17vw,210px); mix-blend-mode: screen; }
 .footer-center { position:relative; z-index:1; max-width: 620px; margin-inline:auto; text-align:center; display:flex; flex-direction:column; align-items:center; gap:14px; }
 .footer-copy { font-family: var(--narrow); text-transform: uppercase; letter-spacing: 0.14em; font-size: 13px; color: var(--text-soft); }
 .footer-disclaimer { font-family: var(--narrow); font-size: 13px; line-height: 1.7; color: var(--text-mute); max-width: 50ch; }

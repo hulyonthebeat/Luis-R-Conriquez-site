@@ -183,7 +183,7 @@ function Footer() {
       />
       <img
         className="footer-mask footer-mask--right"
-        src={mediaUrl(media.logo)}
+        src={mediaUrl(media.kmusic)}
         alt=""
         aria-hidden="true"
         loading="lazy"
