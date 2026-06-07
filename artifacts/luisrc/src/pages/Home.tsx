@@ -50,9 +50,6 @@ export default function Home() {
           preload="metadata"
           aria-hidden="true"
         />
-        <div className="hero-grain" aria-hidden="true" />
-        <div className="hero-shade" aria-hidden="true" />
-
         <div className="hero-overlay">
           <div className="hero-corner">
             <Link href="/" className="hero-logo" aria-label="Luis R Conriquez — Inicio">

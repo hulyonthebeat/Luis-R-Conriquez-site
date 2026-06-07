@@ -466,18 +466,7 @@ body.menu-open .mobile-menu { opacity: 1; pointer-events: auto; }
   object-fit:cover; object-position:center; z-index:0;
   border:0; pointer-events:none;
 }
-/* film grain layered directly over the video */
-.hero-grain {
-  position:absolute; inset:0; z-index:1; pointer-events:none;
-  opacity:0.16; mix-blend-mode:overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='hn'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23hn)'/%3E%3C/svg%3E");
-  background-size: 180px 180px;
-}
-
 /* Hero overlay: corner logo + socials, bottom nav */
-.hero-shade { position:absolute; inset:0; z-index:2; pointer-events:none;
-  background:
-    linear-gradient(180deg, rgba(6,7,8,0.58) 0%, rgba(6,7,8,0) 26%, rgba(6,7,8,0) 60%, rgba(6,7,8,0.78) 100%); }
 .hero-overlay { position:absolute; inset:0; z-index:3; display:flex; flex-direction:column;
   justify-content:space-between;
   padding: clamp(22px,3vw,40px) clamp(22px,4.5vw,60px) clamp(30px,4vw,56px); }
