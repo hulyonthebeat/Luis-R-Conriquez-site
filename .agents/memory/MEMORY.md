@@ -1,1 +1,2 @@
-- [Vite + Tailwind v4 gotchas](vite-tailwind-gotchas.md) — font @import must be first line; restart web workflow to clear stale Vite dep-optimize after adding Radix; verify with typecheck not build
+- [Tailwind v4 font import](tailwind-v4-font-import.md) — load Google Fonts via index.html <link>, not CSS @import (Tailwind inlines tailwindcss before it, breaking the import).
+- [Vite + Tailwind v4 gotchas](vite-tailwind-gotchas.md) — restart web workflow to clear stale Vite dep-optimize after adding Radix; verify with typecheck not build.

@@ -1,46 +1,45 @@
-# Luis R Conriquez — Official Website
+# Luis R Conriquez — Official Site
 
-The official artist website for **Luis R Conriquez** ("El Rey de los Corridos Bélicos", label: Kartel Music) — a flagship, Spanish-language presentation site with discography, videos, tour dates, merch, and an editorial bio. Frontend-only (no backend/DB).
+A cinematic, dark/metallic official artist website for Luis R Conriquez ("El Rey de los Corridos Bélicos") — music, videos, tour dates, merch, and bio. Spanish-language, six routes, built as a static React + Vite app.
 
 ## Run & Operate
 
-- `pnpm --filter @workspace/luisrc run dev` — run the website (the `artifacts/luisrc: web` workflow)
-- `pnpm --filter @workspace/luisrc run typecheck` — typecheck the site (use this to verify, NOT `build`, which needs workflow-provided `PORT`/`BASE_PATH`)
+- App runs via the `luisrc` workflow (preview pane). Do not run `pnpm dev` at the root.
+- `pnpm --filter @workspace/luisrc run typecheck` — typecheck the site
 - `pnpm run typecheck` — full typecheck across all packages
 
 ## Stack
 
 - pnpm workspaces, Node.js 24, TypeScript 5.9
-- React + Vite SPA, Tailwind CSS v4, shadcn/ui components
-- Routing: `wouter` (base from `import.meta.env.BASE_URL`)
-- Animation: `framer-motion`
-- Icons: `react-icons/si` (brand) + `lucide-react`
+- `luisrc` artifact: React + Vite, **wouter** routing, Tailwind v4, framer-motion, react-icons, shadcn/ui (NO Next.js)
+- Other artifacts: `api-server` (Express), `mockup-sandbox` (design canvas)
 
-## Where things live
+## Where things live (luisrc)
 
-- `artifacts/luisrc/src/data/content.ts` — **single source of truth for all site content**: site info, releases, videos, shows (+ ticket URLs), merch, press, stats, awards, socials (+ URLs), streaming links, legal links. Edit here to update text, links, dates.
-- `artifacts/luisrc/src/pages/` — `Home.tsx`, `Music.tsx`, `Videos.tsx`, `Shows.tsx`, `Merch.tsx`, `About.tsx`
-- `artifacts/luisrc/src/components/Layout.tsx` — header (nav + mobile menu) and footer
-- `artifacts/luisrc/src/index.css` — theme tokens + Google Fonts import
-- `artifacts/luisrc/public/media/` — all images, referenced via `${import.meta.env.BASE_URL}media/<file>`
-- `artifacts/luisrc/src/App.tsx` — router
+- `artifacts/luisrc/src/data/content.ts` — single editable source of truth for ALL site content (site info, releases, videos, shows, merch, awards, socials, gallery, timeline, nav links, media mapping)
+- `artifacts/luisrc/src/index.css` — full ported design system (tokens, fonts, smoke bg, grain/vignette overlays, every component class). Fonts via Google Fonts `@import`.
+- `artifacts/luisrc/src/components/Layout.tsx` — nav, fullscreen burger menu, footer, smoke parallax, hash-nav, scroll-to-top
+- `artifacts/luisrc/src/components/site/` — reusable pieces (Icons, Reveal, Img, HeroPlayer, FeaturedVideo, StreamRow, Newsletter, HashLink, cards.tsx)
+- `artifacts/luisrc/src/pages/` — Home, Music, Videos, Shows, Merch, About
+- `artifacts/luisrc/public/media/` — all imagery
+- Routes: `/` `/musica` `/videos` `/shows` `/merch` `/acerca`
 
 ## Architecture decisions
 
-- **Frontend-only by design** — no backend, DB, or API. The newsletter form is a client-side success state only.
-- **Content is fully data-driven** from `content.ts` so text/links/dates/images can be swapped without touching components.
-- **Placeholder links** (tickets, legal) use `"#"` and are documented in `content.ts` for the owner to replace; socials/streaming use safe handle/search URLs.
-- Video playback uses YouTube embeds inside a shadcn `Dialog`; dialog triggers are real `<button>` elements for keyboard accessibility.
+- Faithful rebuild of an uploaded static HTML prototype (`attached_assets/luis_extracted/`). Markup/classes ported verbatim; the original per-page vanilla-JS render functions became React components.
+- `Reveal` wraps content in framer-motion `whileInView` (replaces prototype's `[data-reveal]` CSS). The `[data-reveal]{opacity:0}` rule was intentionally NOT ported, so content is visible even without JS reveal.
+- `Img` renders the prototype's `.imgph` labeled placeholder; when a real media file exists it overlays an `<img>` that covers the label. Releases/awards mostly use placeholders (only Vol. IV has a real cover); videos/merch/gallery use real images.
+- Icons rendered without width/height so CSS controls sizing.
+- Hash links (e.g. `/#suscribete`) navigate home first, then smooth-scroll.
 
-## Aesthetic
+## User preferences
 
-Dark/charcoal backgrounds, muted gold accents, oversized blackletter/serif display type, grainy B&W cinematic photography, smoke/grain texture overlays, editorial spacing, restrained motion. Spanish-forward copy. No emojis.
+_Populate as you build._
 
 ## Gotchas
 
-- In `index.css`, the Google Fonts `@import` MUST be the first line (before `@import "tailwindcss"`) — Tailwind v4 requires `url()` imports first.
-- Verify with `typecheck`, not `build` (build needs `PORT`/`BASE_PATH` from the workflow).
-- If a Vite "duplicate React / useRef null" runtime error appears after adding a Radix dependency, restart the `artifacts/luisrc: web` workflow to clear the stale dep-optimize cache.
+- Do NOT re-add a global `[data-reveal]{opacity:0}` rule — reveals are handled by the `Reveal` component, not CSS.
+- Media filenames in `content.ts` must match files in `public/media/`.
 
 ## Pointers
 

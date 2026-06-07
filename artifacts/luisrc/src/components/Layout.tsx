@@ -1,184 +1,210 @@
-import { ReactNode, useState, useEffect } from "react";
+import { useEffect, useState, type ReactNode, type MouseEvent } from "react";
 import { Link, useLocation } from "wouter";
-import { SiSpotify, SiYoutube, SiInstagram, SiTiktok, SiX } from "react-icons/si";
-import { site, socials, legalLinks } from "@/data/content";
-import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { Icon } from "@/components/site/Icons";
+import { Reveal } from "@/components/site/Reveal";
+import { site, socials, navLinks, media } from "@/data/content";
+import { mediaUrl } from "@/lib/site";
 
-const socialIcons: Record<string, typeof SiInstagram> = {
-  Instagram: SiInstagram,
-  YouTube: SiYoutube,
-  Spotify: SiSpotify,
-  TikTok: SiTiktok,
-  X: SiX,
-};
+function scrollToHash(hash: string) {
+  const el = document.getElementById(hash);
+  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+}
 
 export function Layout({ children }: { children: ReactNode }) {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [location] = useLocation();
+  const [location, navigate] = useLocation();
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
+  /* nav scrolled state */
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  /* smoke background scrolls with the page: size it to the full document height */
   useEffect(() => {
-    setMobileMenuOpen(false);
-    window.scrollTo(0, 0);
+    const smoke = document.getElementById("smokeBg");
+    if (!smoke) return;
+    const sizeSmoke = () => {
+      const se = document.scrollingElement || document.documentElement;
+      const h = Math.max(se.scrollHeight || 0, document.body.scrollHeight || 0, window.innerHeight);
+      smoke.style.height = `${h}px`;
+    };
+    sizeSmoke();
+    window.addEventListener("resize", sizeSmoke);
+    const ro = new ResizeObserver(sizeSmoke);
+    ro.observe(document.body);
+    return () => {
+      window.removeEventListener("resize", sizeSmoke);
+      ro.disconnect();
+    };
   }, [location]);
 
+  /* body menu-open class */
+  useEffect(() => {
+    document.body.classList.toggle("menu-open", menuOpen);
+    return () => document.body.classList.remove("menu-open");
+  }, [menuOpen]);
+
+  /* scroll to top on route change (no hash) */
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, [location]);
+
+  const handleNav = (href: string) => (e: MouseEvent) => {
+    setMenuOpen(false);
+    if (href.startsWith("/#")) {
+      e.preventDefault();
+      const hash = href.slice(2);
+      if (location === "/") {
+        scrollToHash(hash);
+      } else {
+        navigate("/");
+        window.setTimeout(() => scrollToHash(hash), 120);
+      }
+    }
+  };
+
+  const navSocials = socials.slice(0, 4);
+
   return (
-    <div className="min-h-screen flex flex-col bg-background text-foreground font-sans relative">
-      <div className="fixed inset-0 pointer-events-none z-[100] opacity-[0.03] mix-blend-overlay" 
-           style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }}>
-      </div>
+    <>
+      <div
+        className="smoke-bg"
+        id="smokeBg"
+        style={{ backgroundImage: `url(${mediaUrl(media.smoke)})` }}
+      />
 
-      <header 
-        className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-          isScrolled ? "bg-black/90 backdrop-blur-xl border-b border-white/5 py-4" : "bg-gradient-to-b from-black/80 to-transparent py-6"
-        }`}
-      >
-        <div className="container mx-auto px-6 lg:px-12 flex items-center justify-between">
-          <Link href="/" className="font-serif font-black text-2xl tracking-[0.2em] text-white hover:text-primary transition-colors uppercase group relative">
-            <span className="relative z-10">LRC</span>
-            <span className="absolute -inset-2 bg-primary/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+      <header className={`nav${scrolled ? " scrolled" : ""}`} id="siteNav">
+        <div className="wrap">
+          <div className="nav-left">
+            <button
+              className="menu-btn"
+              aria-label="Menú"
+              aria-expanded={menuOpen}
+              onClick={() => setMenuOpen((v) => !v)}
+            >
+              <span className="burger">
+                <span />
+                <span />
+                <span />
+              </span>
+              <span className="lbl">Menú</span>
+            </button>
+          </div>
+          <Link href="/" className="brand" onClick={() => setMenuOpen(false)}>
+            Luis R Conriquez
+            <small>Corridos Bélicos</small>
           </Link>
-          
-          <nav className="hidden md:flex items-center gap-10 font-sans font-medium text-xs tracking-[0.15em] uppercase">
-            {[
-              { href: "/musica", label: "Música" },
-              { href: "/videos", label: "Videos" },
-              { href: "/shows", label: "Gira" },
-              { href: "/merch", label: "Merch" },
-              { href: "/acerca", label: "Acerca" }
-            ].map((link) => (
-              <Link 
-                key={link.href} 
-                href={link.href} 
-                className={`relative py-2 transition-colors hover:text-primary ${location === link.href ? "text-primary" : "text-white/70"}`}
-              >
-                {link.label}
-                {location === link.href && (
-                  <motion.div layoutId="nav-indicator" className="absolute bottom-0 left-0 w-full h-[1px] bg-primary" />
-                )}
-              </Link>
-            ))}
-          </nav>
-
-          <button 
-            className="md:hidden text-white p-2"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label={mobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
-            aria-expanded={mobileMenuOpen}
-          >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="nav-right">
+            <div className="nav-social">
+              {navSocials.map((s) => (
+                <a key={s.id} href={s.url} aria-label={s.label}>
+                  <Icon id={s.id} />
+                </a>
+              ))}
+            </div>
+            <Link href="/shows" className="btn btn--gold btn--sm">
+              Boletos
+            </Link>
+          </div>
         </div>
       </header>
 
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div 
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 bg-black pt-24 px-6"
-          >
-            <div className="flex flex-col gap-8 text-2xl font-serif uppercase tracking-widest text-center mt-12">
-              <Link href="/musica" className="hover:text-primary">Música</Link>
-              <Link href="/videos" className="hover:text-primary">Videos</Link>
-              <Link href="/shows" className="hover:text-primary">Gira</Link>
-              <Link href="/merch" className="hover:text-primary">Merch</Link>
-              <Link href="/acerca" className="hover:text-primary">Acerca</Link>
-            </div>
-            
-            <div className="flex justify-center gap-6 mt-16 text-white/50">
-               {socials.map((s) => {
-                const Icon = socialIcons[s.label] ?? SiX;
-                return (
-                  <a key={s.label} href={s.url} target="_blank" rel="noopener noreferrer" aria-label={s.label} className="hover:text-primary"><Icon size={24} /></a>
-                )
-               })}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <div className="mobile-menu" id="mobileMenu">
+        <nav>
+          {navLinks.map((n, i) => {
+            const active =
+              n.href === location || (n.href === "/" && location === "/");
+            if (n.href.startsWith("/#")) {
+              return (
+                <a key={n.key} href={n.href} onClick={handleNav(n.href)} className={active ? "active" : ""}>
+                  {n.label}
+                  <span>0{i + 1}</span>
+                </a>
+              );
+            }
+            return (
+              <Link
+                key={n.key}
+                href={n.href}
+                onClick={handleNav(n.href)}
+                className={active ? "active" : ""}
+              >
+                {n.label}
+                <span>0{i + 1}</span>
+              </Link>
+            );
+          })}
+        </nav>
+        <div className="mm-foot">
+          {socials.map((s) => (
+            <a key={s.id} className="social" href={s.url} aria-label={s.label}>
+              <Icon id={s.id} />
+            </a>
+          ))}
+        </div>
+      </div>
 
-      <main className="flex-1">
-        {children}
-      </main>
+      <main>{children}</main>
 
-      <footer className="bg-black pt-32 pb-16 relative overflow-hidden border-t border-white/5 mt-auto">
-        <div className="absolute inset-0 opacity-10 mix-blend-overlay" style={{ backgroundImage: `url(${import.meta.env.BASE_URL}media/smoke-texture.jpg)`, backgroundSize: 'cover' }}></div>
-        
-        <div className="container mx-auto px-6 lg:px-12 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-24">
-            <div className="md:col-span-5 flex flex-col items-center md:items-start text-center md:text-left">
-              <h3 className="font-serif font-black text-4xl text-white uppercase tracking-[0.1em] mb-4">Luis R<br/><span className="text-primary">Conriquez</span></h3>
-              <p className="text-white/40 text-sm tracking-widest uppercase max-w-xs mb-8">{site.tagline}</p>
-              
-              <div className="flex gap-4 mb-10">
-                {socials.map((s) => {
-                  const Icon = socialIcons[s.label] ?? SiX;
-                  return (
-                    <a
-                      key={s.label}
-                      href={s.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={s.label}
-                      className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-black hover:bg-primary hover:border-primary transition-all duration-300"
-                    >
-                      <Icon size={18} />
-                    </a>
-                  );
-                })}
-              </div>
+      <Footer />
+    </>
+  );
+}
+
+function Footer() {
+  const year = new Date().getFullYear();
+  return (
+    <footer className="footer">
+      <div className="wrap">
+        <Reveal as="div" className="footer-top">
+          <div className="footer-brand">
+            <div className="display chrome">
+              Luis R
+              <br />
+              Conriquez
             </div>
-
-            <div className="md:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-12 text-center md:text-left">
-              <div>
-                <h4 className="text-white font-serif tracking-[0.2em] uppercase text-xs mb-6 opacity-50">Explorar</h4>
-                <ul className="space-y-4 text-sm font-sans tracking-wider text-white/70 uppercase">
-                  <li><Link href="/musica" className="hover:text-primary transition-colors">Música</Link></li>
-                  <li><Link href="/videos" className="hover:text-primary transition-colors">Videos</Link></li>
-                  <li><Link href="/shows" className="hover:text-primary transition-colors">Gira</Link></li>
-                  <li><Link href="/merch" className="hover:text-primary transition-colors">Merch</Link></li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-white font-serif tracking-[0.2em] uppercase text-xs mb-6 opacity-50">Contacto</h4>
-                <ul className="space-y-6 text-sm font-sans tracking-wider text-white/70">
-                  <li>
-                    <div className="text-[10px] text-primary mb-1 uppercase">Management</div>
-                    <a href={`mailto:${site.management}`} className="hover:text-white transition-colors block lowercase">{site.management}</a>
-                  </li>
-                  <li>
-                    <div className="text-[10px] text-primary mb-1 uppercase">Booking</div>
-                    <a href={`mailto:${site.booking}`} className="hover:text-white transition-colors block lowercase">{site.booking}</a>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-white font-serif tracking-[0.2em] uppercase text-xs mb-6 opacity-50">Label</h4>
-                <p className="text-sm font-sans tracking-wider text-white/70 uppercase">{site.label}</p>
-              </div>
+            <p className="lede" style={{ marginTop: 22, maxWidth: "34ch" }}>
+              {site.tagline}. Sitio oficial — música, gira y la marca, directo desde la fuente.
+            </p>
+            <div className="socials" style={{ marginTop: 26 }}>
+              {socials.map((s) => (
+                <a key={s.id} className="social" href={s.url} aria-label={s.label}>
+                  <Icon id={s.id} />
+                </a>
+              ))}
             </div>
           </div>
-
-          <div className="mt-24 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-white/30 uppercase tracking-[0.2em] font-sans">
-            <p>© {new Date().getFullYear()} {site.name}. Todos los derechos reservados.</p>
-            <div className="flex gap-6">
-              <a href={legalLinks.terms} className="hover:text-primary transition-colors">Términos</a>
-              <a href={legalLinks.privacy} className="hover:text-primary transition-colors">Privacidad</a>
-            </div>
+          <div className="footer-col">
+            <h4>Explorar</h4>
+            <Link href="/musica">Música</Link>
+            <Link href="/videos">Videos</Link>
+            <Link href="/shows">Fechas de gira</Link>
+            <Link href="/merch">Tienda oficial</Link>
+            <Link href="/acerca">Biografía</Link>
+          </div>
+          <div className="footer-col">
+            <h4>Contacto</h4>
+            <a href={`mailto:${site.email}`}>Management</a>
+            <a href={`mailto:${site.booking}`}>Booking</a>
+            <a href="#">Prensa</a>
+            <a href="#">{site.label}</a>
+          </div>
+        </Reveal>
+        <div className="footer-bottom">
+          <span>
+            © {year} {site.name} · {site.label}
+          </span>
+          <div className="legal">
+            <a href="#">Privacidad</a>
+            <a href="#">Términos</a>
+            <a href="#">Cookies</a>
           </div>
         </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
   );
 }

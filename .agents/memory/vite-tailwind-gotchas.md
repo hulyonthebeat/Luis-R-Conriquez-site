@@ -3,16 +3,13 @@ name: Vite + Tailwind v4 artifact gotchas
 description: Non-obvious build/runtime quirks when building React+Vite artifacts with Tailwind v4 and Radix in this monorepo
 ---
 
-# Tailwind v4 font @import ordering
+# Tailwind v4 Google Fonts loading
 
-In a Tailwind v4 `index.css`, any `@import url(...)` (e.g. Google Fonts) MUST be the
-FIRST line, before `@import "tailwindcss"`. CSS spec requires `@import` rules to
-precede other rules, and Tailwind v4 emits rules at the `@import "tailwindcss"` site.
-
-**Why:** If fonts are imported after Tailwind, the browser drops the font import and
-the custom typography silently fails to load.
-
-**How to apply:** Put url() imports at the very top of the entry CSS file.
+See `tailwind-v4-font-import.md` — load Google Fonts via an `index.html` `<link>`,
+NOT a CSS `@import url(...)`. Tailwind v4 inlines `@import "tailwindcss"` at build
+time, so any later font `@import` ends up after non-@import rules and is dropped.
+(A previous note here suggested putting the font `@import` first; that is unreliable
+once `@import "tailwindcss"` expands — prefer the `<link>` approach.)
 
 # Vite dep-optimize stale cache → duplicate-React / "useRef null" runtime error
 

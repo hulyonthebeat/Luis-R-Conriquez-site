@@ -1,0 +1,158 @@
+import { Link } from "wouter";
+import { Icon } from "@/components/site/Icons";
+import { Img } from "@/components/site/Img";
+import { Reveal } from "@/components/site/Reveal";
+import { mediaUrl } from "@/lib/site";
+import {
+  platforms,
+  showStatus,
+  fmtDate,
+  type Release,
+  type Video,
+  type Show,
+  type Merch,
+  type GalleryItem,
+} from "@/data/content";
+
+export function BandHead({ title, sub }: { title: string; sub: string }) {
+  return (
+    <Reveal className="band-head">
+      <h2>{title}</h2>
+      <div className="sub">{sub}</div>
+    </Reveal>
+  );
+}
+
+export function DiscCard({ release }: { release: Release }) {
+  return (
+    <div className="disc">
+      <div className="cover">
+        <Img label={release.title} src={mediaUrl(release.cover)} />
+        <div className="play">
+          <span>
+            <Icon id="play" />
+          </span>
+        </div>
+      </div>
+      <h4>{release.title}</h4>
+      <Link className="escuchar" href="/musica">
+        Escuchar
+      </Link>
+    </div>
+  );
+}
+
+export function ReleaseCard({ release }: { release: Release }) {
+  return (
+    <div className="rel-card">
+      <div className="cover">
+        <Img label={release.title} src={mediaUrl(release.cover)} />
+        <div className="ov">
+          <div className="mini">
+            {platforms.map((p) => (
+              <a key={p} href="#" aria-label={p}>
+                <Icon id={p} />
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="rel-meta">
+        <h4>{release.title}</h4>
+        <span className="tag">
+          {release.type} · {release.tracks} {release.tracks > 1 ? "cortes" : "sencillo"} ·{" "}
+          {release.year}
+        </span>
+      </div>
+    </div>
+  );
+}
+
+export function VideoCard({ video }: { video: Video }) {
+  return (
+    <div className="vcard">
+      <div className="thumb">
+        <Img label={video.title} src={mediaUrl(video.thumb)} />
+        <span className="dur">{video.duration}</span>
+        <div className="pico">
+          <span>
+            <Icon id="play" />
+          </span>
+        </div>
+      </div>
+      <h4>{video.title}</h4>
+      <span className="tag">
+        {video.meta} · {video.views}
+      </span>
+    </div>
+  );
+}
+
+export function ShowRow({ show, withYear }: { show: Show; withYear?: boolean }) {
+  const d = fmtDate(show.date);
+  const st = showStatus[show.status];
+  return (
+    <div className="show-row">
+      <div className="show-date">
+        <span className="d">{d.day}</span>
+        <span className="m">{d.mon}</span>
+      </div>
+      <div className="show-where">
+        <div className="city">{show.city}</div>
+        <div className="venue">
+          {show.venue} · {d.dow}
+          {withYear ? ` · ${d.year}` : ""}
+        </div>
+      </div>
+      <a href={show.ticket} className={`btn ${st.cls} btn--sm`}>
+        {st.label}
+      </a>
+    </div>
+  );
+}
+
+export function AwardCard({
+  award,
+}: {
+  award: { title: string; detail: string; year: string };
+}) {
+  return (
+    <div className="award">
+      <div className="frame">
+        <Img label={award.title} />
+      </div>
+      <div className="yr">{award.year}</div>
+      <h4>{award.title}</h4>
+      <p>{award.detail}</p>
+    </div>
+  );
+}
+
+export function MerchCard({ item }: { item: Merch }) {
+  return (
+    <div className="merch-card">
+      <div className="ph">
+        <Img label={item.name} src={mediaUrl(item.img)} />
+        <span className="price">{item.price}</span>
+        <a href="#" className="btn btn--primary btn--sm btn--block add">
+          Añadir
+        </a>
+      </div>
+      <div className="nm">
+        <h4>{item.name}</h4>
+        <span className="tag">{item.tag}</span>
+      </div>
+    </div>
+  );
+}
+
+export function GalleryTile({ item }: { item: GalleryItem }) {
+  return (
+    <div className="bts-cell">
+      <img className="bts-img" src={mediaUrl(item.img)} alt={item.label} loading="lazy" />
+      <div className="lbl">
+        <span className="tag">{item.label}</span>
+      </div>
+    </div>
+  );
+}
