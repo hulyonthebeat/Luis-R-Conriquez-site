@@ -160,10 +160,45 @@ export type Merch = {
 };
 
 export const merch: Merch[] = [
-  { id: "m1", name: "Tour Hoodie — Negro", price: "$78", tag: "Bélico Tour '26", img: "merch-hoodie.webp" },
-  { id: "m2", name: "Camiseta Convoy", price: "$42", tag: "Edición Limitada", img: "merch-shirt.webp" },
-  { id: "m3", name: "Gorra Chrome Logo", price: "$38", tag: "Esencial", img: "merch-hat.webp" },
-  { id: "m4", name: "Vinilo Vol. IV", price: "$54", tag: "Pre-orden", img: "merch-vinyl.webp" },
+  // Hoodies — Trakas HDSPM Tour 2025
+  { id: "m01", name: "Hoodie Trakas Tour — Negro", price: "$78", tag: "Trakas Tour 2025", img: "merch/15-luis-r-conriquez-trakas-hdspm-tour-2025-black-hoodie.webp" },
+  { id: "m02", name: "Hoodie Trakas Tour — Blanco", price: "$78", tag: "Trakas Tour 2025", img: "merch/14-luis-r-conriquez-trakas-hdspm-tour-2025-white-hoodie.webp" },
+  { id: "m03", name: "Hoodie Trakas Tour — Azul Marino", price: "$78", tag: "Trakas Tour 2025", img: "merch/16-luis-r-conriquez-trakas-hdspm-tour-2025-navy-blue-hoodie.webp" },
+  { id: "m04", name: "Hoodie Trakas Tour — Gris", price: "$78", tag: "Trakas Tour 2025", img: "merch/17-luis-r-conriquez-trakas-hdspm-tour-2025-gray-hoodie.webp" },
+  { id: "m05", name: "Hoodie Trakas Tour — Rosa", price: "$78", tag: "Trakas Tour 2025", img: "merch/18-luis-r-conriquez-trakas-hdspm-tour-2025-pink-hoodie.webp" },
+  { id: "m06", name: "Hoodie Trakas Tour — Rojo", price: "$78", tag: "Trakas Tour 2025", img: "merch/19-luis-r-conriquez-trakas-hdspm-tour-2025-red-hoodie.webp" },
+
+  // Sudaderas — Trakas HDSPM Tour 2025
+  { id: "m07", name: "Sudadera Trakas Tour — Negro", price: "$65", tag: "Trakas Tour 2025", img: "merch/08-luis-r-conriquez-trakas-hdspm-tour-2025-black-sweatshirt.webp" },
+  { id: "m08", name: "Sudadera Trakas Tour — Azul Marino", price: "$65", tag: "Trakas Tour 2025", img: "merch/09-luis-r-conriquez-trakas-hdspm-tour-2025-navy-blue-sweatshirt.webp" },
+  { id: "m09", name: "Sudadera Trakas Tour — Gris", price: "$65", tag: "Trakas Tour 2025", img: "merch/10-luis-r-conriquez-trakas-hdspm-tour-2025-gray-sweatshirt.webp" },
+  { id: "m10", name: "Sudadera Trakas Tour — Rosa", price: "$65", tag: "Trakas Tour 2025", img: "merch/11-luis-r-conriquez-trakas-hdspm-tour-2025-pink-sweatshirt.webp" },
+  { id: "m11", name: "Sudadera Trakas Tour — Rojo", price: "$65", tag: "Trakas Tour 2025", img: "merch/12-luis-r-conriquez-trakas-hdspm-tour-2025-red-sweatshirt.webp" },
+  { id: "m12", name: "Sudadera Trakas Tour — Blanco", price: "$65", tag: "Trakas Tour 2025", img: "merch/13-luis-r-conriquez-trakas-hdspm-tour-2025-white-sweatshirt.webp" },
+
+  // Playeras — Trakas HDSPM Tour 2025
+  { id: "m13", name: "Playera Trakas Tour — Beige", price: "$42", tag: "Trakas Tour 2025", img: "merch/01-luis-r-conriquez-trakas-hdspm-tour-2025-beige-t-shirt.webp" },
+  { id: "m14", name: "Playera Trakas Tour — Rojo", price: "$42", tag: "Trakas Tour 2025", img: "merch/02-luis-r-conriquez-trakas-hdspm-tour-2025-red-t-shirt.webp" },
+  { id: "m15", name: "Playera Trakas Tour — Blanco", price: "$42", tag: "Trakas Tour 2025", img: "merch/03-luis-r-conriquez-trakas-hdspm-tour-2025-white-t-shirt.webp" },
+  { id: "m16", name: "Playera Trakas Tour — Negro", price: "$42", tag: "Trakas Tour 2025", img: "merch/04-luis-r-conriquez-trakas-hdspm-tour-2025-black-t-shirt.webp" },
+  { id: "m17", name: "Playera Trakas Tour — Gris", price: "$42", tag: "Trakas Tour 2025", img: "merch/05-luis-r-conriquez-trakas-hdspm-tour-2025-gray-t-shirt.webp" },
+  { id: "m18", name: "Playera Trakas Tour — Azul Cielo", price: "$42", tag: "Trakas Tour 2025", img: "merch/06-luis-r-conriquez-trakas-hdspm-tour-2025-sky-blue-t-shirt.webp" },
+  { id: "m19", name: "Playera Trakas Tour — Rosa", price: "$42", tag: "Trakas Tour 2025", img: "merch/07-luis-r-conriquez-trakas-hdspm-tour-2025-pink-t-shirt.webp" },
+
+  // Playeras Logo — Esencial
+  { id: "m20", name: "Playera Logo — Blanco", price: "$36", tag: "Esencial", img: "merch/21-luis-r-conriquez-white-t-shirt.webp" },
+  { id: "m21", name: "Playera Logo — Negro", price: "$36", tag: "Esencial", img: "merch/23-luis-r-conriquez-black-t-shirt.webp" },
+  { id: "m22", name: "Playera Logo — Gris", price: "$36", tag: "Esencial", img: "merch/24-luis-r-conriquez-gray-t-shirt.webp" },
+  { id: "m23", name: "Playera Logo — Rojo", price: "$36", tag: "Esencial", img: "merch/25-luis-r-conriquez-red-t-shirt.webp" },
+  { id: "m24", name: "Playera Logo — Beige", price: "$36", tag: "Esencial", img: "merch/26-luis-r-conriquez-beige-t-shirt.webp" },
+  { id: "m25", name: "Playera Logo — Rosa", price: "$36", tag: "Esencial", img: "merch/22-luis-r-conriquez-pink-t-shirt.webp" },
+  { id: "m26", name: "Playera Logo — Azul Cielo", price: "$36", tag: "Esencial", img: "merch/20-luis-r-conriquez-sky-blue-t-shirt.webp" },
+
+  // Fundas — Accesorios
+  { id: "m27", name: "Funda Samsung — Classic Performance", price: "$30", tag: "Accesorio", img: "merch/27-luis-r-conriquez-samsung-phone-case-classic-performance.webp" },
+  { id: "m28", name: "Funda Samsung — Bélico", price: "$30", tag: "Accesorio", img: "merch/28-luis-r-conriquez-samsung-phone-case-3.webp" },
+  { id: "m29", name: "Funda Samsung — Logo", price: "$30", tag: "Accesorio", img: "merch/29-luis-r-conriquez-samsung-phone-case.webp" },
+  { id: "m30", name: "Funda Samsung — Modo Berrión", price: "$30", tag: "Accesorio", img: "merch/30-modo-berrion-samsung-phone-case-luis-r-conriquez.webp" },
 ];
 
 export const press = [
