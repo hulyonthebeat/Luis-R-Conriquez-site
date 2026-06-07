@@ -445,41 +445,21 @@ body.menu-open .mobile-menu { opacity: 1; pointer-events: auto; }
 .hero-name { font-family: var(--serif); font-weight: 800; text-transform: uppercase;
   font-size: clamp(24px, 4.4vw, 58px); line-height: 0.96; letter-spacing: 0.03em; margin-top: 14px; }
 
-.hero-player {
-  position: relative; aspect-ratio: 16 / 9;
-  width: min(1180px, 100%, calc((100svh - 392px) * 1.7778));
-  margin: 0 auto; overflow: hidden; cursor: pointer; background: #000;
-  border: 1px solid var(--hairline-2);
-  box-shadow: 0 60px 130px -50px rgba(0,0,0,0.95), 0 0 0 1px rgba(194,161,91,0.18) inset;
-}
-.hero-player::before { content:""; position:absolute; inset:10px; border:1px solid rgba(194,161,91,0.30); z-index:3; pointer-events:none; transition: inset .4s var(--ease); }
-.hero-player:hover::before { inset:14px; }
-.hero-poster { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
-.hero-player .pscrim { position:absolute; inset:0; z-index:1; pointer-events:none;
-  background: linear-gradient(180deg, rgba(6,7,8,0.25), transparent 38%, rgba(6,7,8,0.78)); }
-.hero-play { position:absolute; inset:0; z-index:2; display:grid; place-items:center; }
-.hero-play span { width: clamp(74px,8vw,108px); height: clamp(74px,8vw,108px); border-radius:50%;
-  border:1px solid var(--silver); background: rgba(10,11,13,0.42); backdrop-filter: blur(8px);
-  display:grid; place-items:center; transition: all .4s var(--ease); box-shadow: 0 0 50px rgba(0,0,0,0.5); }
-.hero-player:hover .hero-play span { background: var(--silver); transform: scale(1.07); }
-.hero-play svg { width:36%; height:36%; color:#fff; margin-left:5px; transition: color .4s var(--ease); }
-.hero-player:hover .hero-play svg { color: var(--ink); }
-.hero-pmeta { position:absolute; z-index:2; left:0; bottom:0; padding: clamp(18px,2.4vw,34px); pointer-events:none; }
-.hero-pmeta .tag { color: var(--gold); }
-.hero-pmeta h2 { font-family:var(--serif); font-weight:800; text-transform:uppercase; line-height:0.96;
-  font-size: clamp(28px,4.4vw,60px); letter-spacing:0.012em; margin-top:8px; }
-.hero-player iframe { position:absolute; inset:0; width:100%; height:100%; border:0; z-index:4; }
-
 /* Video-only hero: the latest video as the sole focal point */
 .hero--video { padding: 0; overflow: hidden; }
-.hero--video .hero-video-poster { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; z-index:0; }
 .hero--video .hero-video-frame {
-  position:absolute; top:50%; left:50%;
-  /* base cover sizing, then scale up to crop YouTube's letterbox bars
-     (the clip is wider than 16:9) so the picture truly fills the hero */
-  transform:translate(-50%,-50%) scale(1.36);
-  width:100vw; height:56.25vw; min-height:100svh; min-width:177.78svh;
-  border:0; z-index:1; pointer-events:none;
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; object-position:center; z-index:0;
+  border:0; pointer-events:none;
+  /* desaturated cinematic look */
+  filter: grayscale(1) contrast(1.08) brightness(0.92);
+}
+/* film grain layered directly over the video */
+.hero-grain {
+  position:absolute; inset:0; z-index:1; pointer-events:none;
+  opacity:0.16; mix-blend-mode:overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='hn'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23hn)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
 }
 
 /* Hero overlay: corner logo + socials, bottom nav */

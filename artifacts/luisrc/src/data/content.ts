@@ -167,9 +167,8 @@ export const timeline = [
 export const heroVideo = {
   tag: "Video Oficial",
   title: "JGL",
-  youtubeId: "Lq_1LuXMFbE",
-  poster: "https://i.ytimg.com/vi/Lq_1LuXMFbE/maxresdefault.jpg",
-  posterFallback: "https://i.ytimg.com/vi/Lq_1LuXMFbE/hqdefault.jpg",
+  file: "hero.mp4",
+  poster: "hero-poster.jpg",
 };
 
 /* Campaign / editorial imagery */

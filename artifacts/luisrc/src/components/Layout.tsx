@@ -13,14 +13,22 @@ function scrollToHash(hash: string) {
 export function Layout({ children }: { children: ReactNode }) {
   const [location, navigate] = useLocation();
   const [scrolled, setScrolled] = useState(false);
+  const [pastHero, setPastHero] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   /* nav scrolled state */
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 24);
+      setPastHero(window.scrollY > window.innerHeight - 90);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   /* smoke background scrolls with the page: size it to the full document height */
@@ -78,9 +86,9 @@ export function Layout({ children }: { children: ReactNode }) {
       />
 
       <header
-        className={`nav${scrolled ? " scrolled" : ""}${location === "/" && !scrolled ? " nav--home-top" : ""}`}
+        className={`nav${scrolled ? " scrolled" : ""}${location === "/" && !pastHero ? " nav--home-top" : ""}`}
         id="siteNav"
-        aria-hidden={location === "/" && !scrolled ? true : undefined}
+        aria-hidden={location === "/" && !pastHero ? true : undefined}
       >
         <div className="wrap">
           <div className="nav-left">

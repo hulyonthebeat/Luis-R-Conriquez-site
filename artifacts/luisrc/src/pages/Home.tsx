@@ -20,19 +20,18 @@ export default function Home() {
     <>
       {/* HERO = the latest video, sole focal point */}
       <section className="hero hero--video">
-        <img
-          className="hero-video-poster"
-          src={mediaUrl(media.merchFeat)}
-          alt=""
+        <video
+          className="hero-video-frame"
+          src={mediaUrl(heroVideo.file)}
+          poster={mediaUrl(heroVideo.poster)}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
           aria-hidden="true"
         />
-        <iframe
-          className="hero-video-frame"
-          src={`https://www.youtube-nocookie.com/embed/${heroVideo.youtubeId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${heroVideo.youtubeId}&playsinline=1&modestbranding=1&rel=0&showinfo=0&disablekb=1&iv_load_policy=3`}
-          title={`${heroVideo.title} — ${heroVideo.tag}`}
-          allow="autoplay; encrypted-media; picture-in-picture"
-          frameBorder={0}
-        />
+        <div className="hero-grain" aria-hidden="true" />
         <div className="hero-shade" aria-hidden="true" />
 
         <div className="hero-overlay">
