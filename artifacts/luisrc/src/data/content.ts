@@ -208,13 +208,6 @@ export const press = [
   { quote: "El arquitecto del sonido bélico moderno.", source: "Apple Music" },
 ];
 
-export const stats = [
-  { n: "8.4B", l: "Reproducciones globales" },
-  { n: "#1", l: "Regional Mexicano · 2025" },
-  { n: "42", l: "Ciudades en gira" },
-  { n: "12M", l: "Oyentes mensuales" },
-];
-
 export type Award = { title: string; detail: string; year: string; img: string };
 
 export const awards: Award[] = [
@@ -242,14 +235,6 @@ export const gallery: GalleryItem[] = [
   { id: "g4", label: "En la gira", img: "crowd.jpg" },
 ];
 
-export const timeline = [
-  { yr: "2020", t: "El comienzo", d: "Primeras grabaciones independientes que se vuelven virales en plataformas digitales." },
-  { yr: "2021", t: "Kartel Music", d: "Funda su propio sello y empieza a impulsar a una nueva generación de artistas del género." },
-  { yr: "2023", t: "Salto global", d: "Entra a los charts internacionales y agota presentaciones en Estados Unidos y México." },
-  { yr: "2024", t: "Récords de streaming", d: "Supera miles de millones de reproducciones y consolida el sonido bélico moderno." },
-  { yr: "2025", t: "Corridos Bélicos Vol. IV", d: "Lanza su trabajo más ambicioso y encabeza la gira más grande de su carrera." },
-];
-
 /* Hero featured video (the homepage player IS the latest video) */
 export const heroVideo = {
   tag: "Video Oficial",
@@ -264,7 +249,6 @@ export const media = {
   kmusic: "kmusic.webp",
   homeMerchBand: "duo-anuel.jpg",
   merchFeat: "portrait-throne.jpg",
-  aboutPortrait: "portrait-1.jpg",
 };
 
 /* Nav links — Spanish, mapped to React routes + home anchors */
@@ -278,7 +262,6 @@ export const navLinks: NavLink[] = [
   { href: "/merch", label: "Merch", key: "merch" },
   { href: "/#reconocimientos", label: "Reconocimientos", key: "recog" },
   { href: "/#bts", label: "BTS", key: "bts" },
-  { href: "/acerca", label: "Bio", key: "about" },
   { href: "/#suscribete", label: "Suscríbete", key: "news" },
 ];
 

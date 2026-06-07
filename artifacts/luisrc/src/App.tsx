@@ -9,7 +9,6 @@ import Music from "@/pages/Music";
 import Videos from "@/pages/Videos";
 import Shows from "@/pages/Shows";
 import Merch from "@/pages/Merch";
-import About from "@/pages/About";
 
 const queryClient = new QueryClient();
 
@@ -22,7 +21,6 @@ function Router() {
         <Route path="/videos" component={Videos} />
         <Route path="/shows" component={Shows} />
         <Route path="/merch" component={Merch} />
-        <Route path="/acerca" component={About} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
