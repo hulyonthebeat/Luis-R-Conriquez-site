@@ -4,7 +4,6 @@ import { Img } from "@/components/site/Img";
 import { Reveal } from "@/components/site/Reveal";
 import { mediaUrl } from "@/lib/site";
 import {
-  platforms,
   showStatus,
   fmtDate,
   type Release,
@@ -42,28 +41,19 @@ export function DiscCard({ release }: { release: Release }) {
   );
 }
 
-export function ReleaseCard({ release }: { release: Release }) {
+export function LatestHitCard({ release }: { release: Release }) {
   return (
-    <div className="rel-card">
+    <div className="lh-card">
       <div className="cover">
         <Img label={release.title} src={mediaUrl(release.cover)} />
-        <div className="ov">
-          <div className="mini">
-            {platforms.map((p) => (
-              <a key={p} href="#" aria-label={p}>
-                <Icon id={p} />
-              </a>
-            ))}
-          </div>
-        </div>
       </div>
-      <div className="rel-meta">
-        <h4>{release.title}</h4>
-        <span className="tag">
-          {release.type} · {release.tracks} {release.tracks > 1 ? "cortes" : "sencillo"} ·{" "}
-          {release.year}
-        </span>
-      </div>
+      <h3 className="lh-name">{release.title}</h3>
+      <span className="lh-meta">
+        {release.year} · {release.type}
+      </span>
+      <a href="#" className="lh-listen" aria-label={`Escuchar ahora: ${release.title}`}>
+        Escuchar ahora
+      </a>
     </div>
   );
 }

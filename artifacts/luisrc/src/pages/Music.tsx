@@ -1,8 +1,9 @@
 import { Reveal } from "@/components/site/Reveal";
 import { Img } from "@/components/site/Img";
+import { Icon } from "@/components/site/Icons";
 import { StreamRow } from "@/components/site/StreamRow";
-import { ReleaseCard } from "@/components/site/cards";
-import { releases } from "@/data/content";
+import { LatestHitCard } from "@/components/site/cards";
+import { releases, platforms, platformLabels } from "@/data/content";
 import { mediaUrl } from "@/lib/site";
 
 export default function Music() {
@@ -60,17 +61,20 @@ export default function Music() {
 
       <section className="section section--tight">
         <div className="wrap">
-          <Reveal className="shead">
-            <div>
-              <span className="kicker-num">Catálogo</span>
-              <h2 className="section-title" style={{ marginTop: 12 }}>
-                Lanzamientos
-              </h2>
-            </div>
+          <Reveal>
+            <h2 className="lh-title">Reproduce los últimos éxitos</h2>
           </Reveal>
-          <Reveal className="grid-4">
+          <Reveal className="lh-grid">
             {releases.map((r) => (
-              <ReleaseCard key={r.id} release={r} />
+              <LatestHitCard key={r.id} release={r} />
+            ))}
+          </Reveal>
+          <Reveal className="lh-platforms">
+            {platforms.map((p) => (
+              <a key={p} className="lh-plat" href="#" aria-label={platformLabels[p]}>
+                <Icon id={p} />
+                <span>{platformLabels[p]}</span>
+              </a>
             ))}
           </Reveal>
         </div>
