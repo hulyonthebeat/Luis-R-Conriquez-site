@@ -22,8 +22,8 @@ export default function Shows() {
           </Reveal>
           <Reveal delay={0.1}>
             <p className="lede">
-              El convoy bélico recorre México y Europa. Consigue tus boletos
-              oficiales antes de que se agoten.
+              El convoy bélico recorre México, Estados Unidos y Europa. Consigue tus
+              boletos oficiales antes de que se agoten.
             </p>
           </Reveal>
           <Reveal className="meta-line" delay={0.15}>
