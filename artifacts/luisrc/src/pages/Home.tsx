@@ -23,9 +23,17 @@ export default function Home() {
   useEffect(() => {
     const v = heroVideoRef.current;
     if (!v) return;
+    /* React doesn't reliably reflect the `muted` attribute to the DOM property,
+       and iOS Safari refuses to autoplay unless the element is actually muted at
+       play() time — so enforce it imperatively before attempting playback. */
+    v.muted = true;
+    v.defaultMuted = true;
+    v.setAttribute("muted", "");
+    const tryPlay = () => v.play().catch(() => {});
+    tryPlay();
     const io = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) v.play().catch(() => {});
+        if (entry.isIntersecting) tryPlay();
         else v.pause();
       },
       { threshold: 0.05 },
