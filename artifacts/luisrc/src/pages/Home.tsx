@@ -9,7 +9,7 @@ import {
   GalleryTile,
 } from "@/components/site/cards";
 import { Icon } from "@/components/site/Icons";
-import { releases, shows, awards, gallery, media, heroVideo, socials, navLinks } from "@/data/content";
+import { releases, tours, awards, gallery, media, heroVideo, socials, navLinks } from "@/data/content";
 import { mediaUrl } from "@/lib/site";
 
 const heroNav = navLinks.filter((n) => n.href !== "/");
@@ -108,14 +108,22 @@ export default function Home() {
       {/* SHOWS */}
       <section className="section section--tight" id="shows">
         <div className="wrap">
-          <BandHead title="Shows" sub="Gira 2026" />
-          <Reveal>
-            <div>
-              {shows.slice(0, 5).map((s) => (
-                <ShowRow key={s.date + s.city} show={s} />
-              ))}
+          <BandHead title="Shows" sub="Dos giras · 2026" />
+          {tours.map((tour) => (
+            <div key={tour.id} className="tour-block">
+              <Reveal className="tour-head">
+                <span className="eyebrow">{tour.eyebrow}</span>
+                <h2>{tour.name}</h2>
+              </Reveal>
+              <Reveal>
+                <div>
+                  {tour.shows.slice(0, 3).map((s, i) => (
+                    <ShowRow key={`${tour.id}-${s.date}-${i}`} show={s} />
+                  ))}
+                </div>
+              </Reveal>
             </div>
-          </Reveal>
+          ))}
           <Reveal>
             <div style={{ textAlign: "center", marginTop: "clamp(36px,4vw,56px)" }}>
               <Link href="/shows" className="btn btn--gold btn--lg">
