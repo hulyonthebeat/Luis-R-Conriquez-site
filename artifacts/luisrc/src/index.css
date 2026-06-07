@@ -589,8 +589,11 @@ body.menu-open .mobile-menu { opacity: 1; pointer-events: auto; }
 .show-where .city { font-family:var(--display); font-weight:800; font-stretch:110%; text-transform:uppercase; font-size: clamp(18px,2vw,25px); line-height:1; letter-spacing:0.01em; }
 .show-where .venue { color: var(--text-soft); font-size:14px; margin-top:6px; font-family:var(--narrow); letter-spacing:0.04em;}
 .show-row .soldout { opacity:0.55; pointer-events:none; }
+.tours-grid { display:grid; grid-template-columns:repeat(2,1fr); gap: clamp(28px,3vw,60px) clamp(32px,4vw,72px); }
 .tour-block { margin-bottom: clamp(46px,6vw,82px); }
 .tour-block:last-child { margin-bottom:0; }
+.tours-grid .tour-block { margin-bottom:0; }
+@media (max-width: 860px){ .tours-grid { grid-template-columns:1fr; gap: clamp(40px,7vw,64px); } }
 .tour-head { margin-bottom: clamp(18px,2.2vw,30px); }
 .tour-head .eyebrow { display:block; margin-bottom:12px; }
 .tour-head h2 { font-family:var(--serif); font-weight:800; text-transform:uppercase; font-size: clamp(26px,3.6vw,48px); line-height:0.98; letter-spacing:0.012em; }

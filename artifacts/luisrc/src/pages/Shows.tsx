@@ -44,7 +44,7 @@ export default function Shows() {
       </section>
 
       <section className="section section--tight">
-        <div className="wrap">
+        <div className="wrap wrap--wide tours-grid">
           {tours.map((tour) => (
             <div key={tour.id} className="tour-block">
               <Reveal className="tour-head">

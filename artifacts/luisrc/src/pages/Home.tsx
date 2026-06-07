@@ -107,8 +107,9 @@ export default function Home() {
 
       {/* SHOWS */}
       <section className="section section--tight" id="shows">
-        <div className="wrap">
+        <div className="wrap wrap--wide">
           <BandHead title="Shows" sub={`${tours.length} giras · 2026`} />
+          <div className="tours-grid">
           {tours.map((tour) => (
             <Reveal key={tour.id} className="tour-block">
               <div className="tour-head">
@@ -122,6 +123,7 @@ export default function Home() {
               </div>
             </Reveal>
           ))}
+          </div>
           <Reveal>
             <div style={{ textAlign: "center", marginTop: "clamp(36px,4vw,56px)" }}>
               <Link href="/shows" className="btn btn--gold btn--lg">
