@@ -55,7 +55,7 @@ export default function Music() {
       </section>
 
       <section className="section section--tight">
-        <div className="wrap">
+        <div className="wrap wrap--wide">
           <Reveal>
             <h2 className="lh-title">Reproduce los últimos éxitos</h2>
           </Reveal>

@@ -175,6 +175,7 @@ body::after {
 
 /* ---------- Layout helpers ---------- */
 .wrap { max-width: var(--maxw); margin-inline: auto; padding-inline: var(--gutter); }
+.wrap--wide { max-width: 1760px; }
 .section { padding-block: clamp(72px, 10vw, 150px); position: relative; }
 .section--tight { padding-block: clamp(56px, 7vw, 100px); }
 
