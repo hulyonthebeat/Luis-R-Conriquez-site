@@ -225,7 +225,6 @@ export const heroVideo = {
 
 /* Campaign / editorial imagery */
 export const media = {
-  smoke: "smoke-texture.jpg",
   logo: "logo.webp",
   kmusic: "kmusic.webp",
   newsletterArt: "oxblood-cross.jpg",

@@ -52,24 +52,14 @@ export function Layout({ children }: { children: ReactNode }) {
     };
   }, []);
 
-  /* smoke background scrolls with the page: size it to the full document height */
+  /* expose the rotated paper textures as CSS vars (base-path-safe) so sections
+     can alternate between them as you scroll */
   useEffect(() => {
-    const smoke = document.getElementById("smokeBg");
-    if (!smoke) return;
-    const sizeSmoke = () => {
-      const se = document.scrollingElement || document.documentElement;
-      const h = Math.max(se.scrollHeight || 0, document.body.scrollHeight || 0, window.innerHeight);
-      smoke.style.height = `${h}px`;
-    };
-    sizeSmoke();
-    window.addEventListener("resize", sizeSmoke);
-    const ro = new ResizeObserver(sizeSmoke);
-    ro.observe(document.body);
-    return () => {
-      window.removeEventListener("resize", sizeSmoke);
-      ro.disconnect();
-    };
-  }, [location]);
+    const root = document.documentElement.style;
+    root.setProperty("--tex-1", `url("${mediaUrl("texture-bg-1.webp")}")`);
+    root.setProperty("--tex-2", `url("${mediaUrl("texture-bg-2.webp")}")`);
+    root.setProperty("--tex-3", `url("${mediaUrl("texture-bg-3.webp")}")`);
+  }, []);
 
   /* body menu-open class */
   useEffect(() => {
@@ -101,12 +91,6 @@ export function Layout({ children }: { children: ReactNode }) {
 
   return (
     <>
-      <div
-        className="smoke-bg"
-        id="smokeBg"
-        style={{ backgroundImage: `url(${mediaUrl(media.smoke)})` }}
-      />
-
       <header
         className={`nav${scrolled ? " scrolled" : ""}${location === "/" && !pastHero ? " nav--home-top" : ""}`}
         id="siteNav"

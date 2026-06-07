@@ -150,18 +150,6 @@ html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-stopped { overflow: hidden; }
 .lenis.lenis-smooth iframe { pointer-events: none; }
 
-/* ---------- Parallax smoke background ---------- */
-.smoke-bg {
-  position: absolute; left: 0; right: 0; top: 0; min-height: 100vh;
-  z-index: -1; pointer-events: none;
-  background-color: var(--ink);
-  background-size: cover; background-position: center top; background-repeat: no-repeat;
-}
-.smoke-bg::after {
-  content: ""; position: absolute; inset: 0;
-  background: linear-gradient(rgba(7,8,10,0.70), rgba(7,8,10,0.85));
-}
-
 /* ---------- Film grain + vignette overlay ---------- */
 body::before {
   content: "";
@@ -183,8 +171,28 @@ body::after {
 /* ---------- Layout helpers ---------- */
 .wrap { max-width: var(--maxw); margin-inline: auto; padding-inline: var(--gutter); }
 .wrap--wide { max-width: 100%; padding-inline: clamp(16px, 1.6vw, 36px); }
-.section { padding-block: clamp(72px, 10vw, 150px); position: relative; }
+.section {
+  padding-block: clamp(72px, 10vw, 150px); position: relative;
+  background-color: var(--ink);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 .section--tight { padding-block: clamp(56px, 7vw, 100px); }
+
+/* Alternate the 3 rotated paper textures across content sections as you scroll.
+   Heroes (.hero / .page-hero) are always section 1 and stay untextured; the
+   formulas below only ever match content sections at positions >= 2.
+   A dark scrim keeps text readable and unifies the seams between textures. */
+.section:nth-of-type(3n + 2) {
+  background-image: linear-gradient(rgba(6, 7, 8, 0.56), rgba(6, 7, 8, 0.76)), var(--tex-1);
+}
+.section:nth-of-type(3n) {
+  background-image: linear-gradient(rgba(6, 7, 8, 0.56), rgba(6, 7, 8, 0.76)), var(--tex-2);
+}
+.section:nth-of-type(3n + 4) {
+  background-image: linear-gradient(rgba(6, 7, 8, 0.56), rgba(6, 7, 8, 0.76)), var(--tex-3);
+}
 
 /* ---------- Type system ---------- */
 .eyebrow {

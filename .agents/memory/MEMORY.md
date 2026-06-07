@@ -1,6 +1,7 @@
 - [Tailwind v4 font import](tailwind-v4-font-import.md) — load Google Fonts via index.html <link>, not CSS @import (Tailwind inlines tailwindcss before it, breaking the import).
 - [Vite + Tailwind v4 gotchas](vite-tailwind-gotchas.md) — restart web workflow to clear stale Vite dep-optimize after adding Radix; verify with typecheck not build.
 - [imgph placeholder label](imgph-placeholder-label.md) — luisrc .imgph ::after label must be position:absolute z-index:0 or it bleeds out of the cover when a real img is present
+- [Section textures](luisrc-section-textures.md) — luisrc bg = 3 paper textures alternating via .section:nth-of-type; URLs injected as CSS vars (base-path safe); assumes each page's 1st section is a hero
 - [luisrc smooth scroll](luisrc-smooth-scroll.md) — site uses one Lenis instance; all programmatic scrolls (hash nav, route-change top) must go through it, not window.scrollTo/scrollIntoView.
 - [luisrc media optimization](luisrc-media-optimization.md) — no photo PNGs (→WebP), JPGs capped 1600px/q82, hero.mp4 is muted bg (audio strippable); keep folder lean.
 - [luisrc screenshot hash-scroll](luisrc-screenshot-hash-scroll.md) — screenshot tool can't reach #hash sections on the luisrc SPA; verify deep sections another way.
