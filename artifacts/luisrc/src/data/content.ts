@@ -269,7 +269,6 @@ export type NavLink = { href: string; label: string; key: string };
 export const navLinks: NavLink[] = [
   { href: "/", label: "Inicio", key: "home" },
   { href: "/musica", label: "Música", key: "music" },
-  { href: "/videos", label: "Videos", key: "videos" },
   { href: "/shows", label: "Shows", key: "shows" },
   { href: "/merch", label: "Merch", key: "merch" },
   { href: "/#reconocimientos", label: "Reconocimientos", key: "recog" },
