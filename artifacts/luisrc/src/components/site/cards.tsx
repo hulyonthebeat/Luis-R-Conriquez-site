@@ -12,9 +12,17 @@ import {
   type GalleryItem,
 } from "@/data/content";
 
-export function BandHead({ title, sub }: { title: string; sub: string }) {
+export function BandHead({
+  title,
+  sub,
+  gold,
+}: {
+  title: string;
+  sub: string;
+  gold?: boolean;
+}) {
   return (
-    <Reveal className="band-head">
+    <Reveal className={`band-head${gold ? " band-head--gold" : ""}`}>
       <h2>{title}</h2>
       <div className="sub">{sub}</div>
     </Reveal>
