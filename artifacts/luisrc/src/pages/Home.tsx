@@ -23,42 +23,20 @@ export default function Home() {
   return (
     <div className="w-full">
       {/* 1. Hero */}
-      <section className="relative h-[100svh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0 overflow-hidden bg-black">
-          <img
-            src={`${base}media/portrait-throne.jpg`}
-            alt=""
-            aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-cover object-center opacity-60 mix-blend-luminosity"
-          />
-          <iframe
-            src="https://www.youtube.com/embed/Lq_1LuXMFbE?autoplay=1&mute=1&controls=0&loop=1&playlist=Lq_1LuXMFbE&playsinline=1&modestbranding=1&rel=0&showinfo=0&disablekb=1&iv_load_policy=3"
-            title="Luis R Conriquez — JGL"
-            allow="autoplay; encrypted-media; picture-in-picture"
-            frameBorder="0"
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100vw] h-[56.25vw] min-h-[100svh] min-w-[177.78svh] pointer-events-none opacity-80"
-          />
-          <div className="absolute inset-0 bg-black/30" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-background/20" />
-        </div>
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-20">
-          <motion.h1 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="text-6xl md:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-b from-primary to-primary/50 uppercase tracking-tighter mb-4 drop-shadow-2xl font-serif"
-          >
-            {site.name}
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8, duration: 1 }}
-            className="text-xl md:text-3xl font-serif text-white/80 uppercase tracking-[0.4em]"
-          >
-            {site.tagline}
-          </motion.p>
-        </div>
+      <section className="relative h-[100svh] overflow-hidden bg-black">
+        <img
+          src={`${base}media/portrait-throne.jpg`}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
+        <iframe
+          src="https://www.youtube.com/embed/Lq_1LuXMFbE?autoplay=1&mute=1&controls=0&loop=1&playlist=Lq_1LuXMFbE&playsinline=1&modestbranding=1&rel=0&showinfo=0&disablekb=1&iv_load_policy=3"
+          title="Luis R Conriquez — JGL"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          frameBorder="0"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100vw] h-[56.25vw] min-h-[100svh] min-w-[177.78svh] pointer-events-none"
+        />
       </section>
 
       {/* 2. Featured Release Spotlight */}
