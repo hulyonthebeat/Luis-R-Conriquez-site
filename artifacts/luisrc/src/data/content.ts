@@ -21,6 +21,15 @@ export const platformLabels: Record<PlatformId, string> = {
   deezer: "Deezer",
 };
 
+/* Official artist profiles per platform (verified) */
+export const platformUrls: Record<PlatformId, string> = {
+  spotify: "https://open.spotify.com/artist/0pePYDrJGk8gqMRbXrLJC8",
+  apple: "https://music.apple.com/us/artist/luis-r-conriquez/1252271456",
+  youtube: "https://www.youtube.com/@LuisRConrriquezOficial",
+  amazon: "https://music.amazon.com/artists/B079916W1F/luis-r-conriquez",
+  deezer: "https://www.deezer.com/us/artist/13916077",
+};
+
 export type Release = {
   id: string;
   title: string;
@@ -31,6 +40,8 @@ export type Release = {
   copy?: string;
   /** filename in /media, or undefined for a labeled placeholder */
   cover?: string;
+  /** direct listen link; falls back to the Spotify artist page when absent */
+  link?: string;
 };
 
 export const releases: Release[] = [
@@ -220,11 +231,11 @@ export const awards: Award[] = [
 export type Social = { id: SocialId; label: string; handle: string; url: string };
 
 export const socials: Social[] = [
-  { id: "instagram", label: "Instagram", handle: "@luisrconriquez", url: "#" },
-  { id: "youtube", label: "YouTube", handle: "Luis R Conriquez", url: "#" },
-  { id: "spotify", label: "Spotify", handle: "Luis R Conriquez", url: "#" },
-  { id: "tiktok", label: "TikTok", handle: "@luisrconriquez", url: "#" },
-  { id: "x", label: "X", handle: "@luisrconriquez", url: "#" },
+  { id: "instagram", label: "Instagram", handle: "@luisrconriquezoficial", url: "https://www.instagram.com/luisrconriquezoficial/" },
+  { id: "youtube", label: "YouTube", handle: "Luis R Conriquez", url: "https://www.youtube.com/@LuisRConrriquezOficial" },
+  { id: "spotify", label: "Spotify", handle: "Luis R Conriquez", url: "https://open.spotify.com/artist/0pePYDrJGk8gqMRbXrLJC8" },
+  { id: "tiktok", label: "TikTok", handle: "@luisrconriquezoficial", url: "https://www.tiktok.com/@luisrconriquezoficial" },
+  { id: "x", label: "X", handle: "@LuisRConriquez", url: "https://x.com/LuisRConriquez" },
 ];
 
 export type GalleryItem = { id: string; label: string; img: string };

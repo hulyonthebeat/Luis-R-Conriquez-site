@@ -5,6 +5,7 @@ import { mediaUrl } from "@/lib/site";
 import {
   showStatus,
   fmtDate,
+  platformUrls,
   type Release,
   type Video,
   type Show,
@@ -40,7 +41,13 @@ export function LatestHitCard({ release }: { release: Release }) {
       <span className="lh-meta">
         {release.year} · {release.type}
       </span>
-      <a href="#" className="lh-listen" aria-label={`Escuchar ahora: ${release.title}`}>
+      <a
+        href={release.link ?? platformUrls.spotify}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="lh-listen"
+        aria-label={`Escuchar ahora: ${release.title}`}
+      >
         Escuchar ahora
       </a>
     </div>

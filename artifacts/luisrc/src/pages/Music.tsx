@@ -3,7 +3,7 @@ import { Img } from "@/components/site/Img";
 import { Icon } from "@/components/site/Icons";
 import { StreamRow } from "@/components/site/StreamRow";
 import { LatestHitCard } from "@/components/site/cards";
-import { releases, platforms, platformLabels } from "@/data/content";
+import { releases, platforms, platformLabels, platformUrls } from "@/data/content";
 import { mediaUrl } from "@/lib/site";
 
 export default function Music() {
@@ -66,7 +66,14 @@ export default function Music() {
           </Reveal>
           <Reveal className="lh-platforms">
             {platforms.map((p) => (
-              <a key={p} className="lh-plat" href="#" aria-label={platformLabels[p]}>
+              <a
+                key={p}
+                className="lh-plat"
+                href={platformUrls[p]}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={platformLabels[p]}
+              >
                 <Icon id={p} />
                 <span>{platformLabels[p]}</span>
               </a>
