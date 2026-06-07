@@ -100,18 +100,64 @@ export type Show = {
   venue: string;
   status: ShowStatus;
   ticket: string;
+  country: string;
+  /** optional extra detail: special note, set time, etc. */
+  note?: string;
 };
 
-export const shows: Show[] = [
-  { date: "2026-06-19", city: "Los Ángeles, CA", venue: "Crypto.com Arena", status: "few", ticket: "#" },
-  { date: "2026-06-27", city: "Phoenix, AZ", venue: "Footprint Center", status: "open", ticket: "#" },
-  { date: "2026-07-04", city: "Las Vegas, NV", venue: "T-Mobile Arena", status: "open", ticket: "#" },
-  { date: "2026-07-11", city: "Houston, TX", venue: "Toyota Center", status: "soldout", ticket: "#" },
-  { date: "2026-07-18", city: "Chicago, IL", venue: "United Center", status: "open", ticket: "#" },
-  { date: "2026-08-01", city: "Guadalajara, MX", venue: "Arena VFG", status: "few", ticket: "#" },
-  { date: "2026-08-08", city: "Monterrey, MX", venue: "Arena Monterrey", status: "open", ticket: "#" },
-  { date: "2026-08-15", city: "Ciudad de México", venue: "Palacio de los Deportes", status: "open", ticket: "#" },
+export type Tour = {
+  id: string;
+  name: string;
+  eyebrow: string;
+  shows: Show[];
+};
+
+export const tours: Tour[] = [
+  {
+    id: "agenda-mx",
+    name: "Agenda México",
+    eyebrow: "República Mexicana · 2026",
+    shows: [
+      { date: "2026-02-18", city: "Tulancingo, Hidalgo", venue: "Teatro del Pueblo", status: "open", ticket: "#", country: "México", note: "Baile" },
+      { date: "2026-02-21", city: "Río Grande, Zacatecas", venue: "Teatro del Pueblo", status: "open", ticket: "#", country: "México" },
+      { date: "2026-03-15", city: "Ring Royale Fights", venue: "Actuación especial", status: "open", ticket: "#", country: "México", note: "8:45 PM" },
+      { date: "2026-03-15", city: "San José Tuzuapan, Puebla", venue: "Teatro del Pueblo", status: "open", ticket: "#", country: "México", note: "12:30 AM" },
+      { date: "2026-03-24", city: "Tatahuicapan, Veracruz", venue: "Teatro del Pueblo", status: "open", ticket: "#", country: "México" },
+      { date: "2026-04-08", city: "Soledad de Graciano Sánchez, S.L.P.", venue: "Teatro del Pueblo", status: "open", ticket: "#", country: "México" },
+      { date: "2026-04-12", city: "Texcoco, Estado de México", venue: "Palenque", status: "open", ticket: "#", country: "México" },
+    ],
+  },
+  {
+    id: "norteamerica",
+    name: "Norteamérica",
+    eyebrow: "Estados Unidos & México · Verano 2026",
+    shows: [
+      { date: "2026-06-19", city: "Los Ángeles, CA", venue: "Crypto.com Arena", status: "few", ticket: "#", country: "Estados Unidos" },
+      { date: "2026-06-27", city: "Phoenix, AZ", venue: "Footprint Center", status: "open", ticket: "#", country: "Estados Unidos" },
+      { date: "2026-07-04", city: "Las Vegas, NV", venue: "T-Mobile Arena", status: "open", ticket: "#", country: "Estados Unidos" },
+      { date: "2026-07-11", city: "Houston, TX", venue: "Toyota Center", status: "soldout", ticket: "#", country: "Estados Unidos" },
+      { date: "2026-07-18", city: "Chicago, IL", venue: "United Center", status: "open", ticket: "#", country: "Estados Unidos" },
+      { date: "2026-08-01", city: "Guadalajara, MX", venue: "Arena VFG", status: "few", ticket: "#", country: "México" },
+      { date: "2026-08-08", city: "Monterrey, MX", venue: "Arena Monterrey", status: "open", ticket: "#", country: "México" },
+      { date: "2026-08-15", city: "Ciudad de México", venue: "Palacio de los Deportes", status: "open", ticket: "#", country: "México" },
+    ],
+  },
+  {
+    id: "europa",
+    name: "Europa Tour",
+    eyebrow: "Europa · Otoño 2026",
+    shows: [
+      { date: "2026-09-24", city: "Madrid, España", venue: "Sala Movistar", status: "open", ticket: "#", country: "España" },
+      { date: "2026-09-25", city: "Barcelona, España", venue: "Sala Apolo", status: "open", ticket: "#", country: "España" },
+      { date: "2026-09-26", city: "Bilbao, España", venue: "Sala Arena Live", status: "open", ticket: "#", country: "España" },
+      { date: "2026-09-30", city: "Berlín, Alemania", venue: "Metropol", status: "open", ticket: "#", country: "Alemania" },
+      { date: "2026-10-02", city: "París, Francia", venue: "Pan Piper", status: "open", ticket: "#", country: "Francia" },
+      { date: "2026-10-04", city: "Ámsterdam, Países Bajos", venue: "IJland", status: "open", ticket: "#", country: "Países Bajos" },
+    ],
+  },
 ];
+
+export const shows: Show[] = tours.flatMap((t) => t.shows);
 
 export const showStatus: Record<ShowStatus, { label: string; cls: string }> = {
   open: { label: "Boletos", cls: "btn--gold" },

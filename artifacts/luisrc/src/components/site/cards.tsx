@@ -80,6 +80,7 @@ export function ShowRow({ show, withYear }: { show: Show; withYear?: boolean }) 
         <div className="venue">
           {show.venue} · {d.dow}
           {withYear ? ` · ${d.year}` : ""}
+          {show.note ? ` · ${show.note}` : ""}
         </div>
       </div>
       <a href={show.ticket} className={`btn ${st.cls} btn--sm`}>
