@@ -413,6 +413,9 @@ body.menu-open .mobile-menu { opacity: 1; pointer-events: auto; }
 .footer { background: linear-gradient(180deg, rgba(8,9,11,0.55), rgba(6,7,8,0.82)); border-top: 1px solid var(--hairline); padding-top: clamp(60px, 8vw, 110px); }
 .footer-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 48px; padding-bottom: 56px; }
 .footer-brand .display { font-size: clamp(40px, 7vw, 78px); }
+.footer-brand-lockup { display: flex; align-items: center; gap: clamp(18px, 2.6vw, 40px); flex-wrap: wrap; }
+.footer-kmusic { height: clamp(72px, 8vw, 108px); width: auto; flex: none; opacity: 0.92;
+  filter: drop-shadow(0 6px 22px rgba(0,0,0,0.55)); }
 .footer-col h4 { font-family: var(--narrow); text-transform: uppercase; letter-spacing: 0.22em; font-size: 12px; color: var(--gold); margin-bottom: 18px; font-weight:700; }
 .footer-col a { display: block; color: var(--text-soft); padding: 6px 0; font-size: 15px; transition: color .25s, transform .25s var(--ease); }
 .footer-col a:hover { color: #fff; transform: translateX(4px); }

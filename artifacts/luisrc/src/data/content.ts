@@ -175,6 +175,7 @@ export const heroVideo = {
 export const media = {
   smoke: "smoke-texture.jpg",
   logo: "logo.png",
+  kmusic: "kmusic.png",
   newsletterArt: "oxblood-cross.jpg",
   homeMerchBand: "duo-anuel.jpg",
   merchFeat: "portrait-throne.jpg",

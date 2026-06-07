@@ -174,10 +174,18 @@ function Footer() {
       <div className="wrap">
         <Reveal as="div" className="footer-top">
           <div className="footer-brand">
-            <div className="display chrome">
-              Luis R
-              <br />
-              Conriquez
+            <div className="footer-brand-lockup">
+              <div className="display chrome">
+                Luis R
+                <br />
+                Conriquez
+              </div>
+              <img
+                className="footer-kmusic"
+                src={mediaUrl(media.kmusic)}
+                alt="K Music"
+                loading="lazy"
+              />
             </div>
             <p className="lede" style={{ marginTop: 22, maxWidth: "34ch" }}>
               {site.tagline}. Sitio oficial — música, gira y la marca, directo desde la fuente.
