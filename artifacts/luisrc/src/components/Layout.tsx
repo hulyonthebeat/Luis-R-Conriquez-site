@@ -56,9 +56,9 @@ export function Layout({ children }: { children: ReactNode }) {
      can alternate between them as you scroll */
   useEffect(() => {
     const root = document.documentElement.style;
-    root.setProperty("--tex-1", `url("${mediaUrl("texture-bg-1.webp")}?v=2")`);
-    root.setProperty("--tex-2", `url("${mediaUrl("texture-bg-2.webp")}?v=2")`);
-    root.setProperty("--tex-3", `url("${mediaUrl("texture-bg-3.webp")}?v=2")`);
+    root.setProperty("--tex-1", `url("${mediaUrl("texture-bg-1.webp")}?v=3")`);
+    root.setProperty("--tex-2", `url("${mediaUrl("texture-bg-2.webp")}?v=3")`);
+    root.setProperty("--tex-3", `url("${mediaUrl("texture-bg-3.webp")}?v=3")`);
   }, []);
 
   /* body menu-open class */
