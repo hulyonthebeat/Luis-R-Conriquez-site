@@ -29,17 +29,48 @@ export default function Home() {
     v.muted = true;
     v.defaultMuted = true;
     v.setAttribute("muted", "");
-    const tryPlay = () => v.play().catch(() => {});
+
+    let playing = false;
+    const tryPlay = () => {
+      v.muted = true;
+      const p = v.play();
+      if (p && typeof p.then === "function") {
+        p.then(() => {
+          playing = true;
+        }).catch(() => {
+          playing = false;
+        });
+      }
+    };
     tryPlay();
+
+    /* Mobile browsers (iOS Low Power Mode, Android Data Saver) block programmatic
+       autoplay until the first user interaction — retry play() on the first gesture. */
+    const onGesture = () => {
+      if (playing) return;
+      tryPlay();
+    };
+    const gestures = ["touchstart", "pointerdown", "click", "scroll", "keydown"] as const;
+    gestures.forEach((g) =>
+      window.addEventListener(g, onGesture, { passive: true }),
+    );
+
     const io = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) tryPlay();
-        else v.pause();
+        else {
+          v.pause();
+          playing = false;
+        }
       },
       { threshold: 0.05 },
     );
     io.observe(v);
-    return () => io.disconnect();
+
+    return () => {
+      io.disconnect();
+      gestures.forEach((g) => window.removeEventListener(g, onGesture));
+    };
   }, []);
 
   return (
@@ -55,7 +86,7 @@ export default function Home() {
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="auto"
           aria-hidden="true"
         />
         <div className="hero-overlay">
