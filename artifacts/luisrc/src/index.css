@@ -195,11 +195,18 @@ body::after {
 }
 /* Promote textured sections to their own compositor layer so the large
    background images translate on scroll instead of repainting every frame
-   (Lenis drives scroll via JS, which otherwise repaints these each tick). */
+   (Lenis drives scroll via JS, which otherwise repaints these each tick).
+   Size the texture to the viewport (not the section) so it stays sharp no
+   matter how tall the section grows — `cover` was zooming the 1600x900 image
+   far past native on tall sections (e.g. MÚSICA on mobile), blurring it. The
+   dark scrim makes the subtle vertical tiling on very tall sections invisible. */
 .section:nth-of-type(3n + 2),
 .section:nth-of-type(3n),
 .section:nth-of-type(3n + 4) {
   transform: translateZ(0);
+  background-repeat: no-repeat, repeat-y;
+  background-size: 100% 100%, 100% 100vh;
+  background-position: center, center top;
 }
 
 /* ---------- Type system ---------- */
