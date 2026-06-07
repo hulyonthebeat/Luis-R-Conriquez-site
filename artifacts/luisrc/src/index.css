@@ -193,6 +193,14 @@ body::after {
 .section:nth-of-type(3n + 4) {
   background-image: linear-gradient(rgba(6, 7, 8, 0.56), rgba(6, 7, 8, 0.76)), var(--tex-3);
 }
+/* Promote textured sections to their own compositor layer so the large
+   background images translate on scroll instead of repainting every frame
+   (Lenis drives scroll via JS, which otherwise repaints these each tick). */
+.section:nth-of-type(3n + 2),
+.section:nth-of-type(3n),
+.section:nth-of-type(3n + 4) {
+  transform: translateZ(0);
+}
 
 /* ---------- Type system ---------- */
 .eyebrow {
@@ -309,7 +317,6 @@ body::after {
 /* ---------- Cards / surfaces ---------- */
 .panel {
   background: linear-gradient(180deg, rgba(22,26,32,0.72), rgba(16,18,22,0.66));
-  backdrop-filter: blur(2px);
   border: 1px solid var(--hairline);
   position: relative;
 }
