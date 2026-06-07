@@ -700,7 +700,7 @@ body.menu-open .mobile-menu { opacity: 1; pointer-events: auto; }
 .lh-meta { display:block; margin-top:7px; color:var(--text-soft); font-size:13px; letter-spacing:0.04em; }
 .lh-listen { display:block; text-align:center; margin-top:16px; padding:9px 22px;
   font-family:var(--serif); font-style:italic; font-size:14px; color:#000;
-  border:1px solid var(--gold); background:var(--gold); border-radius:20px;
+  border:1px solid var(--gold); background:var(--gold); border-radius:6px;
   transition: all .35s var(--ease); }
 .lh-listen:hover { filter: brightness(1.08); }
 .lh-platforms { display:flex; flex-wrap:wrap; justify-content:center; align-items:center;
