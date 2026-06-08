@@ -238,7 +238,7 @@ export const heroVideo = {
 export const media = {
   logo: "logo.webp",
   kmusic: "kmusic.webp",
-  homeMerchBand: "duo-anuel.jpg",
+  homeMerchBand: "portrait-throne.jpg",
   merchFeat: "portrait-throne.jpg",
 };
 
