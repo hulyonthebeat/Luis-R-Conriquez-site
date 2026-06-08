@@ -144,15 +144,6 @@ a { color: inherit; text-decoration: none; }
 ::selection { background: var(--gold); color: var(--ink); }
 
 
-/* ---------- Vignette overlay ---------- */
-body::after {
-  content: "";
-  position: fixed; inset: 0;
-  z-index: 8999;
-  pointer-events: none;
-  background: radial-gradient(130% 110% at 50% 35%, transparent 52%, rgba(0,0,0,0.5) 100%);
-}
-
 /* ---------- Layout helpers ---------- */
 .wrap { max-width: var(--maxw); margin-inline: auto; padding-inline: var(--gutter); }
 .wrap--wide { max-width: 100%; padding-inline: clamp(16px, 1.6vw, 36px); }
