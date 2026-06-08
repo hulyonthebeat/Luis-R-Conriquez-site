@@ -6,9 +6,9 @@ import {
   BandHead,
   LatestHitCard,
   ShowRow,
-  AwardCard,
   GalleryTile,
 } from "@/components/site/cards";
+import { AwardsCarousel } from "@/components/site/AwardsCarousel";
 import { Icon } from "@/components/site/Icons";
 import { releases, tours, awards, gallery, media, heroVideo, socials, navLinks } from "@/data/content";
 import { mediaUrl } from "@/lib/site";
@@ -193,10 +193,8 @@ export default function Home() {
       <section className="section section--tight" id="reconocimientos">
         <div className="wrap">
           <BandHead title="Reconocimientos" sub="Premios & prensa" />
-          <Reveal className="awards">
-            {awards.map((a) => (
-              <AwardCard key={a.img} award={a} />
-            ))}
+          <Reveal>
+            <AwardsCarousel awards={awards} />
           </Reveal>
         </div>
       </section>
