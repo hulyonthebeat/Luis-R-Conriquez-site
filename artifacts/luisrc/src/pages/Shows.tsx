@@ -1,6 +1,12 @@
 import { Reveal } from "@/components/site/Reveal";
 import { ShowRow } from "@/components/site/cards";
-import { tours, shows } from "@/data/content";
+import { tours, shows, site } from "@/data/content";
+
+const requestMailto = `mailto:${site.booking}?subject=${encodeURIComponent(
+  "Solicitud de show — Luis R Conriquez",
+)}&body=${encodeURIComponent(
+  "Hola, me gustaría ver a Luis R Conriquez cerca de mí.\n\nCiudad / país:\nNombre:\n",
+)}`;
 
 export default function Shows() {
   const cities = new Set(shows.map((s) => s.city)).size;
@@ -58,6 +64,22 @@ export default function Shows() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="section section--tight">
+        <div className="wrap">
+          <Reveal className="show-request">
+            <span className="eyebrow">¿No ves tu ciudad?</span>
+            <h2>Pide un show cerca de ti</h2>
+            <p>
+              Cuéntanos dónde quieres ver al convoy bélico y te avisaremos en
+              cuanto haya una fecha cerca de ti.
+            </p>
+            <a className="btn btn--gold btn--lg" href={requestMailto}>
+              Solicitar un show
+            </a>
+          </Reveal>
         </div>
       </section>
     </>
