@@ -145,7 +145,7 @@ export default function Home() {
             <img className="bg" src={mediaUrl(media.homeMerchBand)} alt="Campaña merch" />
             <div className="scrim" />
             <div className="c">
-              <div className="sub">La merch oficial</div>
+              <div className="sub">La Merch Oficial</div>
               <h2>
                 No te quedes
                 <br />

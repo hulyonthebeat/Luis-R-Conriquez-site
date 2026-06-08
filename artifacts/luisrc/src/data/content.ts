@@ -249,7 +249,7 @@ export const navLinks: NavLink[] = [
   { href: "/", label: "Inicio", key: "home" },
   { href: "/musica", label: "Música", key: "music" },
   { href: "/shows", label: "Shows", key: "shows" },
-  { href: "/merch", label: "Merch", key: "merch" },
+  { href: "/merch", label: "La Merch Oficial", key: "merch" },
   { href: "/#reconocimientos", label: "Reconocimientos", key: "recog" },
   { href: "/#bts", label: "BTS", key: "bts" },
   { href: "/#suscribete", label: "Suscríbete", key: "news" },
