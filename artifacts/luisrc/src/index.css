@@ -593,6 +593,10 @@ body.menu-open .mobile-menu { opacity: 1; pointer-events: auto; }
 .show-where .city { font-family:var(--display); font-weight:800; font-stretch:110%; text-transform:uppercase; font-size: clamp(18px,2vw,25px); line-height:1; letter-spacing:0.01em; }
 .show-where .venue { color: var(--text-soft); font-size:14px; margin-top:6px; font-family:var(--narrow); letter-spacing:0.04em;}
 .show-row .soldout { opacity:0.55; pointer-events:none; }
+.show-row .btn { justify-self: end; padding: 2px 0; font-size: 13px; background: none; border: none; border-radius: 0; color: var(--gold); letter-spacing: 0.16em; }
+.show-row .btn:hover { transform: none; border-color: transparent; filter: brightness(1.12); }
+.show-row .btn--blood { color: var(--blood-bright); }
+.show-row .btn--ghost { color: var(--text-soft); }
 .tours-grid { display:grid; grid-template-columns:repeat(2,1fr); gap: clamp(28px,3vw,60px) clamp(32px,4vw,72px); }
 .tour-block { margin-bottom: clamp(46px,6vw,82px); }
 .tour-block:last-child { margin-bottom:0; }
@@ -606,10 +610,7 @@ body.menu-open .mobile-menu { opacity: 1; pointer-events: auto; }
 .chip:hover, .chip.active { color:var(--ink); background:var(--silver); border-color:var(--silver); }
 @media (max-width:680px){
   .show-row{ grid-template-columns: 64px 1fr; gap:16px 14px; padding:20px 4px; }
-  .show-row .btn { grid-column: 2; justify-self: start; padding: 2px 0; font-size: 13px; background: none; border: none; border-radius: 0; color: var(--gold); letter-spacing: 0.16em; }
-  .show-row .btn:hover { transform: none; border-color: transparent; filter: brightness(1.12); }
-  .show-row .btn--blood { color: var(--blood-bright); }
-  .show-row .btn--ghost { color: var(--text-soft); }
+  .show-row .btn { grid-column: 2; justify-self: start; }
   .show-date .d{ font-size:30px; } .show-date{ flex-direction:column; gap:2px;}
 }
 
