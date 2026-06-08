@@ -1,6 +1,5 @@
-import { useEffect, useRef, useState, type ReactNode, type MouseEvent } from "react";
+import { useEffect, useState, type ReactNode, type MouseEvent } from "react";
 import { Link, useLocation } from "wouter";
-import Lenis from "lenis";
 import { Icon } from "@/components/site/Icons";
 import { Reveal } from "@/components/site/Reveal";
 import { site, socials, navLinks, media } from "@/data/content";
@@ -11,31 +10,12 @@ export function Layout({ children }: { children: ReactNode }) {
   const [scrolled, setScrolled] = useState(false);
   const [pastHero, setPastHero] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const lenisRef = useRef<Lenis | null>(null);
 
   const scrollToHash = (hash: string) => {
     const el = document.getElementById(hash);
     if (!el) return;
-    if (lenisRef.current) lenisRef.current.scrollTo(el, { offset: 0 });
-    else el.scrollIntoView({ behavior: "smooth", block: "start" });
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
-
-  /* smooth scroll (Lenis) */
-  useEffect(() => {
-    const lenis = new Lenis({ duration: 1.1, smoothWheel: true });
-    lenisRef.current = lenis;
-    let raf = 0;
-    const loop = (time: number) => {
-      lenis.raf(time);
-      raf = requestAnimationFrame(loop);
-    };
-    raf = requestAnimationFrame(loop);
-    return () => {
-      cancelAnimationFrame(raf);
-      lenis.destroy();
-      lenisRef.current = null;
-    };
-  }, []);
 
   /* nav scrolled state */
   useEffect(() => {
@@ -69,8 +49,7 @@ export function Layout({ children }: { children: ReactNode }) {
 
   /* scroll to top on route change (no hash) */
   useEffect(() => {
-    if (lenisRef.current) lenisRef.current.scrollTo(0, { immediate: true });
-    else window.scrollTo({ top: 0, behavior: "auto" });
+    window.scrollTo({ top: 0, behavior: "auto" });
   }, [location]);
 
   const handleNav = (href: string) => (e: MouseEvent) => {
