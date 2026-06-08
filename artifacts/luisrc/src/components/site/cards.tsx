@@ -104,9 +104,6 @@ export function GalleryTile({ item }: { item: GalleryItem }) {
   return (
     <div className="bts-cell">
       <img className="bts-img" src={mediaUrl(item.img)} alt={item.label} loading="lazy" />
-      <div className="lbl">
-        <span className="tag">{item.label}</span>
-      </div>
     </div>
   );
 }
