@@ -141,11 +141,12 @@ export default function Home() {
       {/* MERCH */}
       <section className="section" id="merch">
         <div className="wrap">
+          <BandHead title="La Merch Oficial" sub="Tienda oficial" gold />
           <Reveal className="merch-band panel">
             <img className="bg" src={mediaUrl(media.homeMerchBand)} alt="Campaña merch" />
             <div className="scrim" />
             <div className="c">
-              <div className="sub">La Merch Oficial</div>
+              <div className="sub">Bélico Tour '26</div>
               <h2>
                 No te quedes
                 <br />
