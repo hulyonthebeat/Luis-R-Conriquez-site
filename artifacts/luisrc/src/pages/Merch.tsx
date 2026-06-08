@@ -17,7 +17,7 @@ export default function Merch() {
             <span className="eyebrow">Tienda oficial</span>
           </Reveal>
           <Reveal delay={0.05}>
-            <h1 className="display h-xl chrome">Merch</h1>
+            <h1 className="display h-xl chrome">La Merch Oficial</h1>
           </Reveal>
           <Reveal delay={0.1}>
             <p className="lede">
