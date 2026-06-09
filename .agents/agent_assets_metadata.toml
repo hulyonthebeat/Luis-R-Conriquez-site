@@ -35,3 +35,9 @@ id = "iFZRfcazijkKTx5GHuHu9"
 uri = "file://artifacts/luisrc/public/opengraph.jpg"
 type = "image"
 title = "Social share thumbnail — portrait restored, subtitle now K MUSIC"
+
+[[outputs]]
+id = "zoA9sQq5QevLEXYPlnyPI"
+uri = "file://attached_assets/og_before_after.png"
+type = "image"
+title = "Before / After — OG thumbnail (KARTEL MUSIC to K MUSIC)"
