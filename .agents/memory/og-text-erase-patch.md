@@ -37,3 +37,15 @@ base, erase the chain+old subtitle by stretching a clean dark-bg column over tha
 darkens the bottom"), re-key the gold name glyphs back on top, then draw the new subtitle. Measure text rows
 with a ruler, NOT just color-keying — gold/cream letters fade into the dark gradient so a fuzz key only
 catches the brighter lower halves and reports a wrong (too-low) cap-top.
+
+**Rebuild-from-scratch (preferred when user rejects "editing the original"):** compose the photo into 1200x630
+(`-resize 1200x -gravity North -crop 1200x630+0+OFF`), then to copy the original's gradient EXACTLY, sample the
+original OG's per-y tone at a left-edge column (all background) AND center, e.g. left x150 ≈ 176→144→112→84→57→38→16→1
+from y300→625 — a smooth near-linear warm falloff that only hits black at the very bottom. Reproduce it with ONE
+linear black gradient over the matching span (`-size 1200xH gradient:none-black` composited at +0+167, H≈463 so
+alpha=0 at y167 → 1 at y630). Black-over-peach preserves warmth: result = photoColor*(1-alpha), so peach*(0.16) =
+warm brown ≈ the original, NOT gray. A "ramp then solid-black slab" looks too dark — users notice. The OG NAME font
+is a bold Times/Georgia-style serif (NOT the site's Cinzel); to match font/size/color/placement perfectly, EXTRACT
+the original gold name glyphs (`-crop 1020x84+90+426`, gray `-level 38%,62%` as alpha, CopyOpacity) and composite
+back at the SAME coords — don't re-typeset. Subtitle in DejaVu Serif (close match) is accepted; size it up if the
+shorter new text looks small.
