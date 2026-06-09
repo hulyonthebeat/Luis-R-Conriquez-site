@@ -8,7 +8,6 @@ import {
   platformUrls,
   type Release,
   type Show,
-  type Merch,
   type GalleryItem,
 } from "@/data/content";
 
@@ -78,24 +77,6 @@ export function ShowRow({ show, withYear }: { show: Show; withYear?: boolean }) 
       >
         {st.label}
       </a>
-    </div>
-  );
-}
-
-export function MerchCard({ item }: { item: Merch }) {
-  return (
-    <div className="merch-card">
-      <div className="ph">
-        <Img label={item.name} src={mediaUrl(item.img)} />
-        <span className="price">{item.price}</span>
-        <a href="#" className="btn btn--primary btn--sm btn--block add">
-          Añadir
-        </a>
-      </div>
-      <div className="nm">
-        <h4>{item.name}</h4>
-        <span className="tag">{item.tag}</span>
-      </div>
     </div>
   );
 }

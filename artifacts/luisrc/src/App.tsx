@@ -7,7 +7,6 @@ import { Layout } from "@/components/Layout";
 import Home from "@/pages/Home";
 import Music from "@/pages/Music";
 import Shows from "@/pages/Shows";
-import Merch from "@/pages/Merch";
 
 const queryClient = new QueryClient();
 
@@ -18,7 +17,6 @@ function Router() {
         <Route path="/" component={Home} />
         <Route path="/musica" component={Music} />
         <Route path="/shows" component={Shows} />
-        <Route path="/merch" component={Merch} />
         <Route component={NotFound} />
       </Switch>
     </Layout>

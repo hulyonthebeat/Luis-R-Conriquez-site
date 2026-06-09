@@ -1,6 +1,6 @@
 # Luis R Conriquez — Official Site
 
-A cinematic, dark/metallic official artist website for Luis R Conriquez ("El Rey de los Corridos Bélicos") — music, videos, tour dates, merch, and bio. Spanish-language, six routes, built as a static React + Vite app.
+A cinematic, dark/metallic official artist website for Luis R Conriquez ("El Rey de los Corridos Bélicos") — music, videos, tour dates, and bio. Spanish-language, built as a static React + Vite app. (Merch was removed; it can be restored from git history if needed.)
 
 ## Run & Operate
 
@@ -16,19 +16,19 @@ A cinematic, dark/metallic official artist website for Luis R Conriquez ("El Rey
 
 ## Where things live (luisrc)
 
-- `artifacts/luisrc/src/data/content.ts` — single editable source of truth for ALL site content (site info, releases, videos, shows, merch, awards, socials, gallery, timeline, nav links, media mapping)
+- `artifacts/luisrc/src/data/content.ts` — single editable source of truth for ALL site content (site info, releases, videos, shows, awards, socials, gallery, timeline, nav links, media mapping)
 - `artifacts/luisrc/src/index.css` — full ported design system (tokens, fonts, smoke bg, grain/vignette overlays, every component class). Fonts via Google Fonts `@import`.
 - `artifacts/luisrc/src/components/Layout.tsx` — nav, fullscreen burger menu, footer, smoke parallax, hash-nav, scroll-to-top
 - `artifacts/luisrc/src/components/site/` — reusable pieces (Icons, Reveal, Img, HeroPlayer, FeaturedVideo, StreamRow, Newsletter, HashLink, cards.tsx)
-- `artifacts/luisrc/src/pages/` — Home, Music, Videos, Shows, Merch, About
+- `artifacts/luisrc/src/pages/` — Home, Music, Shows (Videos/Reconocimientos/BTS/Suscríbete are home-page sections, not separate routes)
 - `artifacts/luisrc/public/media/` — all imagery
-- Routes: `/` `/musica` `/videos` `/shows` `/merch` `/acerca`
+- Routes: `/` `/musica` `/shows` (unknown paths fall through to NotFound)
 
 ## Architecture decisions
 
 - Faithful rebuild of an uploaded static HTML prototype (`attached_assets/luis_extracted/`). Markup/classes ported verbatim; the original per-page vanilla-JS render functions became React components.
 - `Reveal` wraps content in framer-motion `whileInView` (replaces prototype's `[data-reveal]` CSS). The `[data-reveal]{opacity:0}` rule was intentionally NOT ported, so content is visible even without JS reveal.
-- `Img` renders the prototype's `.imgph` labeled placeholder; when a real media file exists it overlays an `<img>` that covers the label. Releases/awards mostly use placeholders (only Vol. IV has a real cover); videos/merch/gallery use real images.
+- `Img` renders the prototype's `.imgph` labeled placeholder; when a real media file exists it overlays an `<img>` that covers the label. Releases/awards mostly use placeholders (only Vol. IV has a real cover); videos/gallery use real images.
 - Icons rendered without width/height so CSS controls sizing.
 - Hash links (e.g. `/#suscribete`) navigate home first, then smooth-scroll.
 
