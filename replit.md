@@ -16,7 +16,7 @@ A cinematic, dark/metallic official artist website for Luis R Conriquez ("El Rey
 
 ## Where things live (luisrc)
 
-- `artifacts/luisrc/src/data/content.ts` — single editable source of truth for ALL site content (site info, releases, videos, shows, awards, socials, gallery, timeline, nav links, media mapping)
+- `artifacts/luisrc/src/data/content.ts` — single editable source of truth for ALL site content (site info, releases, videos, shows, awards, socials, gallery, timeline, nav links, media mapping). Tour dates live in `allTours`; the exported `tours`/`shows` auto-prune any date before today (and drop emptied tours) on every page load, so past shows disappear with no manual edit.
 - `artifacts/luisrc/src/index.css` — full ported design system (tokens, fonts, smoke bg, grain/vignette overlays, every component class). Fonts via Google Fonts `@import`.
 - `artifacts/luisrc/src/components/Layout.tsx` — nav, fullscreen burger menu, footer, smoke parallax, hash-nav, scroll-to-top
 - `artifacts/luisrc/src/components/site/` — reusable pieces (Icons, Reveal, Img, HeroPlayer, FeaturedVideo, StreamRow, Newsletter, HashLink, cards.tsx)

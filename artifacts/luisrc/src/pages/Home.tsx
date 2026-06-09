@@ -141,7 +141,14 @@ export default function Home() {
       {/* SHOWS */}
       <section className="section section--tight" id="shows">
         <div className="wrap wrap--wide">
-          <BandHead title="Shows" sub={`${tours.length} giras · 2026`} />
+          <BandHead title="Shows" sub={tours.length ? `${tours.length} ${tours.length === 1 ? "gira" : "giras"}` : "En vivo"} />
+          {tours.length === 0 ? (
+            <Reveal>
+              <p className="lede" style={{ textAlign: "center" }}>
+                Próximamente nuevas fechas.
+              </p>
+            </Reveal>
+          ) : (
           <div className="tours-grid">
           {tours.map((tour) => (
             <Reveal key={tour.id} className="tour-block">
@@ -157,6 +164,7 @@ export default function Home() {
             </Reveal>
           ))}
           </div>
+          )}
           <Reveal>
             <div style={{ textAlign: "center", marginTop: "clamp(36px,4vw,56px)" }}>
               <Link href="/shows" className="btn btn--gold btn--lg">

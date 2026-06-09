@@ -102,21 +102,24 @@ export type Tour = {
   shows: Show[];
 };
 
-export const tours: Tour[] = [
-  {
-    id: "agenda-mx",
-    name: "Agenda México",
-    eyebrow: "República Mexicana · 2026",
-    shows: [
-      { date: "2026-02-18", city: "Tulancingo, Hidalgo", venue: "Teatro del Pueblo", status: "open", ticket: "#", country: "México", note: "Baile" },
-      { date: "2026-02-21", city: "Río Grande, Zacatecas", venue: "Teatro del Pueblo", status: "open", ticket: "#", country: "México" },
-      { date: "2026-03-15", city: "Ring Royale Fights", venue: "Actuación especial", status: "open", ticket: "#", country: "México", note: "8:45 PM" },
-      { date: "2026-03-15", city: "San José Tuzuapan, Puebla", venue: "Teatro del Pueblo", status: "open", ticket: "#", country: "México", note: "12:30 AM" },
-      { date: "2026-03-24", city: "Tatahuicapan, Veracruz", venue: "Teatro del Pueblo", status: "open", ticket: "#", country: "México" },
-      { date: "2026-04-08", city: "Soledad de Graciano Sánchez, S.L.P.", venue: "Teatro del Pueblo", status: "open", ticket: "#", country: "México" },
-      { date: "2026-04-12", city: "Texcoco, Estado de México", venue: "Palenque", status: "open", ticket: "#", country: "México" },
-    ],
-  },
+/** Local YYYY-MM-DD for "today" (ISO show dates compare lexicographically = chronologically). */
+function todayISO(): string {
+  const d = new Date();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${d.getFullYear()}-${m}-${day}`;
+}
+
+/** A show is upcoming while its date is today or later; it auto-drops the day after it passes. */
+export function isUpcoming(dateISO: string, today: string = todayISO()): boolean {
+  return dateISO >= today;
+}
+
+/**
+ * RAW tour data — the single place to add/edit dates. Keep entries here until they happen;
+ * past dates are pruned automatically below, so there is no need to delete them by hand.
+ */
+const allTours: Tour[] = [
   {
     id: "europa",
     name: "Europa Tour",
@@ -132,6 +135,15 @@ export const tours: Tour[] = [
     ],
   },
 ];
+
+/**
+ * PUBLIC tours/shows used across the site. Past dates are removed automatically as they pass,
+ * and any tour left with no upcoming dates is dropped. This recomputes on every page load,
+ * so the site is always current with no manual cleanup.
+ */
+export const tours: Tour[] = allTours
+  .map((t) => ({ ...t, shows: t.shows.filter((s) => isUpcoming(s.date)) }))
+  .filter((t) => t.shows.length > 0);
 
 export const shows: Show[] = tours.flatMap((t) => t.shows);
 

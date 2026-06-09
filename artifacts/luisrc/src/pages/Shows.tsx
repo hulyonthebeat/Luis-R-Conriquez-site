@@ -28,42 +28,53 @@ export default function Shows() {
           </Reveal>
           <Reveal delay={0.1}>
             <p className="lede">
-              El convoy bélico recorre México y Europa. Consigue tus boletos
-              oficiales antes de que se agoten.
+              El convoy bélico cruza fronteras. Consigue tus boletos oficiales
+              antes de que se agoten.
             </p>
           </Reveal>
-          <Reveal className="meta-line" delay={0.15}>
-            <div className="m">
-              <span className="v chrome">{shows.length}</span>
-              <span className="k">Fechas</span>
-            </div>
-            <div className="m">
-              <span className="v chrome">{cities}</span>
-              <span className="k">Ciudades</span>
-            </div>
-            <div className="m">
-              <span className="v gold-text">{countries}</span>
-              <span className="k">Países</span>
-            </div>
-          </Reveal>
+          {shows.length > 0 && (
+            <Reveal className="meta-line" delay={0.15}>
+              <div className="m">
+                <span className="v chrome">{shows.length}</span>
+                <span className="k">Fechas</span>
+              </div>
+              <div className="m">
+                <span className="v chrome">{cities}</span>
+                <span className="k">Ciudades</span>
+              </div>
+              <div className="m">
+                <span className="v gold-text">{countries}</span>
+                <span className="k">Países</span>
+              </div>
+            </Reveal>
+          )}
         </div>
       </section>
 
       <section className="section section--tight">
         <div className="wrap wrap--wide tours-grid">
-          {tours.map((tour) => (
-            <div key={tour.id} className="tour-block">
-              <Reveal className="tour-head">
-                <span className="eyebrow">{tour.eyebrow}</span>
-                <h2>{tour.name}</h2>
-              </Reveal>
-              <div>
-                {tour.shows.map((s, i) => (
-                  <ShowRow key={`${tour.id}-${s.date}-${i}`} show={s} withYear />
-                ))}
+          {tours.length === 0 ? (
+            <Reveal className="tour-block">
+              <p className="lede">
+                Próximamente anunciaremos nuevas fechas. Vuelve pronto para no
+                perderte al convoy bélico.
+              </p>
+            </Reveal>
+          ) : (
+            tours.map((tour) => (
+              <div key={tour.id} className="tour-block">
+                <Reveal className="tour-head">
+                  <span className="eyebrow">{tour.eyebrow}</span>
+                  <h2>{tour.name}</h2>
+                </Reveal>
+                <div>
+                  {tour.shows.map((s, i) => (
+                    <ShowRow key={`${tour.id}-${s.date}-${i}`} show={s} withYear />
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))
+          )}
         </div>
       </section>
 
