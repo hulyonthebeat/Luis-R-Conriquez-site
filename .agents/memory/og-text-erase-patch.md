@@ -28,3 +28,12 @@ Redraw text: render `label:` trimmed (all-caps has no descenders, so trimmed bot
 original by measuring its on-image width/cap-height with a labeled coord-grid ruler, then composite at
 x = center - W/2, y = baseline - H. Match font/color by sampling the original glyphs.
 Bump the og:image cache-buster (?v=N) in index.html after overwriting the file.
+
+**luisrc OG specifics:** the original OG is a portrait on a vertical sunset→near-black gradient (bg sampled
+at left column x60: y200≈(229,172,117) smoothly → y625≈(1,1,1)); the gold name (#CFA149) is centered at
+x600 baseline ≈y502, the subtitle (#c6b796, DejaVu Serif p32 kerning28) centered ≈x605 cap-top y539
+baseline ≈y562. Cleanest rebuild that keeps the UNCHANGED name pixel-identical: use the original OG as the
+base, erase the chain+old subtitle by stretching a clean dark-bg column over that band (the "gradient that
+darkens the bottom"), re-key the gold name glyphs back on top, then draw the new subtitle. Measure text rows
+with a ruler, NOT just color-keying — gold/cream letters fade into the dark gradient so a fuzz key only
+catches the brighter lower halves and reports a wrong (too-low) cap-top.
