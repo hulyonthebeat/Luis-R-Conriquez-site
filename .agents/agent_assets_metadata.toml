@@ -1,5 +1,4 @@
 uploads = []
-outputs = []
 
 [[generated]]
 id = "7gg5GZnhq5hAihbOr4VAR"
@@ -30,3 +29,9 @@ id = "Xl7KwnlRL9r-vxCA4CVcT"
 uri = "file://artifacts/luisrc/public/media/merch-vinyl.png"
 type = "image"
 title = "merch vinyl"
+
+[[outputs]]
+id = "iFZRfcazijkKTx5GHuHu9"
+uri = "file://artifacts/luisrc/public/opengraph.jpg"
+type = "image"
+title = "Social share thumbnail — portrait restored, subtitle now K MUSIC"
