@@ -39,13 +39,29 @@ export default function Music() {
             </div>
             <div className="info">
               <div style={{ display: "flex", gap: 14, alignItems: "center", marginBottom: 6 }}>
-                <span className="eyebrow">Nuevo álbum</span>
-                <span className="tag">{`${featured.type} · ${featured.tracks} cortes · ${featured.year}`}</span>
+                <span className="eyebrow">{featured.type === "Álbum" ? "Nuevo álbum" : "Nuevo sencillo"}</span>
+                <span className="tag">
+                  {featured.type === "Álbum"
+                    ? `${featured.type} · ${featured.tracks} cortes · ${featured.year}`
+                    : `${featured.type} · ${featured.year}`}
+                </span>
               </div>
               <h2>
                 <span className="gold-text">{featured.title}</span>
               </h2>
               {featured.copy && <p className="lede">{featured.copy}</p>}
+              {featured.link && (
+                <div style={{ marginTop: 24 }}>
+                  <a
+                    href={featured.link}
+                    className="btn btn--gold btn--lg"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Escuchar ahora
+                  </a>
+                </div>
+              )}
               <div style={{ marginTop: 28 }}>
                 <StreamRow />
               </div>

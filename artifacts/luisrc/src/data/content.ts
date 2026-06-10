@@ -76,14 +76,15 @@ export const releases: Release[] = [
     link: "https://songwhip.com/luisrconriquez/salma-hayek",
   },
   {
-    id: "meneo",
-    title: "Meneo",
-    type: "Álbum",
-    year: "2025",
-    tracks: 12,
+    id: "aguas",
+    title: "Aguas",
+    type: "Sencillo",
+    year: "2026",
+    tracks: 1,
     featured: true,
-    copy: "El nuevo álbum de Luis R Conriquez — un cruce de fronteras y de ritmos, del corrido al meneo.",
-    cover: "meneo.jpg",
+    copy: "El nuevo sencillo de Luis R Conriquez.",
+    cover: "aguas.jpg",
+    link: "https://sml.lnk.to/Aguas",
   },
 ];
 
