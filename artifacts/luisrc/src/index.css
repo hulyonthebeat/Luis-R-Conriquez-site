@@ -564,7 +564,7 @@ body.menu-open .mobile-menu { opacity: 1; pointer-events: auto; }
 .show-row .btn:hover { transform: none; border-color: transparent; filter: brightness(1.12); }
 .show-row .btn--blood { color: var(--blood-bright); }
 .show-row .btn--ghost { color: var(--text-soft); }
-.tours-grid { display:grid; grid-template-columns:repeat(2,1fr); gap: clamp(28px,3vw,60px) clamp(32px,4vw,72px); }
+.tours-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 640px)); justify-content:center; gap: clamp(28px,3vw,60px) clamp(32px,4vw,72px); }
 .tour-block { margin-bottom: clamp(46px,6vw,82px); }
 .tour-block:last-child { margin-bottom:0; }
 .tours-grid .tour-block { margin-bottom:0; }
