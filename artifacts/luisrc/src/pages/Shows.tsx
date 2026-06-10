@@ -2,6 +2,37 @@ import { Reveal } from "@/components/site/Reveal";
 import { ShowRow } from "@/components/site/cards";
 import { tours, shows, site } from "@/data/content";
 
+const eventsJsonLd = JSON.stringify(
+  shows.map((s) => ({
+    "@context": "https://schema.org",
+    "@type": "MusicEvent",
+    name: `Luis R Conriquez en ${s.city}`,
+    startDate: s.date,
+    location: {
+      "@type": "Place",
+      name: s.venue,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: s.city,
+        addressCountry: s.country,
+      },
+    },
+    performer: {
+      "@type": "MusicGroup",
+      name: "Luis R Conriquez",
+    },
+    offers: {
+      "@type": "Offer",
+      url: s.ticket,
+      availability: s.status === "soldout"
+        ? "https://schema.org/SoldOut"
+        : s.status === "few"
+          ? "https://schema.org/LimitedAvailability"
+          : "https://schema.org/InStock",
+    },
+  }))
+);
+
 const requestMailto = `mailto:${site.booking}?subject=${encodeURIComponent(
   "Solicitud de show — Luis R Conriquez",
 )}&body=${encodeURIComponent(
@@ -14,6 +45,9 @@ export default function Shows() {
 
   return (
     <>
+      {shows.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: eventsJsonLd }} />
+      )}
       <section className="page-hero">
         <div className="wrap">
           <Reveal>

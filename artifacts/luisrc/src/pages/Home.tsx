@@ -10,8 +10,25 @@ import {
 } from "@/components/site/cards";
 import { AwardsCarousel } from "@/components/site/AwardsCarousel";
 import { Icon } from "@/components/site/Icons";
-import { releases, tours, awards, gallery, media, heroVideo, socials, navLinks, followLinks } from "@/data/content";
+import { releases, tours, awards, gallery, media, heroVideo, socials, navLinks, followLinks, site, platformUrls } from "@/data/content";
 import { mediaUrl } from "@/lib/site";
+
+const artistJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "MusicGroup",
+  name: site.name,
+  url: "https://luisrconriquezofficial.com/",
+  description: "El Rey de los Corridos Bélicos. Música regional mexicana y corridos bélicos.",
+  image: "https://luisrconriquezofficial.com/opengraph.jpg",
+  sameAs: [
+    socials.find((s) => s.id === "instagram")!.url,
+    socials.find((s) => s.id === "youtube")!.url,
+    platformUrls.spotify,
+    socials.find((s) => s.id === "tiktok")!.url,
+    socials.find((s) => s.id === "x")!.url,
+    platformUrls.apple,
+  ],
+});
 
 const heroNav = navLinks.filter((n) => n.href !== "/");
 const heroSocials = socials.slice(0, 6);
@@ -75,6 +92,7 @@ export default function Home() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: artistJsonLd }} />
       {/* HERO = the latest video, sole focal point */}
       <section className="hero hero--video">
         <video
