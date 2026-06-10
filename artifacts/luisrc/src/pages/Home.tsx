@@ -141,7 +141,7 @@ export default function Home() {
       {/* SHOWS */}
       <section className="section section--tight" id="shows">
         <div className="wrap wrap--wide">
-          <BandHead title="Shows" sub={tours.length ? `${tours.length} ${tours.length === 1 ? "gira" : "giras"}` : "En vivo"} />
+          <BandHead title="Shows" />
           {tours.length === 0 ? (
             <Reveal>
               <p className="lede" style={{ textAlign: "center" }}>
