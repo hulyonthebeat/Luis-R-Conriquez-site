@@ -142,34 +142,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* MÚSICA */}
-      <section className="section section--tight" id="musica">
-        <div className="wrap wrap--wide">
-          <BandHead title="Música de la buena" gold />
-          <Reveal className="lh-grid">
-            {releases.slice(0, 4).map((r) => (
-              <LatestHitCard key={r.id} release={r} />
-            ))}
-          </Reveal>
-          <Reveal>
-            <div className="music-follow">
-              {followLinks.map((l) => (
-                <a
-                  key={l.id}
-                  href={l.url}
-                  className="social"
-                  aria-label={l.label}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Icon id={l.id} />
-                </a>
-              ))}
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
       {/* SHOWS */}
       <section className="section section--tight" id="shows">
         <div className="wrap wrap--wide">
@@ -202,6 +174,34 @@ export default function Home() {
               <Link href="/shows" className="btn btn--gold btn--lg">
                 Todas las fechas
               </Link>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* MÚSICA */}
+      <section className="section section--tight" id="musica">
+        <div className="wrap wrap--wide">
+          <BandHead title="Música de la buena" gold />
+          <Reveal className="lh-grid">
+            {releases.slice(0, 4).map((r) => (
+              <LatestHitCard key={r.id} release={r} />
+            ))}
+          </Reveal>
+          <Reveal>
+            <div className="music-follow">
+              {followLinks.map((l) => (
+                <a
+                  key={l.id}
+                  href={l.url}
+                  className="social"
+                  aria-label={l.label}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icon id={l.id} />
+                </a>
+              ))}
             </div>
           </Reveal>
         </div>
