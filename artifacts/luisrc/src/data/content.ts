@@ -63,6 +63,7 @@ export const releases: Release[] = [
     tracks: 1,
     copy: "Luis R Conriquez x Kane Rodriguez.",
     cover: "filoso.jpg",
+    link: "https://wml.link/FILOSO-KaneRodriguezxLuisRConriquez",
   },
   {
     id: "salma-hayek",
