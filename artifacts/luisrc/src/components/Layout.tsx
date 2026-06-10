@@ -166,9 +166,15 @@ function Footer() {
           Al proporcionar tu información, aceptas unirte a la comunidad y recibir
           correos de {site.label}.
         </p>
-        <a className="footer-legal" href="#">
-          Política de Privacidad y Términos de Servicio
-        </a>
+        <span className="footer-legal-links">
+          <a className="footer-legal" href="/privacidad">
+            Política de Privacidad
+          </a>
+          {" · "}
+          <a className="footer-legal" href="/terminos">
+            Términos de Servicio
+          </a>
+        </span>
       </Reveal>
     </footer>
   );

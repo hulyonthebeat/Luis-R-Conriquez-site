@@ -438,6 +438,13 @@ body.menu-open .mobile-menu { opacity: 1; pointer-events: auto; }
 .footer-disclaimer { font-family: var(--narrow); font-size: 13px; line-height: 1.7; color: var(--text-mute); max-width: 50ch; }
 .footer-legal { font-family: var(--narrow); font-size: 12px; letter-spacing: 0.05em; color: var(--text-mute); text-decoration: underline; text-underline-offset: 3px; transition: color .25s; }
 .footer-legal:hover { color: var(--text); }
+.footer-legal-links { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; justify-content: center; }
+
+.prose-legal { max-width: 68ch; margin-inline: auto; padding-block: clamp(2rem,6vw,5rem); }
+.prose-legal h2 { font-family: var(--narrow); text-transform: uppercase; letter-spacing: 0.12em; font-size: clamp(12px,1.5vw,14px); color: var(--text-soft); margin-block: 2.5em 0.6em; border-bottom: 1px solid var(--hairline-1); padding-bottom: 0.4em; }
+.prose-legal p { font-family: var(--body); font-size: 15px; line-height: 1.85; color: var(--text-mute); margin-bottom: 0.8em; }
+.prose-legal a { color: var(--text-soft); text-decoration: underline; text-underline-offset: 3px; transition: color .25s; }
+.prose-legal a:hover { color: var(--text); }
 
 .socials { display: flex; gap: 12px; }
 .social {

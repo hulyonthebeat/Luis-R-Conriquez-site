@@ -6,6 +6,8 @@ import NotFound from "@/pages/not-found";
 import { Layout } from "@/components/Layout";
 import Home from "@/pages/Home";
 import Shows from "@/pages/Shows";
+import Privacidad from "@/pages/Privacidad";
+import Terminos from "@/pages/Terminos";
 
 const queryClient = new QueryClient();
 
@@ -15,6 +17,8 @@ function Router() {
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/shows" component={Shows} />
+        <Route path="/privacidad" component={Privacidad} />
+        <Route path="/terminos" component={Terminos} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
