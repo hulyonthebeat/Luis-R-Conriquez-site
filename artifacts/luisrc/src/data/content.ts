@@ -53,6 +53,7 @@ export const releases: Release[] = [
     tracks: 1,
     copy: "Luis R Conriquez x Neton Vega.",
     cover: "que-gacho.jpg",
+    link: "https://songwhip.com/luisrconriquez/que-gacho",
   },
   {
     id: "filoso",
@@ -191,7 +192,7 @@ export const gallery: GalleryItem[] = [
 /* Hero featured video (the homepage player IS the latest video) */
 export const heroVideo = {
   tag: "Video Oficial",
-  title: "JGL",
+  title: "Que Gacho",
   file: "hero.mp4",
   poster: "hero-poster.jpg",
 };
