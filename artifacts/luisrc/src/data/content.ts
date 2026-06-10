@@ -182,6 +182,18 @@ export const socials: Social[] = [
   { id: "x", label: "X", handle: "@LuisRConriquez", url: "https://x.com/LuisRConriquez" },
 ];
 
+/* Combined music platforms + socials for the "escúchalo/síguelo en todas partes" icon row */
+export const followLinks: { id: PlatformId | SocialId; label: string; url: string }[] = [
+  { id: "spotify", label: "Spotify", url: platformUrls.spotify },
+  { id: "apple", label: "Apple Music", url: platformUrls.apple },
+  { id: "amazon", label: "Amazon Music", url: platformUrls.amazon },
+  { id: "youtube", label: "YouTube", url: platformUrls.youtube },
+  { id: "deezer", label: "Deezer", url: platformUrls.deezer },
+  { id: "instagram", label: "Instagram", url: socials.find((s) => s.id === "instagram")!.url },
+  { id: "tiktok", label: "TikTok", url: socials.find((s) => s.id === "tiktok")!.url },
+  { id: "x", label: "X", url: socials.find((s) => s.id === "x")!.url },
+];
+
 export type GalleryItem = { id: string; label: string; img: string };
 
 export const gallery: GalleryItem[] = [

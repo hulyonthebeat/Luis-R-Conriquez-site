@@ -10,7 +10,7 @@ import {
 } from "@/components/site/cards";
 import { AwardsCarousel } from "@/components/site/AwardsCarousel";
 import { Icon } from "@/components/site/Icons";
-import { releases, tours, awards, gallery, media, heroVideo, socials, navLinks } from "@/data/content";
+import { releases, tours, awards, gallery, media, heroVideo, socials, navLinks, followLinks } from "@/data/content";
 import { mediaUrl } from "@/lib/site";
 
 const heroNav = navLinks.filter((n) => n.href !== "/");
@@ -129,10 +129,19 @@ export default function Home() {
             ))}
           </Reveal>
           <Reveal>
-            <div style={{ textAlign: "center", marginTop: "clamp(36px,4vw,56px)" }}>
-              <Link href="/musica" className="btn btn--lg">
-                Ver toda la música
-              </Link>
+            <div className="music-follow">
+              {followLinks.map((l) => (
+                <a
+                  key={l.id}
+                  href={l.url}
+                  className="social"
+                  aria-label={l.label}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icon id={l.id} />
+                </a>
+              ))}
             </div>
           </Reveal>
         </div>
