@@ -73,6 +73,7 @@ export const releases: Release[] = [
     tracks: 1,
     copy: "Luis R Conriquez x Grupo Frontera.",
     cover: "salma-hayek.jpg",
+    link: "https://songwhip.com/luisrconriquez/salma-hayek",
   },
   {
     id: "meneo",
