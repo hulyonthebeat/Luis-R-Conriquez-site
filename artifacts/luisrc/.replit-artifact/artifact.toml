@@ -1,31 +1,40 @@
 kind = "web"
-previewPath = "/"
-title = "Luis R Conriquez"
-version = "1.0.0"
-id = "artifacts/luisrc"
-router = "path"
+  previewPath = "/"
+  title = "Luis R Conriquez"
+  version = "1.0.0"
+  id = "artifacts/luisrc"
+  router = "path"
 
-[[integratedSkills]]
-name = "react-vite"
-version = "1.0.0"
+  [[integratedSkills]]
+  name = "react-vite"
+  version = "1.0.0"
 
-[[services]]
-name = "web"
-paths = [ "/" ]
-localPort = 24999
+  [[services]]
+  name = "web"
+  paths = [ "/" ]
+  localPort = 24999
 
-[services.development]
-run = "pnpm --filter @workspace/luisrc run dev"
+  [services.development]
+  run = "pnpm --filter @workspace/luisrc run dev"
 
-[services.production]
-build = [ "pnpm", "--filter", "@workspace/luisrc", "run", "build" ]
-publicDir = "artifacts/luisrc/dist/public"
-serve = "static"
+  [services.production]
+  build = [ "pnpm", "--filter", "@workspace/luisrc", "run", "build" ]
+  publicDir = "artifacts/luisrc/dist/public"
+  serve = "static"
 
-[[services.production.rewrites]]
-from = "/*"
-to = "/index.html"
+  [[services.production.rewrites]]
+  from = "/shows"
+  to = "/shows/index.html"
 
-[services.env]
-PORT = "24999"
-BASE_PATH = "/"
+  [[services.production.rewrites]]
+  from = "/shows/"
+  to = "/shows/index.html"
+
+  [[services.production.rewrites]]
+  from = "/*"
+  to = "/index.html"
+
+  [services.env]
+  PORT = "24999"
+  BASE_PATH = "/"
+  

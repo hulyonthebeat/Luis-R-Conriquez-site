@@ -10,7 +10,18 @@ type RevealProps = {
   id?: string;
 };
 
+const isSSR = typeof window === "undefined";
+
 export function Reveal({ children, className, delay = 0, y = 28, as = "div", id }: RevealProps) {
+  if (isSSR) {
+    const Tag = as;
+    return (
+      <Tag id={id} className={className}>
+        {children}
+      </Tag>
+    );
+  }
+
   const MotionTag = motion[as];
   return (
     <MotionTag

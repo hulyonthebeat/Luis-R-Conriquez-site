@@ -12,6 +12,8 @@ import { AwardsCarousel } from "@/components/site/AwardsCarousel";
 import { Icon } from "@/components/site/Icons";
 import { releases, tours, awards, gallery, media, heroVideo, socials, navLinks, followLinks, site, platformUrls } from "@/data/content";
 import { mediaUrl } from "@/lib/site";
+import { usePageMeta } from "@/hooks/usePageMeta";
+import { pageMeta } from "@/lib/pageMeta";
 
 const artistJsonLd = JSON.stringify({
   "@context": "https://schema.org",
@@ -34,6 +36,7 @@ const heroNav = navLinks.filter((n) => n.href !== "/");
 const heroSocials = socials.slice(0, 6);
 
 export default function Home() {
+  usePageMeta(pageMeta["/"]);
   const heroVideoRef = useRef<HTMLVideoElement | null>(null);
 
   /* pause the hero video while it's scrolled out of view to keep scrolling smooth */

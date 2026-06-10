@@ -1,6 +1,8 @@
 import { Reveal } from "@/components/site/Reveal";
 import { ShowRow } from "@/components/site/cards";
 import { tours, shows, site } from "@/data/content";
+import { usePageMeta } from "@/hooks/usePageMeta";
+import { pageMeta } from "@/lib/pageMeta";
 
 const eventsJsonLd = JSON.stringify(
   shows.map((s) => ({
@@ -40,6 +42,7 @@ const requestMailto = `mailto:${site.booking}?subject=${encodeURIComponent(
 )}`;
 
 export default function Shows() {
+  usePageMeta(pageMeta["/shows"]);
   const cities = new Set(shows.map((s) => s.city)).size;
   const countries = new Set(shows.map((s) => s.country)).size;
 
