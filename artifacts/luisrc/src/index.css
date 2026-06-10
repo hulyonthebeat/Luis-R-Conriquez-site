@@ -511,6 +511,11 @@ body.menu-open .mobile-menu { opacity: 1; pointer-events: auto; }
 .hero-socials a:focus-visible,
 .hero-logo:focus-visible { outline:2px solid var(--gold); outline-offset:4px; color:#fff; }
 
+.hero-h1 { font-family: var(--serif); font-size: clamp(13px,1.1vw,17px); font-weight:600;
+  letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.55);
+  text-align:center; margin:0 0 clamp(16px,2.5vw,36px);
+  text-shadow: 0 1px 8px rgba(0,0,0,0.7); }
+
 @media (max-width: 640px) {
   .hero-nav { gap:14px 18px; }
   .hero-nav a { letter-spacing:0.01em; font-size:15px; padding:8px 4px; }

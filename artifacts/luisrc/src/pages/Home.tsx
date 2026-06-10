@@ -121,6 +121,8 @@ export default function Home() {
             </div>
           </div>
 
+          <h1 className="hero-h1">Luis R Conriquez — Sitio Oficial</h1>
+
           <nav className="hero-nav" aria-label="Navegación principal">
             {heroNav.map((n) =>
               n.href.startsWith("/#") ? (
