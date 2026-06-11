@@ -1,7 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "PORT=3000 BASE_PATH=/ pnpm --filter @workspace/luisrc run build",
+  "buildCommand": "PORT=3000 BASE_PATH=/ pnpm --filter @workspace/luisrc run build && rm -rf public && cp -r artifacts/luisrc/dist/public public",
   "installCommand": "pnpm install --frozen-lockfile",
-  "outputDirectory": "artifacts/luisrc/dist/public",
+  "outputDirectory": "public",
   "framework": null
 }
