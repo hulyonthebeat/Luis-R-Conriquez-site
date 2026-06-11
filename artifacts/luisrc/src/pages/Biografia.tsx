@@ -73,21 +73,6 @@ export default function Biografia() {
 
       <section className="section">
         <div className="wrap">
-          <div className="bts-grid bio-gallery">
-            {bio.gallery.map((photo) => (
-              <Reveal key={photo.file}>
-                <div className="bts-cell">
-                  <img
-                    className="bts-img"
-                    src={mediaUrl(photo.file)}
-                    alt={photo.label}
-                    loading="lazy"
-                  />
-                </div>
-              </Reveal>
-            ))}
-          </div>
-
           <Reveal delay={0.1}>
             <p className="bio-cta">
               <Link href="/shows" className="btn btn--gold">

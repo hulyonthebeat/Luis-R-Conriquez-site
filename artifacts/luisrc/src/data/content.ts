@@ -232,11 +232,6 @@ export type BioCopy = {
 
 export const bio = {
   portrait: { file: "bio-portrait.jpg", label: "Luis R Conriquez" } as BioPhoto,
-  gallery: [
-    { file: "bio-orange.jpg", label: "Luis R Conriquez" },
-    { file: "bio-pendant.jpg", label: "Luis R Conriquez" },
-    { file: "bio-paisley.jpg", label: "Luis R Conriquez" },
-  ] as BioPhoto[],
   langLabels: { es: "Español", en: "English" } as Record<BioLang, string>,
   copy: {
     es: {
