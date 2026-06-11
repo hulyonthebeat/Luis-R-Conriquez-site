@@ -218,12 +218,34 @@ export const media = {
   kmusic: "kmusic.webp",
 };
 
+/* Biografía — single source of truth for the bio page (Spanish) */
+export type BioPhoto = { file: string; label: string };
+
+export const bio = {
+  eyebrow: "Biografía",
+  title: "Biografía",
+  portrait: { file: "bio-portrait.jpg", label: "Luis R Conriquez" } as BioPhoto,
+  lede:
+    "Luis R. Conriquez es una de las figuras más destacadas de la música mexicana contemporánea, reconocido por ayudar a definir el sonido y el impacto cultural de los corridos bélicos.",
+  paragraphs: [
+    "Nacido como Luis Roberto Conriquez Magdaleno en Caborca, Sonora, México, forjó su carrera desde cero después de dejar su trabajo para dedicarse por completo a componer y grabar, hasta consolidarse como una fuerza clave dentro del género. Desde entonces, se ha distinguido por su voz inconfundible, su consistencia creativa y su capacidad para combinar la narrativa del corrido con una energía moderna y de cruce comercial.",
+    "Conriquez alcanzó una proyección masiva con colaboraciones y éxitos como “JGL” junto a La Adictiva y “Siempre Pendientes” con Peso Pluma, y desde entonces ha seguido expandiendo su alcance con artistas como Grupo Firme, Nicky Jam, Natanael Cano, Tito Double P y Netón Vega. Es considerado ampliamente como uno de los pioneros de los corridos bélicos y una pieza central en la evolución global del género. Su impacto también se ha reflejado en logros comerciales y presencia en listas, incluyendo su primera entrada al Billboard Hot 100 con “Si No Quieres No” junto a Netón Vega.",
+    "Con un estilo arraigado en la tradición del regional mexicano pero abierto a experimentar con influencias urbanas, Luis R. Conriquez sigue marcando el rumbo de la nueva música mexicana y consolidando una de las marcas más reconocibles del género. Su nuevo álbum, Muchacho Alegre, estará disponible en Verano 2026.",
+  ],
+  gallery: [
+    { file: "bio-orange.jpg", label: "Luis R Conriquez" },
+    { file: "bio-pendant.jpg", label: "Luis R Conriquez" },
+    { file: "bio-paisley.jpg", label: "Luis R Conriquez" },
+  ] as BioPhoto[],
+};
+
 /* Nav links — Spanish, mapped to React routes + home anchors */
 export type NavLink = { href: string; label: string; key: string };
 
 export const navLinks: NavLink[] = [
   { href: "/", label: "Inicio", key: "home" },
   { href: "/#musica", label: "Música", key: "music" },
+  { href: "/biografia", label: "Biografía", key: "bio" },
   { href: "/shows", label: "Shows", key: "shows" },
   { href: "/#reconocimientos", label: "Reconocimientos", key: "recog" },
   { href: "/#bts", label: "BTS", key: "bts" },

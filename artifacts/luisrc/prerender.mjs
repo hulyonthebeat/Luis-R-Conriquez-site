@@ -1,7 +1,7 @@
 /**
  * Post-build prerender script.
  * Runs after `vite build` (client) and `vite build --ssr` (server bundle).
- * Renders / and /shows to static HTML files so crawlers receive full content.
+ * Renders /, /biografia and /shows to static HTML files so crawlers receive full content.
  */
 
 import { readFileSync, writeFileSync, mkdirSync } from "fs";
@@ -34,6 +34,23 @@ const routes = [
       ogDescription: "El Rey de los Corridos Bélicos. Música y gira.",
       twitterTitle: "Luis R Conriquez — Sitio Oficial",
       twitterDescription: "El Rey de los Corridos Bélicos. Música y gira.",
+    },
+  },
+  {
+    url: "/biografia",
+    outFile: "dist/public/biografia/index.html",
+    meta: {
+      title: "Biografía — Luis R Conriquez · El Rey de los Corridos Bélicos",
+      description:
+        "Conoce la historia de Luis R Conriquez: de Caborca, Sonora a pionero de los corridos bélicos. Colaboraciones, logros y su nuevo álbum Muchacho Alegre.",
+      canonical: `${SITE}/biografia`,
+      ogUrl: `${SITE}/biografia`,
+      ogTitle: "Biografía — Luis R Conriquez",
+      ogDescription:
+        "La historia de El Rey de los Corridos Bélicos: trayectoria, colaboraciones y logros.",
+      twitterTitle: "Biografía — Luis R Conriquez",
+      twitterDescription:
+        "La historia de El Rey de los Corridos Bélicos: trayectoria, colaboraciones y logros.",
     },
   },
   {

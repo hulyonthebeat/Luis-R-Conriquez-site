@@ -23,6 +23,14 @@ kind = "web"
   serve = "static"
 
   [[services.production.rewrites]]
+  from = "/biografia"
+  to = "/biografia/index.html"
+
+  [[services.production.rewrites]]
+  from = "/biografia/"
+  to = "/biografia/index.html"
+
+  [[services.production.rewrites]]
   from = "/shows"
   to = "/shows/index.html"
 
@@ -37,4 +45,3 @@ kind = "web"
   [services.env]
   PORT = "24999"
   BASE_PATH = "/"
-  
