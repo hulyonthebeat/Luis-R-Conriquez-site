@@ -553,11 +553,6 @@ body.menu-open .mobile-menu { opacity: 1; pointer-events: auto; }
 .album-card__eyebrow { display:inline-block; font-family:var(--narrow); text-transform:uppercase; letter-spacing:0.34em; font-size: clamp(11px,1.1vw,13px); color:var(--gold); font-weight:600; margin-bottom: clamp(12px,1.4vw,18px); }
 .album-card__title { font-family:var(--serif); font-weight:800; text-transform:uppercase; font-size: clamp(34px,6vw,72px); line-height:0.96; letter-spacing:0.01em; margin:0; }
 .album-card__date { font-family:var(--narrow); text-transform:uppercase; letter-spacing:0.22em; font-size: clamp(14px,1.6vw,19px); color:var(--text-soft); font-weight:600; margin:0; }
-/* Match the width of a single "Escuchar ahora" CTA in MÚSICA — one column of the
-   .lh-grid (repeat(4,1fr), gap clamp(14px,1.5vw,28px)) within the same wrap--wide. */
-.album-card .btn { width: calc((100% - 3 * clamp(14px,1.5vw,28px)) / 4); }
-@media (max-width:900px){ .album-card .btn { width: calc((100% - clamp(14px,1.5vw,28px)) / 2); } }
-@media (max-width:480px){ .album-card .btn { width: calc((100% - 12px) / 2); } }
 
 /* ============ STREAMING SPOTLIGHT ============ */
 .listen { display:grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(28px,5vw,72px); align-items:center; }
