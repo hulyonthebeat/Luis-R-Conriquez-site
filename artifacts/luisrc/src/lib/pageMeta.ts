@@ -1,5 +1,5 @@
 const SITE = "https://luisrconriquezofficial.com";
-const OG_IMAGE = `${SITE}/opengraph.jpg?v=11`;
+const OG_IMAGE = `${SITE}/opengraph.jpg?v=12`;
 
 export type PageMeta = {
   title: string;
