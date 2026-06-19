@@ -195,6 +195,14 @@ export default function Home() {
                 loading="lazy"
               />
             </figure>
+            <a
+              className="btn btn--gold btn--lg"
+              href="https://songwhip.com/luisrconriquez/muchachoalegre"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Pre-Guarda
+            </a>
           </Reveal>
         </div>
       </section>
