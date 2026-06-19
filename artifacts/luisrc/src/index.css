@@ -542,6 +542,10 @@ body.menu-open .mobile-menu { opacity: 1; pointer-events: auto; }
 .band-head--gold h2 { color:var(--gold); }
 
 /* ============ NUEVO ÁLBUM ============ */
+/* Match the MÚSICA section's texture (tex-3) instead of the nth-of-type default (tex-2). */
+#muchacho-alegre {
+  background-image: linear-gradient(rgba(6, 7, 8, 0.56), rgba(6, 7, 8, 0.76)), var(--tex-3);
+}
 .album-card { display:flex; flex-direction:column; align-items:center; text-align:center; gap: clamp(22px,3vw,38px); }
 .album-card__head { display:flex; flex-direction:column; align-items:center; }
 .album-card__art { margin:0; position:relative; overflow:hidden; border-radius:14px; aspect-ratio:1/1; width:100%; max-width: clamp(300px,46vw,520px); border:1px solid var(--hairline-2); box-shadow: 0 24px 60px rgba(0,0,0,0.5); }
