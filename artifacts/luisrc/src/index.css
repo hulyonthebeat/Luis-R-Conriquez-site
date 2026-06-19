@@ -542,7 +542,7 @@ body.menu-open .mobile-menu { opacity: 1; pointer-events: auto; }
 .band-head--gold h2 { color:var(--gold); }
 
 /* ============ NUEVO ÁLBUM ============ */
-.album-card { display:grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(28px,5vw,72px); align-items:center; padding: clamp(20px,3vw,40px); border:1px solid var(--hairline-2); border-radius:22px; background: linear-gradient(135deg, rgba(24,19,12,0.92), rgba(10,11,13,0.9)); overflow:hidden; }
+.album-card { display:grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(28px,5vw,72px); align-items:center; }
 .album-card__art { margin:0; position:relative; overflow:hidden; border-radius:14px; aspect-ratio:1/1; border:1px solid var(--hairline-2); box-shadow: 0 24px 60px rgba(0,0,0,0.5); }
 .album-card__art img { width:100%; height:100%; object-fit:cover; display:block; }
 .album-card__eyebrow { display:inline-block; font-family:var(--narrow); text-transform:uppercase; letter-spacing:0.34em; font-size: clamp(11px,1.1vw,13px); color:var(--gold); font-weight:600; margin-bottom: clamp(14px,1.6vw,20px); }
