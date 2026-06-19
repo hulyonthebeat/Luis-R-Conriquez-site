@@ -29,24 +29,6 @@ export function BandHead({
 }
 
 export function LatestHitCard({ release }: { release: Release }) {
-  if (release.comingSoon) {
-    return (
-      <div className="lh-card lh-card--soon">
-        <div className="cover">
-          <Img label={release.title} src={mediaUrl(release.cover)} />
-          <span className="lh-tag">Próximamente</span>
-        </div>
-        <h3 className="lh-name">{release.title}</h3>
-        <span className="lh-meta">
-          {release.year} · {release.type}
-        </span>
-        <span className="lh-soon">
-          {release.releaseInfo ?? "Próximamente"}
-        </span>
-      </div>
-    );
-  }
-
   return (
     <div className="lh-card">
       <div className="cover">
