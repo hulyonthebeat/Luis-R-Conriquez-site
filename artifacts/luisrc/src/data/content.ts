@@ -42,9 +42,25 @@ export type Release = {
   cover?: string;
   /** direct listen link; falls back to the Spotify artist page when absent */
   link?: string;
+  /** marks an unreleased title — shows a "coming soon" treatment instead of a listen link */
+  comingSoon?: boolean;
+  /** release-date line shown on coming-soon cards, e.g. "Gran Estreno 10 de Julio" */
+  releaseInfo?: string;
 };
 
 export const releases: Release[] = [
+  {
+    id: "muchacho-alegre",
+    title: "Muchacho Alegre",
+    type: "Álbum",
+    year: "2026",
+    tracks: 16,
+    featured: true,
+    comingSoon: true,
+    releaseInfo: "Gran Estreno 10 de Julio",
+    copy: "El nuevo álbum de Luis R Conriquez.",
+    cover: "muchacho-alegre.jpg",
+  },
   {
     id: "que-gacho",
     title: "Que Gacho",
