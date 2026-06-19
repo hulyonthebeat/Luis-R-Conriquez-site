@@ -179,6 +179,26 @@ export default function Home() {
         </div>
       </section>
 
+      {/* NUEVO ÁLBUM */}
+      <section className="section section--tight" id="muchacho-alegre">
+        <div className="wrap wrap--wide">
+          <Reveal className="album-card">
+            <figure className="album-card__art">
+              <img
+                src={mediaUrl("album-muchacho-alegre.jpg")}
+                alt="Muchacho Alegre — nuevo álbum de Luis R Conriquez"
+                loading="lazy"
+              />
+            </figure>
+            <div className="album-card__body">
+              <span className="album-card__eyebrow">Nuevo Álbum</span>
+              <h2 className="album-card__title chrome">Muchacho Alegre</h2>
+              <p className="album-card__date">Gran Estreno 10 de Julio</p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* MÚSICA */}
       <section className="section section--tight" id="musica">
         <div className="wrap wrap--wide">
