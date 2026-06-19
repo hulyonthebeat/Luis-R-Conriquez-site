@@ -5,9 +5,6 @@
  * API specification
  * OpenAPI spec version: 0.1.0
  */
-export interface HealthStatus {
-  status: string;
-}
 
 export interface Subscription {
   id: number;
@@ -18,18 +15,5 @@ export interface Subscription {
   phone?: string | null;
   /** @nullable */
   country?: string | null;
-  createdAt: string;
+  createdAt: Date;
 }
-
-export interface SubscriptionInput {
-  /** @minLength 1 */
-  name: string;
-  email?: string;
-  phone?: string;
-  country?: string;
-}
-
-export interface Error {
-  error: string;
-}
-
