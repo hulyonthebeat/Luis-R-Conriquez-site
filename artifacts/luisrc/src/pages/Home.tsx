@@ -183,6 +183,10 @@ export default function Home() {
       <section className="section section--tight" id="muchacho-alegre">
         <div className="wrap wrap--wide">
           <Reveal className="album-card">
+            <div className="album-card__head">
+              <span className="album-card__eyebrow">Nuevo Álbum</span>
+              <h2 className="album-card__title chrome">Muchacho Alegre</h2>
+            </div>
             <figure className="album-card__art">
               <img
                 src={mediaUrl("album-muchacho-alegre.jpg")}
@@ -190,11 +194,7 @@ export default function Home() {
                 loading="lazy"
               />
             </figure>
-            <div className="album-card__body">
-              <span className="album-card__eyebrow">Nuevo Álbum</span>
-              <h2 className="album-card__title chrome">Muchacho Alegre</h2>
-              <p className="album-card__date">Gran Estreno 10 de Julio</p>
-            </div>
+            <p className="album-card__date">Gran Estreno 10 de Julio</p>
           </Reveal>
         </div>
       </section>
