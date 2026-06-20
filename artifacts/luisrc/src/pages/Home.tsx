@@ -28,6 +28,7 @@ const artistJsonLd = JSON.stringify({
     platformUrls.spotify,
     socials.find((s) => s.id === "tiktok")!.url,
     socials.find((s) => s.id === "x")!.url,
+    socials.find((s) => s.id === "facebook")!.url,
     platformUrls.apple,
   ],
 });
