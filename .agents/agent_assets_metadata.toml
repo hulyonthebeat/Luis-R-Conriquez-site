@@ -46,7 +46,7 @@ title = "Original OG vs. New OG — original font restored, bigger K MUSIC, ligh
 id = "eoyDF4jVSUmC9oFIO7lM1"
 uri = "file://deliverables/luisrc-textures.zip"
 type = "unspecified"
-title = "Luis R Conriquez — Texture Pack (all files, ZIP)"
+title = "All textures + full-page background (ZIP)"
 
 [[outputs]]
 id = "wexe47BO2XgNU-WuP-WGd"
@@ -71,3 +71,9 @@ id = "20gf-7xj68y6p6d8_Gkdl"
 uri = "file://deliverables/luisrc-textures/luisrc-textures-on-page.png"
 type = "image"
 title = "On-page arrangement (textures stacked in site order, with scrim)"
+
+[[outputs]]
+id = "pyQlyT8965by-TXj_ySbM"
+uri = "file://deliverables/luisrc-textures/luisrc-background-full-page.png"
+type = "image"
+title = "Full-page background (1920×6193, exact)"
