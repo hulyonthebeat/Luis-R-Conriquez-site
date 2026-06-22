@@ -41,3 +41,27 @@ id = "zoA9sQq5QevLEXYPlnyPI"
 uri = "file://attached_assets/og_before_after.png"
 type = "image"
 title = "Original OG vs. New OG — original font restored, bigger K MUSIC, lighter gradient"
+
+[[outputs]]
+id = "eoyDF4jVSUmC9oFIO7lM1"
+uri = "file://deliverables/luisrc-textures.zip"
+type = "unspecified"
+title = "Luis R Conriquez — Texture Pack (all files)"
+
+[[outputs]]
+id = "wexe47BO2XgNU-WuP-WGd"
+uri = "file://deliverables/luisrc-textures/luisrc-texture-01.png"
+type = "image"
+title = "Texture 01 (PNG)"
+
+[[outputs]]
+id = "w6XBUeh5dIrM3LYLrNwgw"
+uri = "file://deliverables/luisrc-textures/luisrc-texture-02.png"
+type = "image"
+title = "Texture 02 (PNG)"
+
+[[outputs]]
+id = "bQdklIjuvPhjfY4gbi7mQ"
+uri = "file://deliverables/luisrc-textures/luisrc-texture-03.png"
+type = "image"
+title = "Texture 03 (PNG)"
