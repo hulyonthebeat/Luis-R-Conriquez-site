@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { site } from "@/data/content";
 
 export function Newsletter() {
   const [ok, setOk] = useState("");
@@ -34,6 +35,22 @@ export function Newsletter() {
         />
         <input type="tel" placeholder="Teléfono" aria-label="Teléfono" />
         <input type="text" placeholder="País" aria-label="País" />
+        <label className="news-consent">
+          <input type="checkbox" required />
+          <span>
+            Al marcar esta casilla, aceptas recibir noticias de {site.name} y
+            Sony Music Entertainment. Para más información sobre cómo usamos tus
+            datos, visita{" "}
+            <a
+              href="https://www.sonymusic.com/privacy-policy/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              este enlace
+            </a>
+            .
+          </span>
+        </label>
         <button type="submit" className="btn btn--gold news-submit">
           Suscribirme
         </button>
