@@ -5,13 +5,6 @@
  * API specification
  * OpenAPI spec version: 0.1.0
  */
-export interface HealthStatus {
-  status: string;
-}
-
-export interface Error {
-  error: string;
-}
 
 export interface NewsletterSignupInput {
   /** @minLength 1 */
@@ -22,15 +15,3 @@ export interface NewsletterSignupInput {
   country?: string;
   consent: boolean;
 }
-
-export interface NewsletterSignup {
-  id: number;
-  name: string;
-  email: string;
-  /** @nullable */
-  phone?: string | null;
-  /** @nullable */
-  country?: string | null;
-  consent: boolean;
-}
-

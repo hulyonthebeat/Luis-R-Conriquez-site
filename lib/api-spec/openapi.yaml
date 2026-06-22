@@ -10,6 +10,8 @@ servers:
 tags:
   - name: health
     description: Health operations
+  - name: newsletter
+    description: Newsletter signup operations
 paths:
   /healthz:
     get:
@@ -24,6 +26,31 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+  /newsletter:
+    post:
+      operationId: createNewsletterSignup
+      tags: [newsletter]
+      summary: Capture a newsletter signup
+      description: Stores a fan newsletter signup with opt-in consent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/NewsletterSignupInput"
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NewsletterSignup"
+        "400":
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
 components:
   schemas:
     HealthStatus:
@@ -33,4 +60,44 @@ components:
           type: string
       required:
         - status
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+      required:
+        - error
+    NewsletterSignupInput:
+      type: object
+      required: [name, email, consent]
+      properties:
+        name:
+          type: string
+          minLength: 1
+        email:
+          type: string
+          format: email
+          minLength: 1
+        phone:
+          type: string
+        country:
+          type: string
+        consent:
+          type: boolean
+    NewsletterSignup:
+      type: object
+      required: [id, name, email, consent]
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        email:
+          type: string
+        phone:
+          type: ["string", "null"]
+        country:
+          type: ["string", "null"]
+        consent:
+          type: boolean
 

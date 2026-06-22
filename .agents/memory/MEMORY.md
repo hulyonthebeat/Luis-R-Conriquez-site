@@ -5,6 +5,7 @@
 - [luisrc smooth scroll](luisrc-smooth-scroll.md) — Lenis was REMOVED; site now uses native scrolling. Programmatic scrolls use window.scrollTo/scrollIntoView directly (no Lenis instance).
 - [luisrc media optimization](luisrc-media-optimization.md) — no photo PNGs (→WebP), JPGs capped 1600px/q82, hero.mp4 is muted bg (audio strippable); keep folder lean.
 - [luisrc screenshot hash-scroll](luisrc-screenshot-hash-scroll.md) — screenshot tool can't reach #hash sections on the luisrc SPA; verify deep sections another way.
+- [Newsletter capture](newsletter-capture.md) — luisrc form → POST /api/newsletter → newsletter_signups table → CSV export; CSV exports MUST neutralize formula-injection chars.
 - [luisrc adding a route](luisrc-adding-a-route.md) — a new route must be added in 7 places incl. the SSR duplicate router in entry-server.tsx (miss it → empty prerendered body).
 - [OG text erase-and-replace](og-text-erase-patch.md) — patch baked-in OG text with aligned clean-plate pixels (not erase/slab); feathered mask MUST be 100% opaque over full text height or cap-tops/baselines ghost.
 - [grep output garble](grep-output-garble.md) — in this env rg output replaces the matched term with "n"; use grep or the read tool for exact strings.
