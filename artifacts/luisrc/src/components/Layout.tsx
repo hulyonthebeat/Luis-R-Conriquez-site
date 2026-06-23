@@ -147,15 +147,13 @@ function Footer() {
       <img
         className="footer-mask footer-mask--left"
         src={mediaUrl(media.logo)}
-        alt=""
-        aria-hidden="true"
+        alt="Luis R Conriquez"
         loading="lazy"
       />
       <img
         className="footer-mask footer-mask--right"
         src={mediaUrl(media.kmusic)}
-        alt=""
-        aria-hidden="true"
+        alt="K Music"
         loading="lazy"
       />
       <Reveal as="div" className="footer-center">
