@@ -127,7 +127,11 @@
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; background: var(--ink); }
+/* No global scroll-behavior: smooth — Chrome/Firefox apply it to mouse-wheel
+   scrolling, which makes desktop wheel scrolling stutter (mobile touch scroll is
+   unaffected). Hash/anchor navigation requests smooth scrolling explicitly in JS
+   (scrollIntoView({ behavior: "smooth" })), so in-page jumps stay smooth. */
+html { -webkit-text-size-adjust: 100%; background: var(--ink); }
 body {
   font-family: var(--body);
   background: transparent;
