@@ -77,7 +77,7 @@ export function Newsletter() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              este enlace
+              https://www.sonymusic.com/privacy-policy/
             </a>
             .
           </span>
