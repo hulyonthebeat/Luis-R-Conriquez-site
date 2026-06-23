@@ -6,6 +6,8 @@ import { Layout } from "@/components/Layout";
 import Home from "@/pages/Home";
 import Biografia from "@/pages/Biografia";
 import Shows from "@/pages/Shows";
+import Privacidad from "@/pages/Privacidad";
+import Terminos from "@/pages/Terminos";
 
 function makeStaticHook(path: string) {
   const hook = () => [path, () => {}] as [string, (to: string) => void];
@@ -25,6 +27,8 @@ export function render(url: string): string {
               <Route path="/" component={Home} />
               <Route path="/biografia" component={Biografia} />
               <Route path="/shows" component={Shows} />
+              <Route path="/privacidad" component={Privacidad} />
+              <Route path="/terminos" component={Terminos} />
             </Switch>
           </Layout>
         </Router>

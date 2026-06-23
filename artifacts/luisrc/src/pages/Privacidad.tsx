@@ -1,8 +1,11 @@
 import { Link } from "wouter";
 import { Reveal } from "@/components/site/Reveal";
 import { site } from "@/data/content";
+import { usePageMeta } from "@/hooks/usePageMeta";
+import { pageMeta } from "@/lib/pageMeta";
 
 export default function Privacidad() {
+  usePageMeta(pageMeta["/privacidad"]);
   return (
     <>
       <section className="page-hero">

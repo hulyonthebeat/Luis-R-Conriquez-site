@@ -54,4 +54,32 @@ export const pageMeta: Record<string, PageMeta> = {
       "Conciertos, ciudades y boletos oficiales de la gira bélica 2026.",
     ogImage: OG_IMAGE,
   },
+  "/privacidad": {
+    title: "Política de Privacidad — Luis R Conriquez",
+    description:
+      "Política de privacidad del sitio oficial de Luis R Conriquez. Conoce cómo recopilamos, usamos y protegemos tu información personal.",
+    canonical: `${SITE}/privacidad`,
+    ogUrl: `${SITE}/privacidad`,
+    ogTitle: "Política de Privacidad — Luis R Conriquez",
+    ogDescription:
+      "Cómo recopilamos, usamos y protegemos tu información en el sitio oficial de Luis R Conriquez.",
+    twitterTitle: "Política de Privacidad — Luis R Conriquez",
+    twitterDescription:
+      "Cómo recopilamos, usamos y protegemos tu información en el sitio oficial de Luis R Conriquez.",
+    ogImage: OG_IMAGE,
+  },
+  "/terminos": {
+    title: "Términos de Servicio — Luis R Conriquez",
+    description:
+      "Términos de servicio del sitio oficial de Luis R Conriquez. Condiciones de uso del sitio y la comunidad de fans.",
+    canonical: `${SITE}/terminos`,
+    ogUrl: `${SITE}/terminos`,
+    ogTitle: "Términos de Servicio — Luis R Conriquez",
+    ogDescription:
+      "Condiciones de uso del sitio oficial y la comunidad de fans de Luis R Conriquez.",
+    twitterTitle: "Términos de Servicio — Luis R Conriquez",
+    twitterDescription:
+      "Condiciones de uso del sitio oficial y la comunidad de fans de Luis R Conriquez.",
+    ogImage: OG_IMAGE,
+  },
 };
