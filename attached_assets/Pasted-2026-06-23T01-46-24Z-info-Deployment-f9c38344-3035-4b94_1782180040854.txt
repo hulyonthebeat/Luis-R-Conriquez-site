@@ -1,0 +1,136 @@
+2026-06-23T01:46:24Z info: Deployment: f9c38344-3035-4b94-ad69-6a94117c0e5a
+2026-06-23T01:46:24Z info: Build: 59dbc340-7072-4a03-91b2-3afc75cd2541
+2026-06-23T01:46:24Z info: Running Security Scan
+2026-06-23T01:46:26Z info: Installing packages
+--> pnpm install
+
+--> pnpm install
+
+Scope: all 9 workspace projects
+
+Scope: all 9 workspace projects
+
+
+   ╭─────────────────────────────────────────╮
+   │                                         │
+   │   Update available! 10.26.1 → 11.8.0.   │
+   │   Changelog: https://pnpm.io/v/11.8.0   │
+   │    To update, run: pnpm add -g pnpm     │
+   │                                         │
+   ╰─────────────────────────────────────────╯
+
+
+
+   ╭─────────────────────────────────────────╮
+   │                                         │
+   │   Update available! 10.26.1 → 11.8.0.   │
+   │   Changelog: https://pnpm.io/v/11.8.0   │
+   │    To update, run: pnpm add -g pnpm     │
+   │                                         │
+   ╰─────────────────────────────────────────╯
+
+
+Lockfile is up to date, resolution step is skipped
+
+Lockfile is up to date, resolution step is skipped
+
+Already up to date
+
+Already up to date
+
+. preinstall$ sh -c 'rm -f package-lock.json yarn.lock; case "$npm_config_user_agent" in pnpm/*) ;; *) echo "Use pnpm instead" >&2; exit 1 ;; esac'
+
+. preinstall$ sh -c 'rm -f package-lock.json yarn.lock; case "$npm_config_user_agent" in pnpm/*) ;; *) echo "Use pnpm instead" >&2; exit 1 ;; esac'
+
+. preinstall: Done
+
+. preinstall: Done
+
+Done in 2.7s using pnpm v10.26.1
+
+Done in 2.7s using pnpm v10.26.1
+
+2026-06-23T01:46:29Z info: Starting Build
+
+> @workspace/api-server@0.0.0 build /home/runner/workspace/artifacts/api-server
+> node ./build.mjs
+
+
+
+  dist/index.mjs                       2.1mb ⚠️
+  dist/pino-worker.mjs               153.4kb
+  dist/pino-file.mjs                 142.1kb
+  dist/pino-pretty.mjs               114.6kb
+  dist/thread-stream-worker.mjs        7.3kb
+  dist/index.mjs.map                   3.7mb
+  dist/pino-worker.mjs.map           256.9kb
+  dist/pino-file.mjs.map             229.0kb
+  dist/pino-pretty.mjs.map           204.0kb
+  dist/thread-stream-worker.mjs.map   12.0kb
+
+⚡ Done in 303ms
+
+
+> @workspace/luisrc@0.0.0 build /home/runner/workspace/artifacts/luisrc
+> vite build --config vite.config.ts && SSR_BUILD=true vite build --ssr src/entry-server.tsx --config vite.config.ts && node prerender.mjs
+
+
+vite v7.3.3 building client environment for production...
+
+transforming...
+
+src/components/ui/tooltip.tsx (2:0): Error when using sourcemap for reporting an error: Can't resolve original location of error.
+
+✓ 2184 modules transformed.
+
+rendering chunks...
+
+computing gzip size...
+
+dist/public/index.html                   2.95 kB │ gzip:   0.92 kB
+
+dist/public/assets/index-nGRIdqjc.css  118.34 kB │ gzip:  20.72 kB
+dist/public/assets/index-2wOrCG08.js   480.24 kB │ gzip: 154.58 kB
+✓ built in 3.84s
+
+vite v7.3.3 building ssr environment for production...
+
+transforming...
+
+src/components/ui/tooltip.tsx (2:0): Error when using sourcemap for reporting an error: Can't resolve original location of error.
+
+✓ 23 modules transformed.
+
+rendering chunks...
+
+dist/server/entry-server.js  69.34 kB
+
+✓ built in 229ms
+
+[prerender] / → dist/public/index.html
+
+[prerender] /biografia → dist/public/biografia/index.html
+
+[prerender] /shows → dist/public/shows/index.html
+
+[prerender] /privacidad → dist/public/privacidad/index.html
+
+[prerender] /terminos → dist/public/terminos/index.html
+
+[prerender] done.
+
+Removed all cached metadata files
+
+Removed 28684 files
+
+Removed 488 packages
+
+2026-06-23T01:46:41Z info: Pushing pid1 binary layer...
+2026-06-23T01:46:42Z info: Pushing Repl layer...
+2026-06-23T01:46:42Z info: Pushing hosting layer...
+2026-06-23T01:46:42Z info: Created hosting layer
+2026-06-23T01:46:43Z info: Created pid1 binary layer
+2026-06-23T01:46:57Z info: Security Scan Complete
+2026-06-23T01:47:03Z info: Created Repl layer
+2026-06-23T01:47:07Z info: Pushed image manifest
+2026-06-23T01:47:07Z info: Skipping container streaming artifacts (SOCI/ZTOC) for non-reserved-VM deployment
