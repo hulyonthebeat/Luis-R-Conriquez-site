@@ -1,12 +1,37 @@
 import { useState } from "react";
 import { Link } from "wouter";
 import { Reveal } from "@/components/site/Reveal";
-import { bio, type BioLang } from "@/data/content";
+import { bio, type BioLang, socials, platformUrls } from "@/data/content";
 import { mediaUrl } from "@/lib/site";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { pageMeta } from "@/lib/pageMeta";
 
 const LANGS: BioLang[] = ["es", "en"];
+
+const biografiaJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  name: "Biografía — Luis R Conriquez",
+  url: "https://luisrconriquezofficial.com/biografia",
+  inLanguage: ["es", "en"],
+  mainEntity: {
+    "@type": "MusicGroup",
+    name: "Luis R Conriquez",
+    url: "https://luisrconriquezofficial.com/",
+    description:
+      "Luis R. Conriquez es una de las figuras más destacadas de la música mexicana contemporánea, reconocido por ayudar a definir el sonido y el impacto cultural de los corridos bélicos, al mismo tiempo que amplía su propuesta dentro del regional mexicano y la música urbana latina.",
+    image: "https://luisrconriquezofficial.com/media/bio-portrait.jpg",
+    sameAs: [
+      socials.find((s) => s.id === "instagram")!.url,
+      socials.find((s) => s.id === "youtube")!.url,
+      platformUrls.spotify,
+      socials.find((s) => s.id === "tiktok")!.url,
+      socials.find((s) => s.id === "x")!.url,
+      socials.find((s) => s.id === "facebook")!.url,
+      platformUrls.apple,
+    ],
+  },
+});
 
 export default function Biografia() {
   usePageMeta(pageMeta["/biografia"]);
@@ -15,6 +40,7 @@ export default function Biografia() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: biografiaJsonLd }} />
       <section className="page-hero">
         <div className="wrap">
           <Reveal>
