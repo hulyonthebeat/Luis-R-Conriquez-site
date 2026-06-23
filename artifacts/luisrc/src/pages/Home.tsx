@@ -51,6 +51,12 @@ export default function Home() {
     v.defaultMuted = true;
     v.setAttribute("muted", "");
 
+    /* Defer src assignment to client-side only so SSR/prerendered HTML never
+       includes a src attribute — the browser won't discover or begin downloading
+       the video file during initial HTML parse, keeping LCP uncontested. */
+    const videoSrc = mediaUrl(heroVideo.file);
+    if (videoSrc) v.src = videoSrc;
+
     let playing = false;
     const tryPlay = () => {
       v.muted = true;
@@ -102,13 +108,11 @@ export default function Home() {
         <video
           ref={heroVideoRef}
           className="hero-video-frame"
-          src={mediaUrl(heroVideo.file)}
           poster={mediaUrl(heroVideo.poster)}
-          autoPlay
           muted
           loop
           playsInline
-          preload="auto"
+          preload="none"
           aria-hidden="true"
         />
         <div className="hero-overlay">
