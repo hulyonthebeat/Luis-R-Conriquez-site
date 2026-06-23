@@ -1,21 +1,19 @@
 ---
-name: luisrc smooth scroll (Lenis)
-description: How smooth scrolling is wired in the luisrc artifact and the constraint it imposes on any scroll call.
+name: luisrc smooth scroll (native)
+description: Scroll model for the luisrc artifact and the per-frame scroll-jank causes found/fixed on it.
 ---
 
-# luisrc uses Lenis for smooth scrolling
+# luisrc uses NATIVE browser scrolling (Lenis was removed)
 
-The `luisrc` site drives page scrolling through a single Lenis instance created in `Layout.tsx` (RAF loop, destroyed on unmount, held in a ref).
+Lenis smooth-scroll was added earlier and then **deliberately removed** (git: "Remove smooth scrolling library and revert to native browser scrolling" / "Improve website scrolling by removing Lenis library"). The site now relies on native scrolling.
 
-**Rule:** any programmatic scroll on this site must go through the Lenis instance, NOT `window.scrollTo` / `element.scrollIntoView`.
-- Hash navigation → `lenis.scrollTo(el)`
-- Route-change scroll-to-top → `lenis.scrollTo(0, { immediate: true })`
+**Rule:** programmatic scrolls use `window.scrollTo(...)` / `element.scrollIntoView(...)` directly. There is no Lenis instance — do NOT route scrolls through one.
 
-**Why:** native scroll calls fight Lenis's smoothing and cause a jump-then-glide stutter. Keep a `window.scrollTo` fallback only for when the ref is null.
-
-**Compatibility:** Lenis here smooths the real document scroll (no transformed wrapper), so framer-motion `whileInView` and `window.scrollY` listeners keep working normally.
+**Why Lenis was dropped:** it was judged to hurt rather than help the scroll feel on this site. Re-adding it is a real direction change that was already reverted — confirm with the user before reintroducing.
 
 **Scroll-jank causes found on this site (and fixes):**
-- Do NOT force-promote `.smoke-bg` to its own layer (`will-change`/`translateZ(0)`). It is sized to the full document height, so promotion creates a huge GPU texture that hurts more than it helps. Leave it in the normal paint layer.
-- The autoplay/muted/loop hero `<video>` keeps decoding even when scrolled off-screen, stealing frames during scroll. Pause it via IntersectionObserver when out of view, resume when back in.
-- Avoid `mix-blend-mode` on `position:fixed` full-viewport overlays (the film grain). A blend mode forces the browser to re-composite the whole viewport every scroll frame. Use a plain low-opacity overlay + `translateZ(0)` instead; on a near-black theme the visual difference is negligible.
+- The fixed nav `backdrop-filter: blur(18px)` (active via `.nav.scrolled`) re-blurred the whole page behind the bar every scroll frame → page-wide stutter. Removed it; the nav bg is already ~90%+ opaque so the blur was nearly invisible. **Do not re-add backdrop-filter to the fixed nav.**
+- The autoplay/muted/loop hero `<video>` keeps decoding/compositing and is the heaviest remaining per-frame cost during scroll near the top. It is paused via IntersectionObserver when off-screen; it is also GPU-isolated (`translateZ(0)`/`contain:paint`).
+- Avoid `mix-blend-mode` on `position:fixed` full-viewport overlays — forces full-viewport recomposite every scroll frame.
+
+**Comparison note:** titodoublep.com (a reference the user likes) is a Webflow + GSAP site on NATIVE scroll (no Lenis/ScrollSmoother). Its smoother feel comes from lower per-frame cost (static HTML, no heavy autoplay bg video), not a scroll library.
