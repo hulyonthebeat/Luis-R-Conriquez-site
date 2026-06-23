@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "wouter";
 import { Reveal } from "@/components/site/Reveal";
-import { bio, type BioLang, socials, platformUrls } from "@/data/content";
+import { bio, type BioLang, socials, platformUrls, entityProfiles } from "@/data/content";
 import { mediaUrl } from "@/lib/site";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { pageMeta } from "@/lib/pageMeta";
@@ -29,6 +29,7 @@ const biografiaJsonLd = JSON.stringify({
       socials.find((s) => s.id === "x")!.url,
       socials.find((s) => s.id === "facebook")!.url,
       platformUrls.apple,
+      ...entityProfiles,
     ],
   },
 });

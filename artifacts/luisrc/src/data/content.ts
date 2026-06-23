@@ -30,6 +30,15 @@ export const platformUrls: Record<PlatformId, string> = {
   deezer: "https://www.deezer.com/us/artist/13916077",
 };
 
+/* Authoritative encyclopedia / music-database profiles. Adding these to the
+   structured-data `sameAs` links this domain to Google's knowledge-graph entity,
+   which is what gets an official site recognized as the official site. */
+export const entityProfiles: string[] = [
+  "https://en.wikipedia.org/wiki/Luis_R._Conriquez",
+  "https://www.wikidata.org/wiki/Q124004728",
+  "https://musicbrainz.org/artist/27a2af41-601d-4a99-911f-87c03174bfac",
+];
+
 export type Release = {
   id: string;
   title: string;

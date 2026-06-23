@@ -10,7 +10,7 @@ import {
 } from "@/components/site/cards";
 import { AwardsCarousel } from "@/components/site/AwardsCarousel";
 import { Icon } from "@/components/site/Icons";
-import { releases, tours, awards, gallery, media, heroVideo, socials, navLinks, followLinks, site, platformUrls } from "@/data/content";
+import { releases, tours, awards, gallery, media, heroVideo, socials, navLinks, followLinks, site, platformUrls, entityProfiles } from "@/data/content";
 import { mediaUrl } from "@/lib/site";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { pageMeta } from "@/lib/pageMeta";
@@ -19,9 +19,15 @@ const artistJsonLd = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "MusicGroup",
   name: site.name,
+  alternateName: "El Rey de los Corridos Bélicos",
   url: "https://luisrconriquezofficial.com/",
   description: "El Rey de los Corridos Bélicos. Música regional mexicana y corridos bélicos.",
   image: "https://luisrconriquezofficial.com/opengraph.jpg",
+  genre: ["Corridos Bélicos", "Regional Mexicano", "Corridos", "Música Norteña"],
+  foundingLocation: {
+    "@type": "Place",
+    name: "Caborca, Sonora, México",
+  },
   sameAs: [
     socials.find((s) => s.id === "instagram")!.url,
     socials.find((s) => s.id === "youtube")!.url,
@@ -30,6 +36,7 @@ const artistJsonLd = JSON.stringify({
     socials.find((s) => s.id === "x")!.url,
     socials.find((s) => s.id === "facebook")!.url,
     platformUrls.apple,
+    ...entityProfiles,
   ],
 });
 
