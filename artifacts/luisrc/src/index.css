@@ -683,7 +683,7 @@ body.menu-open .mobile-menu { opacity: 1; pointer-events: auto; }
   color:var(--text); padding:12px 2px; font-family:var(--narrow); font-size:15px; transition:border-color .25s; }
 .news-form input:focus { outline:none; border-bottom-color:var(--gold); }
 .news-form input::placeholder{ color:var(--text-mute); }
-.news-submit { white-space:nowrap; grid-column:1 / -1; justify-self:start; }
+.news-submit { white-space:nowrap; grid-column:1 / -1; justify-self:center; }
 .news-consent { grid-column:1 / -1; display:flex; align-items:flex-start; gap:11px; cursor:pointer; margin-top:4px; }
 .news-consent input[type="checkbox"]{ flex:0 0 auto; width:17px; height:17px; margin-top:2px; accent-color:var(--gold); cursor:pointer; }
 .news-consent span { font-family:var(--narrow); font-size:13px; line-height:1.55; letter-spacing:0.015em; color:var(--text-mute); }
