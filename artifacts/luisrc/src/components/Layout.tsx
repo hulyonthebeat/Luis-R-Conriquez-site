@@ -4,6 +4,7 @@ import { Icon } from "@/components/site/Icons";
 import { Reveal } from "@/components/site/Reveal";
 import { site, socials, navLinks, media } from "@/data/content";
 import { mediaUrl } from "@/lib/site";
+import { trackPageview } from "@/lib/analytics";
 
 export function Layout({ children }: { children: ReactNode }) {
   const [location, navigate] = useLocation();
@@ -50,6 +51,11 @@ export function Layout({ children }: { children: ReactNode }) {
   /* scroll to top on route change (no hash) */
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "auto" });
+  }, [location]);
+
+  /* track a page view on initial load and every route change */
+  useEffect(() => {
+    trackPageview();
   }, [location]);
 
   const handleNav = (href: string) => (e: MouseEvent) => {

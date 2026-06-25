@@ -6,6 +6,11 @@ import { logger } from "./lib/logger";
 
 const app: Express = express();
 
+// Behind the Replit reverse proxy: trust X-Forwarded-* so req.ip is the real
+// client IP (used only for transient country lookup + a salted daily visitor
+// hash; the raw IP is never stored).
+app.set("trust proxy", true);
+
 app.use(
   pinoHttp({
     logger,
