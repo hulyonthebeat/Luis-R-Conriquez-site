@@ -217,7 +217,7 @@ export const gallery: GalleryItem[] = [
 /* Hero featured video (the homepage player IS the latest video) */
 export const heroVideo = {
   tag: "Video Oficial",
-  title: "Que Gacho",
+  title: "Medusa",
   file: "hero.mp4",
   poster: "hero-poster.jpg",
 };
