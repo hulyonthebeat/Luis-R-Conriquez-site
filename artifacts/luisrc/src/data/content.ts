@@ -208,10 +208,10 @@ export const followLinks: { id: PlatformId | SocialId; label: string; url: strin
 export type GalleryItem = { id: string; label: string; img: string };
 
 export const gallery: GalleryItem[] = [
-  { id: "g1", label: "Backstage", img: "backstage-beer.jpg" },
-  { id: "g2", label: "En el escenario", img: "stage.jpg" },
-  { id: "g3", label: "Detrás del bélico", img: "bw-cobra-stage.jpg" },
-  { id: "g4", label: "En la gira", img: "crowd.jpg" },
+  { id: "g1", label: "Backstage", img: "bts-hat.jpg" },
+  { id: "g2", label: "En el escenario", img: "bts-entrance.jpg" },
+  { id: "g3", label: "Detrás del bélico", img: "bts-show.jpg" },
+  { id: "g4", label: "En la gira", img: "bts-walk.jpg" },
 ];
 
 /* Hero featured video (the homepage player IS the latest video) */
