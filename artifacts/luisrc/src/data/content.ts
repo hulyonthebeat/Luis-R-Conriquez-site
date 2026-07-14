@@ -208,8 +208,8 @@ export const followLinks: { id: PlatformId | SocialId; label: string; url: strin
 export type GalleryItem = { id: string; label: string; img: string };
 
 export const gallery: GalleryItem[] = [
-  { id: "g1", label: "Backstage", img: "bts-hat.jpg" },
-  { id: "g2", label: "En el escenario", img: "bts-entrance.jpg" },
+  { id: "g1", label: "Sesión", img: "bts-red-portrait.jpg" },
+  { id: "g2", label: "Backstage", img: "bts-hat.jpg" },
   { id: "g3", label: "Detrás del bélico", img: "bts-show.jpg" },
   { id: "g4", label: "En la gira", img: "bts-walk.jpg" },
 ];
