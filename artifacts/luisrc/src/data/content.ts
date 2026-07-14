@@ -252,7 +252,7 @@ export const bio = {
       paragraphs: [
         "Nacido como Luis Roberto Conriquez Magdaleno en Caborca, Sonora, México, forjó su carrera desde cero después de dejar su trabajo para dedicarse por completo a componer y grabar, hasta consolidarse como una fuerza clave dentro del género. Desde entonces, se ha distinguido por su voz inconfundible, su consistencia creativa y su capacidad para combinar la narrativa del corrido con una energía moderna y de cruce comercial.",
         "Conriquez alcanzó una proyección masiva con colaboraciones y éxitos como “JGL” junto a La Adictiva y “Siempre Pendientes” con Peso Pluma, y desde entonces ha seguido expandiendo su alcance con artistas como Grupo Firme, Nicky Jam, Natanael Cano, Tito Double P y Netón Vega. Es considerado ampliamente como uno de los pioneros de los corridos bélicos y una pieza central en la evolución global del género. Su impacto también se ha reflejado en logros comerciales y presencia en listas, incluyendo su primera entrada al Billboard Hot 100 con “Si No Quieres No” junto a Netón Vega.",
-        "Con un estilo arraigado en la tradición del regional mexicano pero abierto a experimentar con influencias urbanas, Luis R. Conriquez sigue marcando el rumbo de la nueva música mexicana y consolidando una de las marcas más reconocibles del género. Su nuevo álbum, Muchacho Alegre, estará disponible en Verano 2026.",
+        "Con un estilo arraigado en la tradición del regional mexicano pero abierto a experimentar con influencias urbanas, Luis R. Conriquez sigue marcando el rumbo de la nueva música mexicana y consolidando una de las marcas más reconocibles del género. Su nuevo álbum, Muchacho Alegre, ya está disponible en todas las plataformas.",
       ],
       cta: "Ver fechas de gira",
     },
@@ -264,7 +264,7 @@ export const bio = {
       paragraphs: [
         "Born Luis Roberto Conriquez Magdaleno in Caborca, Sonora, Mexico, he built his career from the ground up after leaving his job to focus fully on songwriting and recording, eventually emerging as a major force in the genre. Since then, he has become widely recognized for his distinctive voice, prolific output, and his ability to bridge hard-hitting regional storytelling with modern crossover energy.",
         "Conriquez rose to wider prominence through standout collaborations and hit records including “JGL” with La Adictiva and “Siempre Pendientes” with Peso Pluma, and he has continued to expand his reach through work with artists such as Grupo Firme, Nicky Jam, Natanael Cano, Tito Double P, and Netón Vega. He is frequently referred to as a pioneer of corridos bélicos and is widely associated with the genre’s evolution on a global stage. His success has also extended into charting releases and crossover moments, including his first Billboard Hot 100 entry with “Si No Quieres No” alongside Netón Vega.",
-        "With a sound rooted in regional Mexican tradition but unafraid to experiment with Latin urban influences, Luis R. Conriquez continues to shape the future of the genre while growing one of the most recognizable brands in the space. His new album, Muchacho Alegre, will be available Summer 2026.",
+        "With a sound rooted in regional Mexican tradition but unafraid to experiment with Latin urban influences, Luis R. Conriquez continues to shape the future of the genre while growing one of the most recognizable brands in the space. His new album, Muchacho Alegre, is out now on all platforms.",
       ],
       cta: "View tour dates",
     },

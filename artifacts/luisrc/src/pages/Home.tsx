@@ -198,7 +198,7 @@ export default function Home() {
             <div className="album-card__head">
               <span className="album-card__eyebrow">Nuevo Álbum</span>
               <h2 className="album-card__title chrome">Muchacho Alegre</h2>
-              <p className="album-card__date">Gran Estreno 10 de Julio</p>
+              <p className="album-card__date">Ya Disponible</p>
             </div>
             <figure className="album-card__art">
               <img
@@ -213,7 +213,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Pre-Guarda
+              Escuchar Ahora
             </a>
           </Reveal>
         </div>
