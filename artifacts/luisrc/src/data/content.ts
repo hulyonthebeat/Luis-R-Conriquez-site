@@ -55,6 +55,16 @@ export type Release = {
 
 export const releases: Release[] = [
   {
+    id: "medusa",
+    title: "Medusa",
+    type: "Sencillo",
+    year: "2026",
+    tracks: 1,
+    copy: "Luis R Conriquez x Tito Double P.",
+    cover: "medusa.jpg",
+    link: "https://luisrconriquez.sng.to/muchachoalegre",
+  },
+  {
     id: "que-gacho",
     title: "Que Gacho",
     type: "Sencillo",
