@@ -27,7 +27,7 @@ const routes = [
     meta: {
       title: "Luis R Conriquez — Sitio Oficial · Corridos Bélicos",
       description:
-        "Sitio oficial de Luis R Conriquez. Escucha el nuevo álbum Corridos Bélicos Vol. IV y consigue boletos para la gira.",
+        "Sitio oficial de Luis R Conriquez. Escucha el nuevo álbum Muchacho Alegre y consigue boletos para la gira.",
       canonical: `${SITE}/`,
       ogUrl: `${SITE}/`,
       ogTitle: "Luis R Conriquez — Sitio Oficial",
@@ -171,6 +171,35 @@ for (const route of routes) {
   writeFileSync(outPath, html);
 
   console.log(`[prerender] ${route.url} → ${route.outFile}`);
+}
+
+/**
+ * Legacy URLs that no longer exist as standalone pages.
+ * Emit a tiny redirect page so crawlers treat them as moved, not soft-404s.
+ */
+const redirects = [{ from: "/musica", to: `${SITE}/#musica` }];
+
+for (const r of redirects) {
+  const outPath = resolve(__dirname, `dist/public${r.from}/index.html`);
+  mkdirSync(dirname(outPath), { recursive: true });
+  writeFileSync(
+    outPath,
+    `<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Luis R Conriquez — Sitio Oficial</title>
+    <meta http-equiv="refresh" content="0;url=${r.to}" />
+    <link rel="canonical" href="${SITE}/" />
+    <meta name="robots" content="noindex" />
+  </head>
+  <body>
+    <p><a href="${r.to}">Continuar al sitio oficial</a></p>
+  </body>
+</html>
+`,
+  );
+  console.log(`[prerender] redirect ${r.from} → ${r.to}`);
 }
 
 console.log("[prerender] done.");

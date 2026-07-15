@@ -22,7 +22,7 @@ A cinematic, dark/metallic official artist website for Luis R Conriquez ("El Rey
 - `artifacts/luisrc/src/components/site/` — reusable pieces (Icons, Reveal, Img, HeroPlayer, FeaturedVideo, StreamRow, Newsletter, HashLink, cards.tsx)
 - `artifacts/luisrc/src/pages/` — Home, Music, Shows (Videos/Reconocimientos/BTS/Suscríbete are home-page sections, not separate routes)
 - `artifacts/luisrc/public/media/` — all imagery
-- Routes: `/` `/musica` `/shows` (unknown paths fall through to NotFound)
+- Routes: `/` `/biografia` `/shows` `/privacidad` `/terminos` (unknown paths fall through to NotFound). `/musica` was removed (now the `/#musica` home section); `prerender.mjs` emits a noindex redirect stub for it. Prerender-time meta in `prerender.mjs` overrides `index.html` meta at publish — update both.
 
 ## Architecture decisions
 
