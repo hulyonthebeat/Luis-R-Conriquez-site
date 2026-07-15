@@ -39,6 +39,30 @@ kind = "web"
   to = "/shows/index.html"
 
   [[services.production.rewrites]]
+  from = "/privacidad"
+  to = "/privacidad/index.html"
+
+  [[services.production.rewrites]]
+  from = "/privacidad/"
+  to = "/privacidad/index.html"
+
+  [[services.production.rewrites]]
+  from = "/terminos"
+  to = "/terminos/index.html"
+
+  [[services.production.rewrites]]
+  from = "/terminos/"
+  to = "/terminos/index.html"
+
+  [[services.production.rewrites]]
+  from = "/musica"
+  to = "/musica/index.html"
+
+  [[services.production.rewrites]]
+  from = "/musica/"
+  to = "/musica/index.html"
+
+  [[services.production.rewrites]]
   from = "/*"
   to = "/index.html"
 

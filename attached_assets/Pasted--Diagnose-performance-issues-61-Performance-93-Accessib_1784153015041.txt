@@ -1,0 +1,329 @@
+
+
+Diagnose performance issues
+61
+Performance
+93
+Accessibility
+100
+Best Practices
+100
+SEO
+2/3
+Agentic Browsing
+61
+FCP
++1
+LCP
++0
+TBT
++30
+CLS
++25
+SI
++6
+Performance
+Values are estimated and may vary. The performance score is calculated directly from these metrics.See calculator.
+0–49
+50–89
+90–100
+Final Screenshot
+
+Metrics
+Collapse view
+First Contentful Paint
+5.5 s
+First Contentful Paint marks the time at which the first text or image is painted. Learn more about the First Contentful Paint metric.
+Largest Contentful Paint
+12.7 s
+Largest Contentful Paint marks the time at which the largest text or image is painted. Learn more about the Largest Contentful Paint metric
+Total Blocking Time
+0 ms
+Sum of all time periods between FCP and Time to Interactive, when task length exceeded 50ms, expressed in milliseconds. Learn more about the Total Blocking Time metric.
+Cumulative Layout Shift
+0
+Cumulative Layout Shift measures the movement of visible elements within the viewport. Learn more about the Cumulative Layout Shift metric.
+Speed Index
+5.5 s
+Speed Index shows how quickly the contents of a page are visibly populated. Learn more about the Speed Index metric.
+Captured at Jul 15, 2026, 2:56 PM PDT
+Emulated Moto G Power with Lighthouse 13.4.0
+Single page session
+Initial page load
+Slow 4G throttling
+Using HeadlessChromium 149.0.7827.155 with lr
+View Treemap
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Show audits relevant to:
+
+All
+
+FCP
+
+LCP
+
+TBT
+
+CLS
+Insights
+Use efficient cache lifetimes Est savings of 9,214 KiB
+A long cache lifetime can speed up repeat visits to your page. Learn more about caching.LCPFCPUnscored
+Request
+Cache TTL
+Transfer Size
+luisrconriquezofficial.com 1st party
+9,214 KiB
+/media/hero.mp4(luisrconriquezofficial.com)
+None
+5,792 KiB
+/media/medusa.jpg(luisrconriquezofficial.com)
+None
+585 KiB
+/assets/index-Bd6i_04z.js(luisrconriquezofficial.com)
+None
+470 KiB
+/media/album-muchacho-alegre.jpg(luisrconriquezofficial.com)
+None
+331 KiB
+/media/bts-hat.jpg(luisrconriquezofficial.com)
+None
+329 KiB
+/media/salma-hayek.jpg(luisrconriquezofficial.com)
+None
+306 KiB
+/media/texture-bg-2.webp?v=3(luisrconriquezofficial.com)
+None
+249 KiB
+/media/texture-bg-3.webp?v=3(luisrconriquezofficial.com)
+None
+247 KiB
+/media/bts-red-portrait.jpg(luisrconriquezofficial.com)
+None
+228 KiB
+/media/texture-bg-1.webp?v=3(luisrconriquezofficial.com)
+None
+214 KiB
+/media/filoso.jpg(luisrconriquezofficial.com)
+None
+129 KiB
+/assets/index-DuLJUb0a.css(luisrconriquezofficial.com)
+None
+116 KiB
+/media/que-gacho.jpg(luisrconriquezofficial.com)
+None
+113 KiB
+/media/award-billboard-airplay.jpg(luisrconriquezofficial.com)
+None
+49 KiB
+/media/hero-poster.jpg(luisrconriquezofficial.com)
+None
+39 KiB
+/media/logo.webp(luisrconriquezofficial.com)
+None
+19 KiB
+Render-blocking requests Est savings of 460 ms
+Requests are blocking the page's initial render, which may delay LCP. Deferring or inlining can move these network requests out of the critical path.LCPFCPUnscored
+URL
+Transfer Size
+Duration
+luisrconriquezofficial.com 1st party
+115.6 KiB	2,380 ms
+/assets/index-DuLJUb0a.css(luisrconriquezofficial.com)
+115.6 KiB
+2,380 ms
+Forced reflow
+A forced reflow occurs when JavaScript queries geometric properties (such as offsetWidth) after styles have been invalidated by a change to the DOM state. This can result in poor performance. Learn more about forced reflows and possible mitigations.Unscored
+Top function call
+Total reflow time
+/assets/index-Bd6i_04z.js:2:3039(luisrconriquezofficial.com)
+61 ms
+Source
+Total reflow time
+/assets/index-Bd6i_04z.js:17:40077(luisrconriquezofficial.com)
+51 ms
+/assets/index-Bd6i_04z.js:17:40725(luisrconriquezofficial.com)
+11 ms
+Network dependency tree
+Avoid chaining critical requests by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load.LCPUnscored
+Maximum critical path latency: 422 ms
+Initial Navigation
+https://luisrconriquezofficial.com - 145 ms, 22.76 KiB
+/assets/index-Bd6i_04z.js(luisrconriquezofficial.com) - 422 ms, 470.28 KiB
+/assets/index-DuLJUb0a.css(luisrconriquezofficial.com) - 364 ms, 115.56 KiB
+Preconnected origins
+preconnect hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.
+Origin
+Source
+https://fonts.googleapis.com/
+head > link
+<link rel="preconnect" href="https://fonts.googleapis.com">
+https://fonts.gstatic.com/
+head > link
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+Preconnect candidates
+Add preconnect hints to your most important origins, but try to use no more than 4.
+No additional origins are good candidates for preconnecting
+Document request latency Est savings of 15 KiB
+Your first network request is the most important. Reduce its latency by avoiding redirects, ensuring a fast server response, and enabling text compression.LCPFCPUnscored
+Avoids redirects
+Server responds quickly (observed 2 ms)
+No compression applied
+Improve image delivery Est savings of 1,966 KiB
+Reducing the download time of images can improve the perceived load time of the page and LCP. Learn more about optimizing image sizeLCPFCPUnscored
+URL
+Resource Size
+Est Savings
+luisrconriquezofficial.com 1st party
+2,579.9 KiB	1,965.9 KiB
+Medusa
+<img alt="Medusa" loading="lazy" src="/media/medusa.jpg">
+/media/medusa.jpg(luisrconriquezofficial.com)
+585.1 KiB
+569.0 KiB
+Using a modern image format (WebP, AVIF) or increasing the image compression could improve this image's download size.
+168.5 KiB
+This image file is larger than it needs to be (1600x1600) for its displayed dimensions (315x315). Use responsive images to reduce the image download size.
+562.5 KiB
+Backstage
+<img class="bts-img" alt="Backstage" loading="lazy" src="/media/bts-hat.jpg">
+/media/bts-hat.jpg(luisrconriquezofficial.com)
+328.4 KiB
+307.2 KiB
+Using a modern image format (WebP, AVIF) or increasing the image compression could improve this image's download size.
+15.6 KiB
+This image file is larger than it needs to be (1201x1600) for its displayed dimensions (312x416). Use responsive images to reduce the image download size.
+306.1 KiB
+Salma Hayek
+<img alt="Salma Hayek" loading="lazy" src="/media/salma-hayek.jpg">
+/media/salma-hayek.jpg(luisrconriquezofficial.com)
+305.2 KiB
+290.6 KiB
+This image file is larger than it needs to be (1440x1440) for its displayed dimensions (315x315). Use responsive images to reduce the image download size.
+290.6 KiB
+Muchacho Alegre — nuevo álbum de Luis R Conriquez
+<img alt="Muchacho Alegre — nuevo álbum de Luis R Conriquez" loading="lazy" src="/media/album-muchacho-alegre.jpg">
+/media/album-muchacho-alegre.jpg(luisrconriquezofficial.com)
+330.6 KiB
+286.4 KiB
+Using a modern image format (WebP, AVIF) or increasing the image compression could improve this image's download size.
+11.6 KiB
+This image file is larger than it needs to be (1400x1400) for its displayed dimensions (522x522). Use responsive images to reduce the image download size.
+284.8 KiB
+Sesión
+<img class="bts-img" alt="Sesión" loading="lazy" src="/media/bts-red-portrait.jpg">
+/media/bts-red-portrait.jpg(luisrconriquezofficial.com)
+227.2 KiB
+211.8 KiB
+This image file is larger than it needs to be (1200x1600) for its displayed dimensions (312x416). Use responsive images to reduce the image download size.
+211.8 KiB
+Filoso
+<img alt="Filoso" loading="lazy" src="/media/filoso.jpg">
+/media/filoso.jpg(luisrconriquezofficial.com)
+128.7 KiB
+115.0 KiB
+This image file is larger than it needs to be (1080x1080) for its displayed dimensions (315x394). Use responsive images to reduce the image download size.
+115.0 KiB
+Que Gacho
+<img alt="Que Gacho" loading="lazy" src="/media/que-gacho.jpg">
+/media/que-gacho.jpg(luisrconriquezofficial.com)
+112.4 KiB
+100.5 KiB
+This image file is larger than it needs to be (1080x1080) for its displayed dimensions (315x394). Use responsive images to reduce the image download size.
+100.5 KiB
+Billboard
+<img alt="Billboard" loading="eager" src="/media/award-billboard-airplay.jpg">
+/media/award-billboard-airplay.jpg(luisrconriquezofficial.com)
+48.5 KiB
+35.8 KiB
+This image file is larger than it needs to be (942x625) for its displayed dimensions (481x321). Use responsive images to reduce the image download size.
+35.8 KiB
+MÚSICA DE LA BUENA MEDUSA 2026 · Sencillo Escuchar ahora QUE GACHO 2026 · Senci…
+<section class="section section--tight" id="musica">
+/media/texture-bg-3.webp?v=3(luisrconriquezofficial.com)
+246.6 KiB
+18.0 KiB
+Increasing the image compression factor could improve this image's download size.
+18.0 KiB
+Luis R Conriquez
+<img alt="Luis R Conriquez" src="/media/logo.webp">
+/media/logo.webp(luisrconriquezofficial.com)
+18.9 KiB
+17.8 KiB
+This image file is larger than it needs to be (700x700) for its displayed dimensions (168x168). Use responsive images to reduce the image download size.
+17.8 KiB
+BEHIND THE SCENES ANDAMO' DETRÁS DE CÁMARA
+<section class="section section--tight" id="bts">
+/media/texture-bg-2.webp?v=3(luisrconriquezofficial.com)
+248.2 KiB
+13.8 KiB
+Increasing the image compression factor could improve this image's download size.
+13.8 KiB
+Optimize DOM size
+LCP breakdown
+3rd parties
+These insights are also available in the Chrome DevTools Performance Panel - record a trace to view more detailed information.
+Diagnostics
+Reduce unused JavaScript Est savings of 253 KiB
+Image elements do not have explicit width and height
+Avoid enormous network payloads Total size was 9,319 KiB
+Avoid long main-thread tasks 2 long tasks found
+More information about the performance of your application. These numbers don't directly affect the Performance score.
+Passed audits (14)
+Show
+93
+Accessibility
+These checks highlight opportunities to improve the accessibility of your web app. Automatic detection can only detect a subset of issues and does not guarantee the accessibility of your web app, so manual testing is also encouraged.
+Best practices
+[user-scalable="no"] is used in the <meta name="viewport"> element or the [maximum-scale] attribute is less than 5.
+Identical links have the same purpose.
+These items highlight common accessibility best practices.
+Navigation
+Heading elements are not in a sequentially-descending order
+These are opportunities to improve keyboard navigation in your application.
+Additional items to manually check (10)
+Show
+These items address areas which an automated testing tool cannot cover. Learn more in our guide on conducting an accessibility review.
+Passed audits (22)
+Show
+Not applicable (38)
+Show
+100
+Best Practices
+Trust and Safety
+Ensure CSP is effective against XSS attacks
+Use a strong HSTS policy
+Ensure proper origin isolation with COOP
+Mitigate clickjacking with XFO or CSP
+Mitigate DOM-based XSS with Trusted Types
+Browser Compatibility
+Baseline Features
+Passed audits (13)
+Show
+Not applicable (2)
+Show
+100
+SEO
+These checks ensure that your page is following basic search engine optimization advice. There are many additional factors Lighthouse does not score here that may affect your search ranking, including performance on Core Web Vitals. Learn more about Google Search Essentials.
+Additional items to manually check (1)
+Hide
+Structured data is valid
+Run these additional validators on your site to check additional SEO best practices.
+Passed audits (10)
+Show
+2/3
+Agentic Browsing
+These checks ensure high-quality, browsable websites for AI agents and validate the correctness of WebMCP integrations. This category is still under development and subject to change.
+Agent Accessibility
+llms.txt does not follow recommendations
+These audits highlight best practices for improving the accessibility of the website for AI agents.
+Passed audits (2)
+Show
+Not applicable (3)
+Show

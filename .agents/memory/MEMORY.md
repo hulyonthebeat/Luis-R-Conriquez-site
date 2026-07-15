@@ -10,3 +10,4 @@
 - [OG text erase-and-replace](og-text-erase-patch.md) — patch baked-in OG text with aligned clean-plate pixels (not erase/slab); feathered mask MUST be 100% opaque over full text height or cap-tops/baselines ghost.
 - [grep output garble](grep-output-garble.md) — in this env rg output replaces the matched term with "n"; use grep or the read tool for exact strings.
 - [luisrc analytics](luisrc-analytics.md) — cookieless first-party analytics; geoip-lite MUST stay external in build.mjs, endpoints bypass OpenAPI contract, hash salt = SESSION_SECRET (no weak fallback), token header-only.
+- [luisrc static rewrites](luisrc-static-rewrites.md) — prod is Replit static hosting; each prerendered route needs explicit artifact.toml rewrite entries or it falls to the SPA homepage.
