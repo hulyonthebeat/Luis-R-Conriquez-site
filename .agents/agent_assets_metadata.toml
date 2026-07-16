@@ -34,7 +34,7 @@ title = "merch vinyl"
 id = "iFZRfcazijkKTx5GHuHu9"
 uri = "file://artifacts/luisrc/public/opengraph.jpg"
 type = "image"
-title = "Social share thumbnail — portrait restored, subtitle now K MUSIC"
+title = "Main preview (iMessage & sharing)"
 
 [[outputs]]
 id = "zoA9sQq5QevLEXYPlnyPI"
@@ -77,3 +77,15 @@ id = "pyQlyT8965by-TXj_ySbM"
 uri = "file://deliverables/luisrc-textures/luisrc-background-full-page.png"
 type = "image"
 title = "Full-page background (1920×6193, exact)"
+
+[[outputs]]
+id = "K9GUrBuF1W9TKkHLHYwAP"
+uri = "file://artifacts/luisrc/public/opengraph-4x3.jpg"
+type = "image"
+title = "Google crop — standard"
+
+[[outputs]]
+id = "HkZTvuV-DzrIvkOmAovM3"
+uri = "file://artifacts/luisrc/public/opengraph-1x1.jpg"
+type = "image"
+title = "Google crop — square"
