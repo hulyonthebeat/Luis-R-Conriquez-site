@@ -82,10 +82,10 @@ title = "Full-page background (1920×6193, exact)"
 id = "K9GUrBuF1W9TKkHLHYwAP"
 uri = "file://artifacts/luisrc/public/opengraph-4x3.jpg"
 type = "image"
-title = "Google crop — standard"
+title = "Google — standard version"
 
 [[outputs]]
 id = "HkZTvuV-DzrIvkOmAovM3"
 uri = "file://artifacts/luisrc/public/opengraph-1x1.jpg"
 type = "image"
-title = "Google crop — square"
+title = "Google — square version"

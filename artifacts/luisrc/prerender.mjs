@@ -18,7 +18,7 @@ const template = readFileSync(
 );
 
 const SITE = "https://luisrconriquezofficial.com";
-const OG_IMAGE = `${SITE}/opengraph.jpg?v=14`;
+const OG_IMAGE = `${SITE}/opengraph.jpg?v=15`;
 
 const routes = [
   {
