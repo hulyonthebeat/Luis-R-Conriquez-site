@@ -22,7 +22,11 @@ const artistJsonLd = JSON.stringify({
   alternateName: "El Rey de los Corridos Bélicos",
   url: "https://luisrconriquezofficial.com/",
   description: "El Rey de los Corridos Bélicos. Música regional mexicana y corridos bélicos.",
-  image: "https://luisrconriquezofficial.com/opengraph.jpg",
+  image: [
+    "https://luisrconriquezofficial.com/opengraph.jpg?v=13",
+    "https://luisrconriquezofficial.com/opengraph-4x3.jpg?v=13",
+    "https://luisrconriquezofficial.com/opengraph-1x1.jpg?v=13",
+  ],
   genre: ["Corridos Bélicos", "Regional Mexicano", "Corridos", "Música Norteña"],
   foundingLocation: {
     "@type": "Place",
