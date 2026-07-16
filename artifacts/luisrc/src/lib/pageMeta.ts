@@ -17,7 +17,7 @@ export const pageMeta: Record<string, PageMeta> = {
   "/": {
     title: "Luis R Conriquez — Sitio Oficial · Corridos Bélicos",
     description:
-      "Sitio oficial de Luis R Conriquez. Escucha el nuevo álbum Corridos Bélicos Vol. IV y consigue boletos para la gira.",
+      "Sitio oficial de Luis R Conriquez. Escucha el nuevo álbum Muchacho Alegre y consigue boletos para la gira.",
     canonical: `${SITE}/`,
     ogUrl: `${SITE}/`,
     ogTitle: "Luis R Conriquez — Sitio Oficial",
