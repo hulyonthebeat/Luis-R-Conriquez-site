@@ -69,6 +69,7 @@ export default function Home() {
     if (videoSrc) v.src = videoSrc;
 
     let playing = false;
+    let visible = true;
     const tryPlay = () => {
       v.muted = true;
       const p = v.play();
@@ -85,16 +86,20 @@ export default function Home() {
     /* Mobile browsers (iOS Low Power Mode, Android Data Saver) block programmatic
        autoplay until the first user interaction — retry play() on the first gesture. */
     const onGesture = () => {
-      if (playing) return;
+      /* only retry while the hero is actually on screen — otherwise every
+         scroll/touch below the hero restarts the paused video off-screen,
+         causing play/pause churn that stutters scrolling */
+      if (playing || !visible) return;
       tryPlay();
     };
-    const gestures = ["touchstart", "pointerdown", "click", "scroll", "keydown"] as const;
+    const gestures = ["touchstart", "pointerdown", "click", "keydown"] as const;
     gestures.forEach((g) =>
       window.addEventListener(g, onGesture, { passive: true }),
     );
 
     const io = new IntersectionObserver(
       ([entry]) => {
+        visible = entry.isIntersecting;
         if (entry.isIntersecting) tryPlay();
         else {
           v.pause();
