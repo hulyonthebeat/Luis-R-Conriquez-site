@@ -30,8 +30,8 @@ export const pageMeta: Record<string, PageMeta> = {
     title: "Biografía — Luis R Conriquez · El Rey de los Corridos Bélicos",
     description:
       "Conoce la historia de Luis R Conriquez: de Caborca, Sonora a pionero de los corridos bélicos. Colaboraciones, logros y su nuevo álbum Muchacho Alegre.",
-    canonical: `${SITE}/biografia`,
-    ogUrl: `${SITE}/biografia`,
+    canonical: `${SITE}/biografia/`,
+    ogUrl: `${SITE}/biografia/`,
     ogTitle: "Biografía — Luis R Conriquez",
     ogDescription:
       "La historia de El Rey de los Corridos Bélicos: trayectoria, colaboraciones y logros.",
@@ -44,8 +44,8 @@ export const pageMeta: Record<string, PageMeta> = {
     title: "Fechas de Gira 2026 — Luis R Conriquez · Boletos Oficiales",
     description:
       "Consulta las fechas de la gira de Luis R Conriquez en 2026. Consigue tus boletos oficiales para los conciertos de El Rey de los Corridos Bélicos.",
-    canonical: `${SITE}/shows`,
-    ogUrl: `${SITE}/shows`,
+    canonical: `${SITE}/shows/`,
+    ogUrl: `${SITE}/shows/`,
     ogTitle: "Fechas de Gira 2026 — Luis R Conriquez",
     ogDescription:
       "Conciertos, ciudades y boletos oficiales de la gira bélica 2026. El convoy bélico cruza fronteras.",
@@ -58,8 +58,8 @@ export const pageMeta: Record<string, PageMeta> = {
     title: "Política de Privacidad — Luis R Conriquez",
     description:
       "Política de privacidad del sitio oficial de Luis R Conriquez. Conoce cómo recopilamos, usamos y protegemos tu información personal.",
-    canonical: `${SITE}/privacidad`,
-    ogUrl: `${SITE}/privacidad`,
+    canonical: `${SITE}/privacidad/`,
+    ogUrl: `${SITE}/privacidad/`,
     ogTitle: "Política de Privacidad — Luis R Conriquez",
     ogDescription:
       "Cómo recopilamos, usamos y protegemos tu información en el sitio oficial de Luis R Conriquez.",
@@ -72,8 +72,8 @@ export const pageMeta: Record<string, PageMeta> = {
     title: "Términos de Servicio — Luis R Conriquez",
     description:
       "Términos de servicio del sitio oficial de Luis R Conriquez. Condiciones de uso del sitio y la comunidad de fans.",
-    canonical: `${SITE}/terminos`,
-    ogUrl: `${SITE}/terminos`,
+    canonical: `${SITE}/terminos/`,
+    ogUrl: `${SITE}/terminos/`,
     ogTitle: "Términos de Servicio — Luis R Conriquez",
     ogDescription:
       "Condiciones de uso del sitio oficial y la comunidad de fans de Luis R Conriquez.",

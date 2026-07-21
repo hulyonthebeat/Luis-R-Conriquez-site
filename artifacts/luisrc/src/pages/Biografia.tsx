@@ -12,7 +12,7 @@ const biografiaJsonLd = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "ProfilePage",
   name: "Biografía — Luis R Conriquez",
-  url: "https://luisrconriquezofficial.com/biografia",
+  url: "https://luisrconriquezofficial.com/biografia/",
   inLanguage: ["es", "en"],
   mainEntity: {
     "@type": "MusicGroup",
