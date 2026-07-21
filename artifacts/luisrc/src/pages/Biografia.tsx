@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "wouter";
 import { Reveal } from "@/components/site/Reveal";
-import { bio, type BioLang, socials, platformUrls, entityProfiles } from "@/data/content";
+import { bio, faq, type BioLang, socials, platformUrls, entityProfiles } from "@/data/content";
 import { mediaUrl } from "@/lib/site";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { pageMeta } from "@/lib/pageMeta";
@@ -34,6 +34,25 @@ const biografiaJsonLd = JSON.stringify({
   },
 });
 
+const faqJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faq.es.items.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+});
+
+const breadcrumbJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://luisrconriquezofficial.com/" },
+    { "@type": "ListItem", position: 2, name: "Biografía", item: "https://luisrconriquezofficial.com/biografia/" },
+  ],
+});
+
 export default function Biografia() {
   usePageMeta(pageMeta["/biografia"]);
   const [lang, setLang] = useState<BioLang>("es");
@@ -42,6 +61,8 @@ export default function Biografia() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: biografiaJsonLd }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqJsonLd }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: breadcrumbJsonLd }} />
       <section className="page-hero">
         <div className="wrap">
           <Reveal>
@@ -95,6 +116,24 @@ export default function Biografia() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="wrap">
+          <Reveal>
+            <h2 className="display h-lg chrome faq-heading">{faq[lang].heading}</h2>
+          </Reveal>
+          <dl className="faq-list">
+            {faq[lang].items.map((item, i) => (
+              <Reveal key={`${lang}-faq-${i}`} delay={0.05 + i * 0.03}>
+                <div className="faq-item">
+                  <dt>{item.q}</dt>
+                  <dd>{item.a}</dd>
+                </div>
+              </Reveal>
+            ))}
+          </dl>
         </div>
       </section>
 

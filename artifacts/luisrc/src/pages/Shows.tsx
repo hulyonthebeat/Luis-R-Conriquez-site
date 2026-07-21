@@ -9,6 +9,14 @@ const eventsJsonLd = JSON.stringify(
     "@context": "https://schema.org",
     "@type": "MusicEvent",
     name: `Luis R Conriquez en ${s.city}`,
+    description: `Luis R Conriquez en concierto — ${s.venue}, ${s.city}, ${s.country}. Gira 2026.`,
+    image: [
+      "https://luisrconriquezofficial.com/opengraph.jpg?v=15",
+      "https://luisrconriquezofficial.com/opengraph-4x3.jpg?v=15",
+      "https://luisrconriquezofficial.com/opengraph-1x1.jpg?v=15",
+    ],
+    eventStatus: "https://schema.org/EventScheduled",
+    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     startDate: s.date,
     location: {
       "@type": "Place",
@@ -35,6 +43,15 @@ const eventsJsonLd = JSON.stringify(
   }))
 );
 
+const showsBreadcrumbJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://luisrconriquezofficial.com/" },
+    { "@type": "ListItem", position: 2, name: "Shows", item: "https://luisrconriquezofficial.com/shows/" },
+  ],
+});
+
 const requestMailto = `mailto:${site.booking}?subject=${encodeURIComponent(
   "Solicitud de show — Luis R Conriquez",
 )}&body=${encodeURIComponent(
@@ -51,6 +68,7 @@ export default function Shows() {
       {shows.length > 0 && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: eventsJsonLd }} />
       )}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: showsBreadcrumbJsonLd }} />
       <section className="page-hero">
         <div className="wrap">
           <Reveal>

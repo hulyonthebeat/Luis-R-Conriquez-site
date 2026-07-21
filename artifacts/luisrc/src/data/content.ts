@@ -281,6 +281,62 @@ export const bio = {
   } as Record<BioLang, BioCopy>,
 };
 
+/* FAQ — bilingual, shown on the bio page and emitted as FAQPage JSON-LD */
+export type FaqItem = { q: string; a: string };
+
+export const faq: Record<BioLang, { heading: string; items: FaqItem[] }> = {
+  es: {
+    heading: "Preguntas frecuentes",
+    items: [
+      {
+        q: "¿Quién es Luis R Conriquez?",
+        a: "Luis R Conriquez (Luis Roberto Conriquez Magdaleno) es un cantautor mexicano de música regional mexicana, considerado uno de los pioneros de los corridos bélicos y conocido como “El Rey de los Corridos Bélicos”.",
+      },
+      {
+        q: "¿De dónde es Luis R Conriquez?",
+        a: "Luis R Conriquez es de Caborca, Sonora, México.",
+      },
+      {
+        q: "¿Cuál es el nuevo álbum de Luis R Conriquez?",
+        a: "Su nuevo álbum se titula Muchacho Alegre y ya está disponible en todas las plataformas de streaming.",
+      },
+      {
+        q: "¿Dónde puedo comprar boletos para sus conciertos?",
+        a: "Los boletos oficiales están disponibles en la página de shows de este sitio, con enlaces directos a la venta autorizada de cada fecha de la gira 2026.",
+      },
+      {
+        q: "¿Cómo puedo contactar a Luis R Conriquez para contrataciones?",
+        a: `Para contrataciones y booking, escribe a ${site.booking}.`,
+      },
+    ],
+  },
+  en: {
+    heading: "Frequently asked questions",
+    items: [
+      {
+        q: "Who is Luis R Conriquez?",
+        a: "Luis R Conriquez (Luis Roberto Conriquez Magdaleno) is a Mexican singer-songwriter of regional Mexican music, widely regarded as a pioneer of corridos bélicos and known as “El Rey de los Corridos Bélicos”.",
+      },
+      {
+        q: "Where is Luis R Conriquez from?",
+        a: "Luis R Conriquez is from Caborca, Sonora, Mexico.",
+      },
+      {
+        q: "What is Luis R Conriquez's new album?",
+        a: "His new album is titled Muchacho Alegre and is available now on all streaming platforms.",
+      },
+      {
+        q: "Where can I buy tickets to his concerts?",
+        a: "Official tickets are available on the shows page of this site, with direct links to authorized sales for every 2026 tour date.",
+      },
+      {
+        q: "How can I contact Luis R Conriquez for bookings?",
+        a: `For bookings, email ${site.booking}.`,
+      },
+    ],
+  },
+};
+
 /* Nav links — Spanish, mapped to React routes + home anchors */
 export type NavLink = { href: string; label: string; key: string };
 
