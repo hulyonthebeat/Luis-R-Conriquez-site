@@ -108,7 +108,7 @@ export default function Biografia() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section bio-cta-section">
         <div className="wrap">
           <Reveal delay={0.1}>
             <p className="bio-cta">
