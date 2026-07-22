@@ -32,6 +32,11 @@ const eventsJsonLd = JSON.stringify(
       "@type": "MusicGroup",
       name: "Luis R Conriquez",
     },
+    organizer: {
+      "@type": "Organization",
+      name: "K Music",
+      url: "https://luisrconriquezofficial.com/",
+    },
     offers: {
       "@type": "Offer",
       url: s.ticket,
