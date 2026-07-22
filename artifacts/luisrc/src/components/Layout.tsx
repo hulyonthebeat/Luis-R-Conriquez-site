@@ -72,7 +72,7 @@ export function Layout({ children }: { children: ReactNode }) {
     }
   };
 
-  const navSocials = socials.slice(0, 4);
+  const navSocials = socials.filter((s) => s.id !== "apple").slice(0, 4);
 
   return (
     <>

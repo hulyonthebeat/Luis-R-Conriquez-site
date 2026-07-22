@@ -1,5 +1,5 @@
 export type PlatformId = "spotify" | "apple" | "youtube" | "amazon" | "deezer";
-export type SocialId = "instagram" | "youtube" | "spotify" | "tiktok" | "facebook" | "x";
+export type SocialId = "instagram" | "youtube" | "spotify" | "apple" | "tiktok" | "facebook" | "x";
 export type ShowStatus = "open" | "few" | "soldout";
 
 export const site = {
@@ -198,6 +198,7 @@ export const socials: Social[] = [
   { id: "instagram", label: "Instagram", handle: "@luisrconriquezoficial", url: "https://www.instagram.com/luisrconriquezoficial/" },
   { id: "youtube", label: "YouTube", handle: "Luis R Conriquez", url: "https://www.youtube.com/@LuisRConrriquezOficial" },
   { id: "spotify", label: "Spotify", handle: "Luis R Conriquez", url: "https://open.spotify.com/artist/0pePYDrJGk8gqMRbXrLJC8" },
+  { id: "apple", label: "Apple Music", handle: "Luis R Conriquez", url: platformUrls.apple },
   { id: "tiktok", label: "TikTok", handle: "@luisrconriquezoficial", url: "https://www.tiktok.com/@luisrconriquezoficial" },
   { id: "x", label: "X", handle: "@LuisRConriquez", url: "https://x.com/LuisRConriquez" },
   { id: "facebook", label: "Facebook", handle: "Luis R Conriquez", url: "https://www.facebook.com/100050488239777/" },

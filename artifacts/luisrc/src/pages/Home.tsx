@@ -45,7 +45,7 @@ const artistJsonLd = JSON.stringify({
 });
 
 const heroNav = navLinks.filter((n) => n.href !== "/");
-const heroSocials = socials.slice(0, 6);
+const heroSocials = socials.slice(0, 7);
 
 export default function Home() {
   usePageMeta(pageMeta["/"]);
