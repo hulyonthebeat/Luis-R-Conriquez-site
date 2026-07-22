@@ -18,6 +18,7 @@ const eventsJsonLd = JSON.stringify(
     eventStatus: "https://schema.org/EventScheduled",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     startDate: s.date,
+    endDate: s.date,
     location: {
       "@type": "Place",
       name: s.venue,
