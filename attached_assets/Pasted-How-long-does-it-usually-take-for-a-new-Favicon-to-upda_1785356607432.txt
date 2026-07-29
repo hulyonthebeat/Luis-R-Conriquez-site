@@ -1,0 +1,362 @@
+How long does it usually take for a new Favicon to update in Google Search results?
+Hi everyone,
+
+I’m looking for some insight into how long it typically takes for a new Favicon to actually appear in Google Search results (SERPs).
+
+I have already verified the icon using the Google magic URL: s2/favicons?domain=XXX&sz=128
+
+It shows the correct/new favicon there, so I know Google has grabbed the image successfully. I also requested a re-index of the homepage via Google Search Console a few days ago.
+
+However, the old icon (or default) is still showing up on actual Google searches.
+
+I know this process requires patience, but I’m curious—in your experience, how long does this lag usually last? Is it days or weeks?
+
+This is my first time dealing with this specific delay, so any shared experiences would be appreciated.
+
+Thanks!
+
+
+Upvote
+3
+
+Downvote
+
+19
+Go to comments
+
+Repost
+
+Share
+Join the conversation
+Sort by:
+
+Best
+
+Search Comments
+Expand comment search
+Comments Section
+u/phy100 avatar
+phy100
+•
+7mo ago
+Usually 3-7 days. Google crawls but caches old version. Force clear via Search Console reindex + explicit cache headers on favicon.
+
+
+Upvote
+6
+
+Downvote
+
+Reply
+
+Award
+
+Share
+
+u/Useful-Regular9992 avatar
+Useful-Regular9992
+OP
+•
+7mo ago
+Big Thanks!
+
+
+Upvote
+1
+
+Downvote
+
+Reply
+
+Award
+
+Share
+
+u/UnkWinnie avatar
+UnkWinnie
+•
+7mo ago
+i updated our favicon and verified with the url you used. It's been 3 weeks and still seeing old icon
+
+
+Upvote
+2
+
+Downvote
+
+Reply
+
+Award
+
+Share
+
+u/Useful-Regular9992 avatar
+Useful-Regular9992
+OP
+•
+7mo ago
+=P I will let you know when I notice my icon is updated.
+
+
+Upvote
+1
+
+Downvote
+
+Reply
+
+Award
+
+Share
+
+u/UnkWinnie avatar
+UnkWinnie
+•
+6mo ago
+mine just updated today
+
+
+Upvote
+2
+
+Downvote
+
+Reply
+
+Award
+
+Share
+
+u/Useful-Regular9992 avatar
+Useful-Regular9992
+OP
+•
+6mo ago
+=) Same here. I just notice it just updated !
+
+
+Upvote
+1
+
+Downvote
+
+Reply
+
+Award
+
+Share
+
+u/UnkWinnie avatar
+UnkWinnie
+•
+7mo ago
+yeah - our new title structure was showing after 3 days so I know it has been indexed but the favicon is taking forever.
+
+
+Upvote
+1
+
+Downvote
+
+Reply
+
+Award
+
+Share
+
+yasonkh
+•
+6mo ago
+I'm having the same experience.
+
+
+Upvote
+1
+
+Downvote
+
+Reply
+
+Award
+
+Share
+
+u/UnkWinnie avatar
+UnkWinnie
+•
+6mo ago
+Mine just updated today FYI - so roughly 1 month (this is a low authority site not sure if that matters)
+
+
+Upvote
+1
+
+Downvote
+
+Reply
+
+Award
+
+Share
+
+yasonkh
+•
+6mo ago
+Haha. Favicons for 2 of my websites just updated too. Looks like they are batching these. Thanks for the good news
+
+
+Upvote
+1
+
+Downvote
+
+Reply
+
+Award
+
+Share
+
+u/phamaral249 avatar
+phamaral249
+•
+6mo ago
+Been waiting for two months now. Checked on faviconcheck and everything seems fine. Just google taking its sweet sweet time.
+
+
+Upvote
+1
+
+Downvote
+
+Reply
+
+Award
+
+Share
+
+u/Mindless-Fly2086 avatar
+Mindless-Fly2086
+•
+7mo ago
+I am currently running the same dilemma, I have done all I can within google search console & my app, but everything is moving at snail pace. Google notified me saying there was some errors after a week, so I fix indexing, & I having to play the waiting game. I dont feel teh error message are particularly helpful too so I dont know if it will full work but you right that it requires a lot of patience
+
+
+Upvote
+1
+
+Downvote
+
+Reply
+
+Award
+
+Share
+
+u/Useful-Regular9992 avatar
+Useful-Regular9992
+OP
+•
+7mo ago
+I am kind of hate this online waiting game. Take me long time to find what I am doing wrong.
+
+
+Upvote
+1
+
+Downvote
+
+Reply
+
+Award
+
+Share
+
+u/adamnicolson avatar
+adamnicolson
+•
+6mo ago
+I’ve recently launched and refreshed a few sites, but none of them are showing the favicons I’ve set in search results. The sites are all getting indexed, but the favicon issue is consistent. I've always used Real Favicon Generator, and I’ve recently noticed the generated code is much shorter than it used to be. Older sites I manage still show their favicons in search results fine, but even when I updated a new site to use the older, longer code, it didn’t change anything. The favicons pass all the favicon test sites, but they still don’t appear across any search engines like Google and DuckDuckGo etc.
+
+
+Upvote
+1
+
+Downvote
+
+Reply
+
+Award
+
+Share
+
+kkkaspar
+•
+6mo ago
+yea man same-same. even opencode.com don't have a favicon
+
+
+Upvote
+1
+
+Downvote
+
+Reply
+
+Award
+
+Share
+
+u/adamnicolson avatar
+adamnicolson
+•
+6mo ago
+Seeing other comments saying theirs have been updated, and so have all mine too. The joys of Gooog
+
+
+Upvote
+1
+
+Downvote
+
+Reply
+
+Award
+
+Share
+
+kkkaspar
+•
+6mo ago
+ive been waiting for like 6-7 weeks. Other search providers updated in ~1 week
+
+
+Upvote
+1
+
+Downvote
+
+Reply
+
+Award
+
+Share
+
+u/Useful-Regular9992 avatar
+Useful-Regular9992
+OP
+•
+6mo ago
+For the records, it took 12 days to update this time.
+
+
+Upvote
+1
+
+Downvote
+
+Reply
+
+Award
+
+Share
+
