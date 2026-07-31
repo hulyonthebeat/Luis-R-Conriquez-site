@@ -202,4 +202,38 @@ for (const r of redirects) {
   console.log(`[prerender] redirect ${r.from} → ${r.to}`);
 }
 
+/**
+ * Generate sitemap.xml with accurate lastmod dates.
+ * /shows/ gets today's build date (content changes frequently).
+ * Other pages use static dates reflecting their last meaningful update.
+ */
+const today = new Date().toISOString().slice(0, 10);
+
+const sitemapEntries = [
+  { loc: `${SITE}/`,           lastmod: today,        changefreq: "weekly",  priority: "1.0" },
+  { loc: `${SITE}/biografia/`, lastmod: "2026-07-01", changefreq: "monthly", priority: "0.8" },
+  { loc: `${SITE}/shows/`,     lastmod: today,        changefreq: "daily",   priority: "0.9" },
+  { loc: `${SITE}/privacidad/`,lastmod: "2026-01-01", changefreq: "yearly",  priority: "0.3" },
+  { loc: `${SITE}/terminos/`,  lastmod: "2026-01-01", changefreq: "yearly",  priority: "0.3" },
+];
+
+const sitemapXml =
+  `<?xml version="1.0" encoding="UTF-8"?>\n` +
+  `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
+  sitemapEntries
+    .map(
+      (e) =>
+        `  <url>\n` +
+        `    <loc>${e.loc}</loc>\n` +
+        `    <lastmod>${e.lastmod}</lastmod>\n` +
+        `    <changefreq>${e.changefreq}</changefreq>\n` +
+        `    <priority>${e.priority}</priority>\n` +
+        `  </url>`,
+    )
+    .join("\n") +
+  `\n</urlset>\n`;
+
+writeFileSync(resolve(__dirname, "dist/public/sitemap.xml"), sitemapXml);
+console.log(`[prerender] sitemap.xml generated (shows lastmod: ${today})`);
+
 console.log("[prerender] done.");
