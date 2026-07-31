@@ -70,22 +70,34 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "MusicGroup",
-        "name": "Luis R Conriquez",
-        "url": "https://luisrconriquezofficial.com/",
-        "image": [
-          "https://luisrconriquezofficial.com/opengraph-1x1.jpg?v=15",
-          "https://luisrconriquezofficial.com/opengraph-4x3.jpg?v=15",
-          "https://luisrconriquezofficial.com/opengraph.jpg?v=15"
-        ],
-        "genre": ["Corridos Bélicos", "Regional Mexicano"],
-        "sameAs": [
-          "https://www.instagram.com/luisrconriquezoficial/",
-          "https://www.youtube.com/@LuisRConrriquezOficial",
-          "https://open.spotify.com/artist/0pePYDrJGk8gqMRbXrLJC8",
-          "https://www.tiktok.com/@luisrconriquezoficial",
-          "https://x.com/LuisRConriquez",
-          "https://www.facebook.com/100050488239777/"
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://luisrconriquezofficial.com/#website",
+            "url": "https://luisrconriquezofficial.com/",
+            "name": "Luis R Conriquez — Sitio Oficial",
+            "inLanguage": "es-MX",
+            "publisher": { "@id": "https://luisrconriquezofficial.com/#artist" }
+          },
+          {
+            "@type": "MusicGroup",
+            "@id": "https://luisrconriquezofficial.com/#artist",
+            "name": "Luis R Conriquez",
+            "url": "https://luisrconriquezofficial.com/",
+            "image": [
+              "https://luisrconriquezofficial.com/opengraph-1x1.jpg?v=15",
+              "https://luisrconriquezofficial.com/opengraph-4x3.jpg?v=15",
+              "https://luisrconriquezofficial.com/opengraph.jpg?v=15"
+            ],
+            "genre": ["Corridos Bélicos", "Regional Mexicano"],
+            "sameAs": [
+              "https://www.instagram.com/luisrconriquezoficial/",
+              "https://www.youtube.com/@LuisRConrriquezOficial",
+              "https://open.spotify.com/artist/0pePYDrJGk8gqMRbXrLJC8",
+              "https://www.tiktok.com/@luisrconriquezoficial",
+              "https://www.facebook.com/100050488239777/"
+            ]
+          }
         ]
       }
     </script>

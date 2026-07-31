@@ -200,7 +200,6 @@ export const socials: Social[] = [
   { id: "spotify", label: "Spotify", handle: "Luis R Conriquez", url: "https://open.spotify.com/artist/0pePYDrJGk8gqMRbXrLJC8" },
   { id: "apple", label: "Apple Music", handle: "Luis R Conriquez", url: platformUrls.apple },
   { id: "tiktok", label: "TikTok", handle: "@luisrconriquezoficial", url: "https://www.tiktok.com/@luisrconriquezoficial" },
-  { id: "x", label: "X", handle: "@LuisRConriquez", url: "https://x.com/LuisRConriquez" },
   { id: "facebook", label: "Facebook", handle: "Luis R Conriquez", url: "https://www.facebook.com/100050488239777/" },
 ];
 
@@ -213,7 +212,6 @@ export const followLinks: { id: PlatformId | SocialId; label: string; url: strin
   { id: "deezer", label: "Deezer", url: platformUrls.deezer },
   { id: "instagram", label: "Instagram", url: socials.find((s) => s.id === "instagram")!.url },
   { id: "tiktok", label: "TikTok", url: socials.find((s) => s.id === "tiktok")!.url },
-  { id: "x", label: "X", url: socials.find((s) => s.id === "x")!.url },
 ];
 
 export type GalleryItem = { id: string; label: string; img: string };

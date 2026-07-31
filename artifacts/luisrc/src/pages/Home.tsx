@@ -17,30 +17,42 @@ import { pageMeta } from "@/lib/pageMeta";
 
 const artistJsonLd = JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "MusicGroup",
-  name: site.name,
-  alternateName: "El Rey de los Corridos Bélicos",
-  url: "https://luisrconriquezofficial.com/",
-  description: "El Rey de los Corridos Bélicos. Música regional mexicana y corridos bélicos.",
-  image: [
-    "https://luisrconriquezofficial.com/opengraph.jpg?v=15",
-    "https://luisrconriquezofficial.com/opengraph-4x3.jpg?v=15",
-    "https://luisrconriquezofficial.com/opengraph-1x1.jpg?v=15",
-  ],
-  genre: ["Corridos Bélicos", "Regional Mexicano", "Corridos", "Música Norteña"],
-  foundingLocation: {
-    "@type": "Place",
-    name: "Caborca, Sonora, México",
-  },
-  sameAs: [
-    socials.find((s) => s.id === "instagram")!.url,
-    socials.find((s) => s.id === "youtube")!.url,
-    platformUrls.spotify,
-    socials.find((s) => s.id === "tiktok")!.url,
-    socials.find((s) => s.id === "x")!.url,
-    socials.find((s) => s.id === "facebook")!.url,
-    platformUrls.apple,
-    ...entityProfiles,
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://luisrconriquezofficial.com/#website",
+      url: "https://luisrconriquezofficial.com/",
+      name: "Luis R Conriquez — Sitio Oficial",
+      inLanguage: "es-MX",
+      publisher: { "@id": "https://luisrconriquezofficial.com/#artist" },
+    },
+    {
+      "@type": "MusicGroup",
+      "@id": "https://luisrconriquezofficial.com/#artist",
+      name: site.name,
+      alternateName: "El Rey de los Corridos Bélicos",
+      url: "https://luisrconriquezofficial.com/",
+      description: "El Rey de los Corridos Bélicos. Música regional mexicana y corridos bélicos.",
+      image: [
+        "https://luisrconriquezofficial.com/opengraph.jpg?v=15",
+        "https://luisrconriquezofficial.com/opengraph-4x3.jpg?v=15",
+        "https://luisrconriquezofficial.com/opengraph-1x1.jpg?v=15",
+      ],
+      genre: ["Corridos Bélicos", "Regional Mexicano", "Corridos", "Música Norteña"],
+      foundingLocation: {
+        "@type": "Place",
+        name: "Caborca, Sonora, México",
+      },
+      sameAs: [
+        socials.find((s) => s.id === "instagram")!.url,
+        socials.find((s) => s.id === "youtube")!.url,
+        platformUrls.spotify,
+        socials.find((s) => s.id === "tiktok")!.url,
+        socials.find((s) => s.id === "facebook")!.url,
+        platformUrls.apple,
+        ...entityProfiles,
+      ],
+    },
   ],
 });
 
