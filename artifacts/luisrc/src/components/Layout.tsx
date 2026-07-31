@@ -79,7 +79,6 @@ export function Layout({ children }: { children: ReactNode }) {
       <header
         className={`nav${scrolled ? " scrolled" : ""}${location === "/" && !pastHero ? " nav--home-top" : ""}`}
         id="siteNav"
-        aria-hidden={location === "/" && !pastHero ? true : undefined}
       >
         <div className="wrap">
           <div className="nav-left">
