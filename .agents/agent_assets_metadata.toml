@@ -103,3 +103,10 @@ uri = "file://attached_assets/serp-preview.html"
 type = "text"
 title = "Search Result Preview"
 description = "How the homepage and shows page appear in Google"
+
+[[outputs]]
+id = "-pN9pUsLkaS9ovrc0_PjF"
+uri = "file://attached_assets/og-comparison.html"
+type = "text"
+title = "OG Image Options"
+description = "Before/after comparison of both fix options"
