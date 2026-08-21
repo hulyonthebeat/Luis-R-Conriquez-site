@@ -61,7 +61,7 @@ export const releases: Release[] = [
     year: "2026",
     tracks: 1,
     copy: "Luis R Conriquez x Tito Double P.",
-    cover: "medusa.jpg",
+    cover: "medusa.webp",
     link: "https://luisrconriquez.sng.to/muchachoalegre",
   },
   {
@@ -71,7 +71,7 @@ export const releases: Release[] = [
     year: "2026",
     tracks: 1,
     copy: "Luis R Conriquez x Neton Vega.",
-    cover: "que-gacho.jpg",
+    cover: "que-gacho.webp",
     link: "https://songwhip.com/luisrconriquez/que-gacho",
   },
   {
@@ -81,7 +81,7 @@ export const releases: Release[] = [
     year: "2026",
     tracks: 1,
     copy: "Luis R Conriquez x Kane Rodriguez.",
-    cover: "filoso.jpg",
+    cover: "filoso.webp",
     link: "https://wml.link/FILOSO-KaneRodriguezxLuisRConriquez",
   },
   {
@@ -91,7 +91,7 @@ export const releases: Release[] = [
     year: "2026",
     tracks: 1,
     copy: "Luis R Conriquez x Grupo Frontera.",
-    cover: "salma-hayek.jpg",
+    cover: "salma-hayek.webp",
     link: "https://songwhip.com/luisrconriquez/salma-hayek",
   },
   {
@@ -187,7 +187,7 @@ export const press = [
 export type Award = { title: string; detail: string; year: string; img: string };
 
 export const awards: Award[] = [
-  { title: "Billboard", detail: "#1 Regional Mexican Airplay", year: "2024", img: "award-billboard-airplay.jpg" },
+  { title: "Billboard", detail: "#1 Regional Mexican Airplay", year: "2024", img: "award-billboard-airplay.webp" },
   { title: "Billboard Hot 100", detail: "Debut · «Si No Quieres No»", year: "2024", img: "award-billboard-hot100.jpg" },
   { title: "Billboard", detail: "Latin Artist on the Rise", year: "2022", img: "award-billboard-rise.jpg" },
 ];
@@ -217,8 +217,8 @@ export const followLinks: { id: PlatformId | SocialId; label: string; url: strin
 export type GalleryItem = { id: string; label: string; img: string };
 
 export const gallery: GalleryItem[] = [
-  { id: "g1", label: "Sesión", img: "bts-red-portrait.jpg" },
-  { id: "g2", label: "Backstage", img: "bts-hat.jpg" },
+  { id: "g1", label: "Sesión", img: "bts-red-portrait.webp" },
+  { id: "g2", label: "Backstage", img: "bts-hat.webp" },
   { id: "g3", label: "Detrás del bélico", img: "bts-show.jpg" },
   { id: "g4", label: "En la gira", img: "bts-walk.jpg" },
 ];

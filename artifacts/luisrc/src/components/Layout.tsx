@@ -153,6 +153,8 @@ function Footer() {
         className="footer-mask footer-mask--left"
         src={mediaUrl(media.logo)}
         alt="Luis R Conriquez"
+        width="360"
+        height="360"
         loading="lazy"
       />
       <img

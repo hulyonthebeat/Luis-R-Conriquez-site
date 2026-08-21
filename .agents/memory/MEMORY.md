@@ -11,3 +11,4 @@
 - [grep output garble](grep-output-garble.md) — in this env rg output replaces the matched term with "n"; use grep or the read tool for exact strings.
 - [luisrc analytics](luisrc-analytics.md) — cookieless first-party analytics; geoip-lite MUST stay external in build.mjs, endpoints bypass OpenAPI contract, hash salt = SESSION_SECRET (no weak fallback), token header-only.
 - [luisrc static rewrites](luisrc-static-rewrites.md) — prod is Replit static hosting; each prerendered route needs explicit artifact.toml rewrite entries or it falls to the SPA homepage.
+- [Code splitting prerender](code-splitting-prerender.md) — React.lazy breaks renderToString prerender; needs migration to renderToPipeableStream before any lazy-loading work.

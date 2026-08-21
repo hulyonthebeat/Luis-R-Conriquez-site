@@ -39,7 +39,7 @@ export function AwardsCarousel({ awards }: { awards: Award[] }) {
             <div className="frame">
               <Img label={award.title} src={mediaUrl(award.img)} eager />
             </div>
-            <h4>{award.title}</h4>
+            <h3>{award.title}</h3>
             <p>{award.detail}</p>
           </motion.div>
         </AnimatePresence>

@@ -223,7 +223,7 @@ export default function Home() {
             </div>
             <figure className="album-card__art">
               <img
-                src={mediaUrl("album-muchacho-alegre.jpg")}
+                src={mediaUrl("album-muchacho-alegre.webp")}
                 alt="Muchacho Alegre — nuevo álbum de Luis R Conriquez"
                 loading="lazy"
               />
