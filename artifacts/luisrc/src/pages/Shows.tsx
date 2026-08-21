@@ -4,12 +4,12 @@ import { tours, shows, site } from "@/data/content";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { pageMeta } from "@/lib/pageMeta";
 
-const eventsJsonLd = JSON.stringify(
-  shows.map((s) => ({
-    "@context": "https://schema.org",
+const eventsJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": shows.map((s) => ({
     "@type": "MusicEvent",
     name: `Luis R Conriquez en ${s.city}`,
-    description: `Luis R Conriquez en concierto — ${s.venue}, ${s.city}, ${s.country}. Gira 2026.`,
+    description: `Luis R Conriquez en concierto — ${s.venue}, ${s.city}, ${s.country}. Tour 2026.`,
     image: [
       "https://luisrconriquezofficial.com/opengraph.jpg?v=15",
       "https://luisrconriquezofficial.com/opengraph-4x3.jpg?v=15",
@@ -31,6 +31,7 @@ const eventsJsonLd = JSON.stringify(
     performer: {
       "@type": "MusicGroup",
       name: "Luis R Conriquez",
+      url: "https://luisrconriquezofficial.com/",
     },
     organizer: {
       "@type": "Organization",
@@ -46,8 +47,8 @@ const eventsJsonLd = JSON.stringify(
           ? "https://schema.org/LimitedAvailability"
           : "https://schema.org/InStock",
     },
-  }))
-);
+  })),
+});
 
 const showsBreadcrumbJsonLd = JSON.stringify({
   "@context": "https://schema.org",
