@@ -1,0 +1,661 @@
+Report from Aug 21, 2026, 5:19:40 AM
+
+Enter a valid URL
+
+smartphone
+Mobile
+
+computer
+Desktop
+
+Discover what your real users are experiencing
+No Data
+
+Diagnose performance issues
+55
+Performance
+98
+Accessibility
+100
+Best Practices
+100
+SEO
+2/3
+Agentic Browsing
+55
+FCP
++1
+LCP
++0
+TBT
++24
+CLS
++25
+SI
++6
+Performance
+Values are estimated and may vary. The performance score is calculated directly from these metrics.See calculator.
+0–49
+50–89
+90–100
+Final Screenshot
+
+METRICS
+Expand view
+First Contentful Paint
+5.3 s
+Largest Contentful Paint
+8.8 s
+Total Blocking Time
+300 ms
+Cumulative Layout Shift
+0.032
+Speed Index
+5.3 s
+Captured at Aug 21, 2026 at 5:19 AM PDT
+Emulated Moto G Power with Lighthouse 13.4.1
+Single page session
+Initial page load
+Slow 4G throttling
+Using HeadlessChromium 151.0.7922.71 with lr
+View Treemap
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Show audits relevant to:
+
+All
+
+FCP
+
+LCP
+
+TBT
+
+CLS
+INSIGHTS
+Use efficient cache lifetimes Est savings of 6,606 KiB
+A long cache lifetime can speed up repeat visits to your page. Learn more about caching.LCPFCPUnscored
+Request
+Cache TTL
+Transfer Size
+luisrconriquezofficial.com 1st Party
+6,606 KiB
+/media/hero.mp4(luisrconriquezofficial.com)
+None
+4,402 KiB
+/assets/index-C1YdLAd1.js(luisrconriquezofficial.com)
+None
+472 KiB
+/media/texture-bg-2.webp?v=3(luisrconriquezofficial.com)
+None
+249 KiB
+/media/texture-bg-3.webp?v=3(luisrconriquezofficial.com)
+None
+247 KiB
+/media/texture-bg-1.webp?v=3(luisrconriquezofficial.com)
+None
+214 KiB
+/media/album-muchacho-alegre.jpg(luisrconriquezofficial.com)
+None
+178 KiB
+/media/bts-hat.jpg(luisrconriquezofficial.com)
+None
+130 KiB
+/assets/index-CYNNeFJ6.css(luisrconriquezofficial.com)
+None
+116 KiB
+/media/medusa.jpg(luisrconriquezofficial.com)
+None
+115 KiB
+/media/salma-hayek.jpg(luisrconriquezofficial.com)
+None
+114 KiB
+/media/filoso.jpg(luisrconriquezofficial.com)
+None
+99 KiB
+/media/bts-red-portrait.jpg(luisrconriquezofficial.com)
+None
+86 KiB
+/media/que-gacho.jpg(luisrconriquezofficial.com)
+None
+79 KiB
+/media/award-billboard-airplay.jpg(luisrconriquezofficial.com)
+None
+49 KiB
+/media/hero-poster.jpg(luisrconriquezofficial.com)
+None
+39 KiB
+/media/logo.webp(luisrconriquezofficial.com)
+None
+19 KiB
+Render-blocking requests Est savings of 600 ms
+Requests are blocking the page's initial render, which may delay LCP. Deferring or inlining can move these network requests out of the critical path.LCPFCPUnscored
+URL
+Transfer Size
+Duration
+luisrconriquezofficial.com 1st Party
+115.7 KiB	2,310 ms
+/assets/index-CYNNeFJ6.css(luisrconriquezofficial.com)
+115.7 KiB
+2,310 ms
+Forced reflow
+A forced reflow occurs when JavaScript queries geometric properties (such as offsetWidth) after styles have been invalidated by a change to the DOM state. This can result in poor performance. Learn more about forced reflows and possible mitigations.Unscored
+Top function call
+Total reflow time
+/assets/index-C1YdLAd1.js:2:3039(luisrconriquezofficial.com)
+96 ms
+Source
+Total reflow time
+[unattributed]
+112 ms
+/assets/index-C1YdLAd1.js:17:40020(luisrconriquezofficial.com)
+83 ms
+/assets/index-C1YdLAd1.js:17:40668(luisrconriquezofficial.com)
+13 ms
+Network dependency tree
+Avoid chaining critical requests by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load.LCPUnscored
+Maximum critical path latency: 801 ms
+Initial Navigation
+https://luisrconriquezofficial.com - 209 ms, 24.13 KiB
+/assets/index-C1YdLAd1.js(luisrconriquezofficial.com) - 801 ms, 472.05 KiB
+/assets/index-CYNNeFJ6.css(luisrconriquezofficial.com) - 298 ms, 115.75 KiB
+Preconnected origins
+preconnect hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.
+Origin
+Source
+https://fonts.googleapis.com/
+head > link
+<link rel="preconnect" href="https://fonts.googleapis.com">
+https://fonts.gstatic.com/
+head > link
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+Preconnect candidates
+Add preconnect hints to your most important origins, but try to use no more than 4.
+No additional origins are good candidates for preconnecting
+Document request latency Est savings of 16 KiB
+Your first network request is the most important. Reduce its latency by avoiding redirects, ensuring a fast server response, and enabling text compression.LCPFCPUnscored
+Avoids redirects
+Server responds quickly (observed 4 ms)
+No compression applied
+Improve image delivery Est savings of 737 KiB
+Reducing the download time of images can improve the perceived load time of the page and LCP. Learn more about optimizing image sizeLCPFCPUnscored
+URL
+Resource Size
+Est Savings
+luisrconriquezofficial.com 1st Party
+1,359.8 KiB	737.1 KiB
+Muchacho Alegre — nuevo álbum de Luis R Conriquez
+<img alt="Muchacho Alegre — nuevo álbum de Luis R Conriquez" loading="lazy" src="/media/album-muchacho-alegre.jpg">
+/media/album-muchacho-alegre.jpg(luisrconriquezofficial.com)
+177.4 KiB
+137.5 KiB
+This image file is larger than it needs to be (1100x1100) for its displayed dimensions (522x522). Use responsive images to reduce the image download size.
+137.5 KiB
+Backstage
+<img class="bts-img" alt="Backstage" loading="lazy" src="/media/bts-hat.jpg">
+/media/bts-hat.jpg(luisrconriquezofficial.com)
+129.3 KiB
+108.1 KiB
+Using a modern image format (WebP, AVIF) or increasing the image compression could improve this image's download size.
+30.8 KiB
+This image file is larger than it needs to be (672x900) for its displayed dimensions (313x416). Use responsive images to reduce the image download size.
+101.5 KiB
+Medusa
+<img alt="Medusa" loading="lazy" src="/media/medusa.jpg">
+/media/medusa.jpg(luisrconriquezofficial.com)
+114.5 KiB
+98.4 KiB
+Using a modern image format (WebP, AVIF) or increasing the image compression could improve this image's download size.
+10.4 KiB
+This image file is larger than it needs to be (800x800) for its displayed dimensions (315x315). Use responsive images to reduce the image download size.
+96.8 KiB
+Salma Hayek
+<img alt="Salma Hayek" loading="lazy" src="/media/salma-hayek.jpg">
+/media/salma-hayek.jpg(luisrconriquezofficial.com)
+114.1 KiB
+97.9 KiB
+Using a modern image format (WebP, AVIF) or increasing the image compression could improve this image's download size.
+9.9 KiB
+This image file is larger than it needs to be (800x800) for its displayed dimensions (315x315). Use responsive images to reduce the image download size.
+96.4 KiB
+Filoso
+<img alt="Filoso" loading="lazy" src="/media/filoso.jpg">
+/media/filoso.jpg(luisrconriquezofficial.com)
+98.6 KiB
+79.5 KiB
+This image file is larger than it needs to be (800x800) for its displayed dimensions (315x394). Use responsive images to reduce the image download size.
+79.5 KiB
+Sesión
+<img class="bts-img" alt="Sesión" loading="lazy" src="/media/bts-red-portrait.jpg">
+/media/bts-red-portrait.jpg(luisrconriquezofficial.com)
+85.5 KiB
+67.2 KiB
+This image file is larger than it needs to be (675x900) for its displayed dimensions (312x416). Use responsive images to reduce the image download size.
+67.2 KiB
+Que Gacho
+<img alt="Que Gacho" loading="lazy" src="/media/que-gacho.jpg">
+/media/que-gacho.jpg(luisrconriquezofficial.com)
+78.2 KiB
+63.0 KiB
+This image file is larger than it needs to be (800x800) for its displayed dimensions (315x394). Use responsive images to reduce the image download size.
+63.0 KiB
+Billboard
+<img alt="Billboard" loading="eager" src="/media/award-billboard-airplay.jpg">
+/media/award-billboard-airplay.jpg(luisrconriquezofficial.com)
+48.5 KiB
+35.8 KiB
+This image file is larger than it needs to be (942x625) for its displayed dimensions (481x321). Use responsive images to reduce the image download size.
+35.8 KiB
+MÚSICA DE LA BUENA MEDUSA 2026 · Sencillo Escuchar ahora QUE GACHO 2026 · Senci…
+<section class="section section--tight" id="musica">
+/media/texture-bg-3.webp?v=3(luisrconriquezofficial.com)
+246.6 KiB
+18.0 KiB
+Increasing the image compression factor could improve this image's download size.
+18.0 KiB
+Luis R Conriquez
+<img alt="Luis R Conriquez" src="/media/logo.webp">
+/media/logo.webp(luisrconriquezofficial.com)
+18.9 KiB
+17.8 KiB
+This image file is larger than it needs to be (700x700) for its displayed dimensions (168x168). Use responsive images to reduce the image download size.
+17.8 KiB
+BEHIND THE SCENES ANDAMO' DETRÁS DE CÁMARA
+<section class="section section--tight" id="bts">
+/media/texture-bg-2.webp?v=3(luisrconriquezofficial.com)
+248.2 KiB
+13.8 KiB
+Increasing the image compression factor could improve this image's download size.
+13.8 KiB
+Layout shift culprits
+Layout shifts occur when elements move absent any user interaction. Investigate the causes of layout shifts, such as elements being added, removed, or their fonts changing as the page loads.CLSUnscored
+Element
+Layout shift score
+Total
+0.032
+Biografía
+<a href="/biografia">
+0.032
+…v35/tss0ApVBd….woff2(fonts.gstatic.com)
+Web font
+…v26/8vIJ7ww63….woff2(fonts.gstatic.com)
+Web font
+…v25/k3kPo8UDI….woff2(fonts.gstatic.com)
+Web font
+Optimize DOM size
+LCP breakdown
+3rd parties
+These insights are also available in the Chrome DevTools Performance Panel - record a trace to view more detailed information.
+DIAGNOSTICS
+Minimize main-thread work 2.1 s
+Consider reducing the time spent parsing, compiling and executing JS. You may find delivering smaller JS payloads helps with this. Learn how to minimize main-thread workTBTUnscored
+Category
+Time Spent
+Style & Layout
+622 ms
+Script Evaluation
+591 ms
+Other
+588 ms
+Script Parsing & Compilation
+144 ms
+Rendering
+111 ms
+Parse HTML & CSS
+22 ms
+Reduce unused JavaScript Est savings of 253 KiB
+Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. Learn how to reduce unused JavaScript.LCPFCPUnscored
+URL
+Transfer Size
+Est Savings
+luisrconriquezofficial.com 1st Party
+471.4 KiB	253.4 KiB
+/assets/index-C1YdLAd1.js(luisrconriquezofficial.com)
+471.4 KiB
+253.4 KiB
+Image elements do not have explicit width and height
+Set an explicit width and height on image elements to reduce layout shifts and improve CLS. Learn how to set image dimensionsCLSUnscored
+URL
+luisrconriquezofficial.com 1st Party
+Luis R Conriquez
+<img alt="Luis R Conriquez" src="/media/logo.webp">
+/media/logo.webp(luisrconriquezofficial.com)
+Avoid enormous network payloads Total size was 6,712 KiB
+Large network payloads cost users real money and are highly correlated with long load times. Learn how to reduce payload sizes.Unscored
+URL
+Transfer Size
+luisrconriquezofficial.com 1st Party
+6,235.4 KiB
+/media/hero.mp4(luisrconriquezofficial.com)
+4,401.8 KiB
+/assets/index-C1YdLAd1.js(luisrconriquezofficial.com)
+472.1 KiB
+/media/texture-bg-2.webp?v=3(luisrconriquezofficial.com)
+248.5 KiB
+/media/texture-bg-3.webp?v=3(luisrconriquezofficial.com)
+247.0 KiB
+/media/texture-bg-1.webp?v=3(luisrconriquezofficial.com)
+213.6 KiB
+/media/album-muchacho-alegre.jpg(luisrconriquezofficial.com)
+177.8 KiB
+/media/bts-hat.jpg(luisrconriquezofficial.com)
+129.6 KiB
+/assets/index-CYNNeFJ6.css(luisrconriquezofficial.com)
+115.7 KiB
+/media/medusa.jpg(luisrconriquezofficial.com)
+114.9 KiB
+/media/salma-hayek.jpg(luisrconriquezofficial.com)
+114.4 KiB
+Avoid long main-thread tasks 10 long tasks found
+Lists the longest tasks on the main thread, useful for identifying worst contributors to input delay. Learn how to avoid long main-thread tasksTBTUnscored
+URL
+Start Time
+Duration
+luisrconriquezofficial.com 1st Party
+1,085 ms
+/assets/index-C1YdLAd1.js(luisrconriquezofficial.com)
+5,406 ms
+294 ms
+/assets/index-C1YdLAd1.js(luisrconriquezofficial.com)
+1,246 ms
+217 ms
+https://luisrconriquezofficial.com
+1,055 ms
+191 ms
+https://luisrconriquezofficial.com
+1,463 ms
+112 ms
+/assets/index-C1YdLAd1.js(luisrconriquezofficial.com)
+5,305 ms
+101 ms
+https://luisrconriquezofficial.com
+1,772 ms
+89 ms
+https://luisrconriquezofficial.com
+1,691 ms
+81 ms
+Unattributable
+274 ms
+Unattributable
+1,575 ms
+116 ms
+Unattributable
+955 ms
+86 ms
+Unattributable
+1,861 ms
+72 ms
+More information about the performance of your application. These numbers don't directly affect the Performance score.
+PASSED AUDITS (12)
+Show
+98
+Accessibility
+These checks highlight opportunities to improve the accessibility of your web app. Automatic detection can only detect a subset of issues and does not guarantee the accessibility of your web app, so manual testing is also encouraged.
+NAVIGATION
+Heading elements are not in a sequentially-descending order
+Properly ordered headings that do not skip levels convey the semantic structure of the page, making it easier to navigate and understand when using assistive technologies. Learn more about heading order.
+Failing Elements
+BILLBOARD
+<h4>
+These are opportunities to improve keyboard navigation in your application.
+BEST PRACTICES
+Identical links have the same purpose.
+Links with the same destination should have the same description, to help users understand the link's purpose and decide whether to follow it. Learn more about identical links.Unscored
+Failing Elements
+BOLETOS
+<a href="https://tickets.baila.fm/luis-r-conriquez-la-sala-movistar-arena-madrid-20…" class="btn btn--gold btn--sm" target="_blank" rel="noopener noreferrer">
+BOLETOS
+<a href="https://entradium.com/events/luis-r-conriquez-en-barcelona" class="btn btn--gold btn--sm" target="_blank" rel="noopener noreferrer">
+BOLETOS
+<a href="https://entradium.com/events/luis-r-conriquez-en-bilbao" class="btn btn--gold btn--sm" target="_blank" rel="noopener noreferrer">
+These items highlight common accessibility best practices.
+ADDITIONAL ITEMS TO MANUALLY CHECK (10)
+Show
+These items address areas which an automated testing tool cannot cover. Learn more in our guide on conducting an accessibility review.
+PASSED AUDITS (23)
+Hide
+[aria-*] attributes match their roles
+[aria-hidden="true"] is not present on the document <body>
+[role]s have all required [aria-*] attributes
+[role] values are valid
+[aria-*] attributes have valid values
+[aria-*] attributes are valid and not misspelled
+Buttons have an accessible name
+Image elements have [alt] attributes
+Form elements have associated labels
+[user-scalable="no"] is not used in the <meta name="viewport"> element and the [maximum-scale] attribute is not less than 5.
+ARIA attributes are used as specified for the element's role
+[aria-hidden="true"] elements do not contain focusable descendents
+Elements use only permitted ARIA attributes
+Background and foreground colors have a sufficient contrast ratio
+Document has a <title> element
+<html> element has a [lang] attribute
+<html> element has a valid value for its [lang] attribute
+Links have a discernible name
+Lists contain only <li> elements and script supporting elements (<script> and <template>).
+No element has a [tabindex] value greater than 0
+Touch targets have sufficient size and spacing.
+Document has a main landmark.
+Deprecated ARIA roles were not used
+NOT APPLICABLE (38)
+Hide
+[accesskey] values are unique
+button, link, and menuitem elements have accessible names
+Elements with role="dialog" or role="alertdialog" have accessible names.
+ARIA input fields have accessible names
+ARIA meter elements have accessible names
+ARIA progressbar elements have accessible names
+Elements with an ARIA [role] that require children to contain a specific [role] have all required children.
+[role]s are contained by their required parent element
+Elements with the role=text attribute do not have focusable descendents.
+ARIA toggle fields have accessible names
+ARIA tooltip elements have accessible names
+ARIA treeitem elements have accessible names
+The page contains a heading, skip link, or landmark region
+<dl>'s contain only properly-ordered <dt> and <dd> groups, <script>, <template> or <div> elements.
+Definition list items are wrapped in <dl> elements
+ARIA IDs are unique
+No form fields have multiple labels
+<frame> or <iframe> elements have a title
+<html> element has an [xml:lang] attribute with the same base language as the [lang] attribute.
+Input buttons have discernible text.
+<input type="image"> elements have [alt] text
+Links are distinguishable without relying on color.
+List items (<li>) are contained within <ul>, <ol> or <menu> parent elements
+The document does not use <meta http-equiv="refresh">
+<object> elements have alternate text
+Select elements have associated label elements.
+Skip links are focusable.
+Cells in a <table> element that use the [headers] attribute refer to table cells within the same table.
+<th> elements and elements with [role="columnheader"/"rowheader"] have data cells they describe.
+[lang] attributes have a valid value
+<video> elements contain a <track> element with [kind="captions"]
+autocomplete attributes are used correctly
+Elements with role="none" or role="presentation" do not have conflicts
+SVG elements with an img role have an accessible text alternative
+Tables have different content in the summary attribute and <caption>.
+All heading elements contain content.
+Uses ARIA roles only on compatible elements
+Image elements do not have [alt] attributes that are redundant text.
+100
+Best Practices
+TRUST AND SAFETY
+Ensure CSP is effective against XSS attacks
+A strong Content Security Policy (CSP) significantly reduces the risk of cross-site scripting (XSS) attacks. Learn how to use a CSP to prevent XSSUnscored
+Description
+Directive
+Severity
+No CSP found in enforcement mode
+High
+Use a strong HSTS policy
+Deployment of the HSTS header significantly reduces the risk of downgrading HTTP connections and eavesdropping attacks. A rollout in stages, starting with a low max-age is recommended. Learn more about using a strong HSTS policy.Unscored
+Description
+Directive
+Severity
+No `preload` directive found
+preload
+Medium
+Ensure proper origin isolation with COOP
+The Cross-Origin-Opener-Policy (COOP) can be used to isolate the top-level window from other documents such as pop-ups. Learn more about deploying the COOP header.Unscored
+Description
+Directive
+Severity
+No COOP header found
+High
+Mitigate clickjacking with XFO or CSP
+The X-Frame-Options (XFO) header or the frame-ancestors directive in the Content-Security-Policy (CSP) header control where a page can be embedded. These can mitigate clickjacking attacks by blocking some or all sites from embedding the page. Learn more about mitigating clickjacking.Unscored
+Description
+Severity
+No frame control policy found
+High
+Mitigate DOM-based XSS with Trusted Types
+The require-trusted-types-for directive in the Content-Security-Policy (CSP) header instructs user agents to control the data passed to DOM XSS sink functions. Learn more about mitigating DOM-based XSS with Trusted Types.Unscored
+Description
+Severity
+No `Content-Security-Policy` header with Trusted Types directive found
+High
+BROWSER COMPATIBILITY
+Baseline Features
+Lists web features used on the page and their Baseline status as of 2026-07-15. Learn more about Baseline.Unscored
+Web-features
+Baseline Status
+Source
+luisrconriquezofficial.com 1st Party
+background-clip-text	
+Limited Availability
+https://luisrconriquezofficial.com:-1:-2
+accent-color	
+Limited Availability
+https://luisrconriquezofficial.com:-1:-2
+scrollend	
+Newly Available (2025-12-12)
+/assets/index-C1YdLAd1.js:8:117976(luisrconriquezofficial.com)
+relative-color	
+Newly Available (2024-09-16)
+https://luisrconriquezofficial.com:-1:-2
+backdrop-filter	
+Newly Available (2024-09-16)
+https://luisrconriquezofficial.com:-1:-2
+registered-custom-properties	
+Newly Available (2024-07-09)
+https://luisrconriquezofficial.com:-1:-2
+has	
+Widely Available (2023-12-19)
+https://luisrconriquezofficial.com:-1:-2
+dir-pseudo	
+Widely Available (2023-12-07)
+https://luisrconriquezofficial.com:-1:-2
+contain-intrinsic-size	
+Widely Available (2023-09-18)
+https://luisrconriquezofficial.com:-1:-2
+color-mix	
+Widely Available (2023-05-09)
+https://luisrconriquezofficial.com:-1:-2
+container-queries	
+Widely Available (2023-02-14)
+https://luisrconriquezofficial.com:-1:-2
+viewport-unit-variants	
+Widely Available (2022-12-05)
+https://luisrconriquezofficial.com:-1:-2
+forced-colors	
+Widely Available (2022-09-12)
+https://luisrconriquezofficial.com:-1:-2
+cascade-layers	
+Widely Available (2022-03-14)
+https://luisrconriquezofficial.com:-1:-2
+focus-visible	
+Widely Available (2022-03-14)
+https://luisrconriquezofficial.com:-1:-2
+appearance	
+Widely Available (2022-03-14)
+https://luisrconriquezofficial.com:-1:-2
+aspect-ratio	
+Widely Available (2021-09-20)
+https://luisrconriquezofficial.com:-1:-2
+file-selector-button	
+Widely Available (2021-04-26)
+https://luisrconriquezofficial.com:-1:-2
+where	
+Widely Available (2021-01-21)
+https://luisrconriquezofficial.com:-1:-2
+is	
+Widely Available (2021-01-21)
+https://luisrconriquezofficial.com:-1:-2
+not	
+Widely Available (2021-01-21)
+https://luisrconriquezofficial.com:-1:-2
+text-underline-offset	
+Widely Available (2020-11-19)
+https://luisrconriquezofficial.com:-1:-2
+webp	
+Widely Available (2020-09-16)
+https://luisrconriquezofficial.com:-1:-2
+logical-assignments	
+Widely Available (2020-09-16)
+https://luisrconriquezofficial.com:1:0
+nullish-coalescing	
+Widely Available (2020-09-16)
+https://luisrconriquezofficial.com:1:0
+aborting	
+Widely Available (2019-03-25)
+/assets/index-C1YdLAd1.js:8:28858(luisrconriquezofficial.com)
+intersection-observer	
+Widely Available (2019-03-25)
+/assets/index-C1YdLAd1.js:17:28545(luisrconriquezofficial.com)
+js-modules	
+Widely Available (2018-05-09)
+https://luisrconriquezofficial.com:-1:-2
+grid	
+Widely Available (2017-10-17)
+https://luisrconriquezofficial.com:-1:-2
+flexbox	
+Widely Available (2015-09-30)
+https://luisrconriquezofficial.com:-1:-2
+ch	
+Widely Available (2015-07-29)
+https://luisrconriquezofficial.com:-1:-2
+request-animation-frame	
+Widely Available (2015-07-29)
+/assets/index-C1YdLAd1.js:9:163475(luisrconriquezofficial.com)
+PASSED AUDITS (13)
+Show
+NOT APPLICABLE (2)
+Show
+100
+SEO
+These checks ensure that your page is following basic search engine optimization advice. There are many additional factors Lighthouse does not score here that may affect your search ranking, including performance on Core Web Vitals. Learn more about Google Search Essentials.
+ADDITIONAL ITEMS TO MANUALLY CHECK (1)
+Hide
+Structured data is valid
+Run the Structured Data Testing Tool to validate structured data. Learn more about Structured Data.Unscored
+Run these additional validators on your site to check additional SEO best practices.
+PASSED AUDITS (10)
+Hide
+Page isn’t blocked from indexing
+Document has a <title> element
+Document has a meta description
+Page has successful HTTP status code
+Links have descriptive text
+Links are crawlable
+robots.txt is valid
+Image elements have [alt] attributes
+Document has a valid hreflang
+Document has a valid rel=canonical
+2/3
+Agentic Browsing
+These checks ensure high-quality, browsable websites for AI agents and validate the correctness of WebMCP integrations. This category is still under development and subject to change.
+AGENT ACCESSIBILITY
+llms.txt does not follow recommendations
+If your llms.txt file does not follow recommendations, large language models may not be able to understand how you want your website to be crawled or used for training. The llms.txt file should be a Markdown file containing at least one H1 header. Learn more about the llms.txt audit.
+Error
+File does not appear to contain any links.
+These audits highlight best practices for improving the accessibility of the website for AI agents.
+PASSED AUDITS (2)
+Show
+NOT APPLICABLE (3)
