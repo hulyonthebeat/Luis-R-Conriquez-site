@@ -96,3 +96,10 @@ uri = "file://attached_assets/search-chart.html"
 type = "text"
 title = "Search Console — 3 Month Overview"
 description = "Daily clicks and impressions Jun 22 – Aug 19"
+
+[[outputs]]
+id = "C5Fj2Aoe2ZegCPkZiL6jz"
+uri = "file://attached_assets/serp-preview.html"
+type = "text"
+title = "Search Result Preview"
+description = "How the homepage and shows page appear in Google"
