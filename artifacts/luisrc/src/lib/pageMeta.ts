@@ -41,17 +41,18 @@ export const pageMeta: Record<string, PageMeta> = {
     ogImage: OG_IMAGE,
   },
   "/shows": {
+    // UPDATE this title and description whenever a new tour leg is announced.
     title: "Tour 2026 — Luis R Conriquez · Conciertos y Boletos",
     description:
-      "Fechas y boletos del tour de Luis R Conriquez 2026. Conciertos en España, Alemania, Francia, Países Bajos y más. Consigue tu entrada oficial antes de que se agoten.",
+      "Fechas y boletos del tour de Luis R Conriquez 2026. Conciertos oficiales de El Rey de los Corridos Bélicos. Consigue tu entrada antes de que se agoten.",
     canonical: `${SITE}/shows/`,
     ogUrl: `${SITE}/shows/`,
-    ogTitle: "Tour 2026 — Luis R Conriquez · Conciertos Europa",
+    ogTitle: "Tour 2026 — Luis R Conriquez · Conciertos",
     ogDescription:
-      "Conciertos y boletos oficiales del tour bélico 2026. El convoy cruza España, Alemania, Francia y Países Bajos.",
-    twitterTitle: "Tour 2026 — Luis R Conriquez · Conciertos Europa",
+      "Conciertos y boletos oficiales del tour bélico 2026. El convoy bélico en vivo.",
+    twitterTitle: "Tour 2026 — Luis R Conriquez · Conciertos",
     twitterDescription:
-      "Conciertos y boletos oficiales del tour bélico 2026. El convoy cruza España, Alemania, Francia y Países Bajos.",
+      "Conciertos y boletos oficiales del tour bélico 2026. El convoy bélico en vivo.",
     ogImage: OG_IMAGE,
   },
   "/privacidad": {
