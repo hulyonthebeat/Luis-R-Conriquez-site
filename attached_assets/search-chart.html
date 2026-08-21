@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Search Console — 3 Month Overview</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  body { font-family: -apple-system, sans-serif; background: #0f1117; color: #e2e8f0; margin: 0; padding: 24px; }
+  h1 { font-size: 18px; font-weight: 600; margin: 0 0 4px; color: #f8fafc; }
+  .sub { font-size: 13px; color: #94a3b8; margin-bottom: 24px; }
+  .chart-wrap { background: #1e2130; border-radius: 12px; padding: 20px; margin-bottom: 20px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+  .card { background: #1e2130; border-radius: 10px; padding: 16px 20px; }
+  .card-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #64748b; margin-bottom: 6px; }
+  .card-val { font-size: 28px; font-weight: 700; color: #f8fafc; }
+  .card-sub { font-size: 12px; color: #64748b; margin-top: 4px; }
+  .pages { background: #1e2130; border-radius: 10px; padding: 16px 20px; }
+  .pages h2 { font-size: 13px; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.07em; margin: 0 0 14px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: left; color: #64748b; font-weight: 500; padding: 0 0 8px; font-size: 11px; text-transform: uppercase; }
+  td { padding: 7px 0; border-top: 1px solid #2d3148; color: #cbd5e1; }
+  td:not(:first-child) { text-align: right; color: #94a3b8; }
+  .url { color: #7dd3fc; font-size: 12px; }
+  .note { background: #1e2a1e; border-left: 3px solid #4ade80; border-radius: 6px; padding: 12px 16px; font-size: 13px; color: #86efac; margin-top: 12px; }
+  .warn { background: #2a1e1e; border-left: 3px solid #f87171; border-radius: 6px; padding: 12px 16px; font-size: 13px; color: #fca5a5; margin-top: 12px; }
+  canvas { max-height: 220px; }
+</style>
+</head>
+<body>
+<h1>luisrconriquezofficial.com — Search Performance</h1>
+<p class="sub">Jun 22 – Aug 19, 2026 &nbsp;·&nbsp; Web search &nbsp;·&nbsp; All pages</p>
+
+<div class="grid">
+  <div class="card"><div class="card-label">Total Clicks</div><div class="card-val">120</div><div class="card-sub">3-month total</div></div>
+  <div class="card"><div class="card-label">Total Impressions</div><div class="card-val">8,279</div><div class="card-sub">3-month total</div></div>
+  <div class="card"><div class="card-label">Avg Position</div><div class="card-val">9.5</div><div class="card-sub">All queries combined</div></div>
+</div>
+
+<div class="chart-wrap">
+  <canvas id="chart"></canvas>
+</div>
+
+<div class="pages">
+  <h2>Pages</h2>
+  <table>
+    <tr><th>Page</th><th>Clicks</th><th>Impressions</th><th>CTR</th><th>Avg Pos</th></tr>
+    <tr><td class="url">/ (Homepage)</td><td>68</td><td>6,678</td><td>1.0%</td><td>9.5</td></tr>
+    <tr><td class="url">/shows/</td><td>50</td><td>1,262</td><td><strong style="color:#4ade80">4.0%</strong></td><td>8.7</td></tr>
+    <tr><td class="url">/biografia/</td><td>2</td><td>326</td><td style="color:#f87171">0.6%</td><td style="color:#f87171">14.0</td></tr>
+    <tr><td class="url">/terminos/ + /privacidad/</td><td>0</td><td>12</td><td>—</td><td>—</td></tr>
+  </table>
+</div>
+
+<div class="note">
+  📈 <strong>Trend is up:</strong> Aug 19 = 13 clicks + 489 impressions — strongest single day since launch. The site has grown from ~30 impressions/day in late June to 350–500/day in August.
+</div>
+<div class="warn">
+  ⚠️ <strong>Aug 12–14 dip:</strong> Impressions dropped 515 → 211 → 54 over 3 days, then fully recovered. Likely Google re-crawling after the schema change published Aug 9. Recovery is complete.
+</div>
+
+<script>
+const ctx = document.getElementById('chart').getContext('2d');
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ["Jun 22","Jun 23","Jun 24","Jun 25","Jun 26","Jun 27","Jun 28","Jun 29","Jun 30","Jul 1","Jul 2","Jul 3","Jul 4","Jul 5","Jul 6","Jul 7","Jul 8","Jul 9","Jul 10","Jul 11","Jul 12","Jul 13","Jul 14","Jul 15","Jul 16","Jul 17","Jul 18","Jul 19","Jul 20","Jul 21","Jul 22","Jul 23","Jul 24","Jul 25","Jul 26","Jul 27","Jul 28","Jul 29","Jul 30","Jul 31","Aug 1","Aug 2","Aug 3","Aug 4","Aug 5","Aug 6","Aug 7","Aug 8","Aug 9","Aug 10","Aug 11","Aug 12","Aug 13","Aug 14","Aug 15","Aug 16","Aug 17","Aug 18","Aug 19"],
+    datasets: [
+      {
+        label: 'Impressions',
+        data: [0,37,47,25,33,24,44,28,35,21,17,32,43,47,58,120,79,81,71,45,24,62,106,77,72,82,111,115,57,74,79,88,82,259,165,108,111,111,156,286,116,149,194,234,206,320,274,506,417,301,443,515,211,54,105,134,106,356,489],
+        backgroundColor: 'rgba(99,102,241,0.5)',
+        borderColor: 'rgba(99,102,241,0.8)',
+        borderWidth: 1,
+        yAxisID: 'y1',
+        order: 2
+      },
+      {
+        label: 'Clicks',
+        data: [0,2,0,1,0,1,1,0,0,2,0,0,0,0,1,0,1,2,0,0,0,3,0,2,0,1,1,0,0,1,1,2,0,1,0,6,2,3,2,1,2,2,5,5,1,2,5,8,1,2,0,6,3,2,8,5,7,4,13],
+        type: 'line',
+        borderColor: '#4ade80',
+        backgroundColor: 'rgba(74,222,128,0.15)',
+        borderWidth: 2,
+        pointRadius: 3,
+        pointBackgroundColor: '#4ade80',
+        tension: 0.3,
+        yAxisID: 'y2',
+        order: 1
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    interaction: { mode: 'index', intersect: false },
+    plugins: {
+      legend: { labels: { color: '#94a3b8', boxWidth: 12, font: { size: 12 } } },
+      tooltip: { backgroundColor: '#1e2130', titleColor: '#f8fafc', bodyColor: '#94a3b8' }
+    },
+    scales: {
+      x: { ticks: { color: '#475569', font: { size: 10 }, maxRotation: 45 }, grid: { color: 'rgba(255,255,255,0.04)' } },
+      y1: { position: 'left', ticks: { color: '#6366f1', font: { size: 11 } }, grid: { color: 'rgba(255,255,255,0.06)' }, title: { display: true, text: 'Impressions', color: '#6366f1', font: { size: 11 } } },
+      y2: { position: 'right', ticks: { color: '#4ade80', font: { size: 11 } }, grid: { display: false }, title: { display: true, text: 'Clicks', color: '#4ade80', font: { size: 11 } } }
+    }
+  }
+});
+</script>
+</body>
+</html>

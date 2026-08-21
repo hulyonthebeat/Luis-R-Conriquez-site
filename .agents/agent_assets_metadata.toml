@@ -89,3 +89,10 @@ id = "HkZTvuV-DzrIvkOmAovM3"
 uri = "file://artifacts/luisrc/public/opengraph-1x1.jpg"
 type = "image"
 title = "Square Google thumbnail (1200×1200)"
+
+[[outputs]]
+id = "tUWbrQG9wA8LzJSLLkyai"
+uri = "file://attached_assets/search-chart.html"
+type = "text"
+title = "Search Console — 3 Month Overview"
+description = "Daily clicks and impressions Jun 22 – Aug 19"
