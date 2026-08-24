@@ -2,4 +2,9 @@ import { createRoot } from "react-dom/client";
 import App from "./App";
 import "./index.css";
 
-createRoot(document.getElementById("root")!).render(<App />);
+const isShopPlaceholder =
+  window.location.hostname.toLowerCase() === "shop.luisrconriquezofficial.com";
+
+createRoot(document.getElementById("root")!).render(
+  isShopPlaceholder ? null : <App />,
+);

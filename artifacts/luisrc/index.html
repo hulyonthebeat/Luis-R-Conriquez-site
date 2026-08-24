@@ -92,6 +92,25 @@
   </head>
   <body>
     <div id="root"><!--app-html--></div>
+    <script>
+      if (
+        window.location.hostname.toLowerCase() ===
+        "shop.luisrconriquezofficial.com"
+      ) {
+        document.documentElement.classList.add("shop-placeholder");
+        document.getElementById("root")?.replaceChildren();
+        document.title = "Shop — Luis R Conriquez";
+        const robots = document.querySelector('meta[name="robots"]');
+        robots?.setAttribute("content", "noindex, nofollow");
+        document.querySelector('link[rel="canonical"]')?.remove();
+        document
+          .querySelectorAll('meta[property^="og:"], meta[name^="twitter:"]')
+          .forEach((element) => element.remove());
+        document
+          .querySelectorAll('script[type="application/ld+json"]')
+          .forEach((element) => element.remove());
+      }
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
