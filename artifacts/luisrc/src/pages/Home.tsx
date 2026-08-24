@@ -161,7 +161,17 @@ export default function Home() {
 
           <nav className="hero-nav" aria-label="Navegación principal">
             {heroNav.map((n) =>
-              n.href.startsWith("/#") ? (
+              n.external ? (
+                <a
+                  key={n.key}
+                  href={n.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${n.label} (abre en una pestaña nueva)`}
+                >
+                  {n.label}
+                </a>
+              ) : n.href.startsWith("/#") ? (
                 <a key={n.key} href={n.href.slice(1)}>
                   {n.label}
                 </a>

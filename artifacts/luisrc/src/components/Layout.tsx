@@ -72,6 +72,11 @@ export function Layout({ children }: { children: ReactNode }) {
     }
   };
 
+  const handleShopClick = (e: MouseEvent<HTMLAnchorElement>) => {
+    e.stopPropagation();
+    window.setTimeout(() => setMenuOpen(false), 0);
+  };
+
   const navSocials = socials;
 
   return (
@@ -124,8 +129,8 @@ export function Layout({ children }: { children: ReactNode }) {
                   href={n.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => setMenuOpen(false)}
-                  className="nav-shop-link btn btn--gold btn--sm"
+                  onClick={handleShopClick}
+                  className="nav-shop-link"
                   aria-label={`${n.label} (abre en una pestaña nueva)`}
                 >
                   {n.label}

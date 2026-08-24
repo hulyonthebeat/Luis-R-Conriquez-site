@@ -439,8 +439,6 @@ body.menu-open .mobile-menu { opacity: 1; pointer-events: auto; }
 .mobile-menu a:hover, .mobile-menu a.active { color: #fff; }
 .mobile-menu a:hover::after, .mobile-menu a.active::after { transform: scaleX(1); }
 .mobile-menu a:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; color: #fff; }
-.mobile-menu a.nav-shop-link { font-family:var(--narrow); font-size:13px; letter-spacing:0.14em; text-transform:uppercase; text-shadow:none; }
-.mobile-menu a.nav-shop-link::after { display:none; }
 
 /* ============================================================
    FOOTER
