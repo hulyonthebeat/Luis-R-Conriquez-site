@@ -72,7 +72,7 @@ export function Layout({ children }: { children: ReactNode }) {
     }
   };
 
-  const navSocials = socials.filter((s) => s.id !== "apple").slice(0, 4);
+  const navSocials = socials;
 
   return (
     <>
@@ -101,15 +101,6 @@ export function Layout({ children }: { children: ReactNode }) {
             <small>Corridos Bélicos</small>
           </Link>
           <div className="nav-right">
-            <a
-              className="btn btn--gold btn--sm nav-shop-cta"
-              href={shopUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Shop (abre en una pestaña nueva)"
-            >
-              Shop
-            </a>
             <div className="nav-social">
               {navSocials.map((s) => (
                 <a key={s.id} href={s.url} aria-label={s.label}>

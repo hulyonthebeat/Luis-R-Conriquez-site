@@ -399,7 +399,18 @@ body.menu-open .burger span:nth-child(3){ transform: translateY(-7px) rotate(-45
 .nav-social a { color:var(--text-soft); transition: color .3s var(--ease); }
 .nav-social a:hover { color:var(--gold); }
 .nav-social svg { width:17px; height:17px; }
-@media (max-width:640px){ .nav-social { display:none; } .nav-right .btn { display:none; } }
+@media (max-width:640px){
+  .nav-social { display:flex; gap:7px; }
+  .nav-social svg { width:15px; height:15px; }
+  .nav-right { gap:8px; }
+  .nav-right .btn { display:none; }
+}
+@media (max-width:400px){
+  .nav-social { gap:5px; }
+  .nav-social svg { width:14px; height:14px; }
+  .nav .wrap { gap:8px; }
+  .brand { font-size:clamp(12px, 4vw, 18px); }
+}
 
 /* Mobile sheet */
 .mobile-menu {
