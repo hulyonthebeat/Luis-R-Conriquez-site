@@ -2,7 +2,7 @@ import { useEffect, useState, type ReactNode, type MouseEvent } from "react";
 import { Link, useLocation } from "wouter";
 import { Icon } from "@/components/site/Icons";
 import { Reveal } from "@/components/site/Reveal";
-import { site, socials, navLinks, media } from "@/data/content";
+import { site, socials, navLinks, media, shopUrl } from "@/data/content";
 import { mediaUrl } from "@/lib/site";
 import { trackPageview } from "@/lib/analytics";
 
@@ -101,6 +101,15 @@ export function Layout({ children }: { children: ReactNode }) {
             <small>Corridos Bélicos</small>
           </Link>
           <div className="nav-right">
+            <a
+              className="btn btn--gold btn--sm nav-shop-cta"
+              href={shopUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Shop (abre en una pestaña nueva)"
+            >
+              Shop
+            </a>
             <div className="nav-social">
               {navSocials.map((s) => (
                 <a key={s.id} href={s.url} aria-label={s.label}>
@@ -117,6 +126,21 @@ export function Layout({ children }: { children: ReactNode }) {
           {navLinks.map((n) => {
             const active =
               n.href === location || (n.href === "/" && location === "/");
+            if (n.external) {
+              return (
+                <a
+                  key={n.key}
+                  href={n.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMenuOpen(false)}
+                  className="nav-shop-link btn btn--gold btn--sm"
+                  aria-label={`${n.label} (abre en una pestaña nueva)`}
+                >
+                  {n.label}
+                </a>
+              );
+            }
             if (n.href.startsWith("/#")) {
               return (
                 <a key={n.key} href={n.href} onClick={handleNav(n.href)} className={active ? "active" : ""}>

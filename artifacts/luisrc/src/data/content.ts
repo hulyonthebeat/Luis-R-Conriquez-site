@@ -10,6 +10,8 @@ export const site = {
   booking: "booking@kmusic.com",
 };
 
+export const shopUrl = "https://shop.luisrconriquezofficial.com";
+
 /* Streaming platforms used across release cards */
 export const platforms: PlatformId[] = ["spotify", "apple", "youtube", "amazon", "deezer"];
 
@@ -281,7 +283,12 @@ export const bio = {
 };
 
 /* Nav links — Spanish, mapped to React routes + home anchors */
-export type NavLink = { href: string; label: string; key: string };
+export type NavLink = {
+  href: string;
+  label: string;
+  key: string;
+  external?: boolean;
+};
 
 export const navLinks: NavLink[] = [
   { href: "/", label: "Inicio", key: "home" },
@@ -291,6 +298,7 @@ export const navLinks: NavLink[] = [
   { href: "/biografia", label: "Biografía", key: "bio" },
   { href: "/#bts", label: "BTS", key: "bts" },
   { href: "/#suscribete", label: "Suscríbete", key: "news" },
+  { href: shopUrl, label: "Shop", key: "shop", external: true },
 ];
 
 const MES = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
