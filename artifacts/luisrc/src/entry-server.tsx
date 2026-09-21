@@ -8,6 +8,7 @@ import Biografia from "@/pages/Biografia";
 import Shows from "@/pages/Shows";
 import Privacidad from "@/pages/Privacidad";
 import Terminos from "@/pages/Terminos";
+import NotFound from "@/pages/not-found";
 
 function makeStaticHook(path: string) {
   const hook = () => [path, () => {}] as [string, (to: string) => void];
@@ -29,6 +30,7 @@ export function render(url: string): string {
               <Route path="/shows" component={Shows} />
               <Route path="/privacidad" component={Privacidad} />
               <Route path="/terminos" component={Terminos} />
+              <Route component={NotFound} />
             </Switch>
           </Layout>
         </Router>

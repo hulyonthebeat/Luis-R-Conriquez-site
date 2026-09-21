@@ -35,78 +35,94 @@ id = "iFZRfcazijkKTx5GHuHu9"
 uri = "file://artifacts/luisrc/public/opengraph.jpg"
 type = "image"
 title = "Wide banner (chat/social previews)"
+logical_id = "f1123aaa-4f8b-4e56-b365-e183b7ad7cb9"
 
 [[outputs]]
 id = "zoA9sQq5QevLEXYPlnyPI"
 uri = "file://attached_assets/og_before_after.png"
 type = "image"
 title = "Original OG vs. New OG — original font restored, bigger K MUSIC, lighter gradient"
+logical_id = "f33a9dcf-738b-414f-8e14-4085ebc6de46"
 
 [[outputs]]
 id = "eoyDF4jVSUmC9oFIO7lM1"
 uri = "file://deliverables/luisrc-textures.zip"
 type = "unspecified"
 title = "All textures + full-page background (ZIP)"
+logical_id = "28e2c75c-9f6f-49f2-b9aa-169b48c113d7"
 
 [[outputs]]
 id = "wexe47BO2XgNU-WuP-WGd"
 uri = "file://deliverables/luisrc-textures/luisrc-texture-01.png"
 type = "image"
 title = "Texture 01 (PNG)"
+logical_id = "6494603c-062c-4e58-8308-921920bf8879"
 
 [[outputs]]
 id = "w6XBUeh5dIrM3LYLrNwgw"
 uri = "file://deliverables/luisrc-textures/luisrc-texture-02.png"
 type = "image"
 title = "Texture 02 (PNG)"
+logical_id = "326a68ee-4ec2-46a4-9103-4b399a68c862"
 
 [[outputs]]
 id = "bQdklIjuvPhjfY4gbi7mQ"
 uri = "file://deliverables/luisrc-textures/luisrc-texture-03.png"
 type = "image"
 title = "Texture 03 (PNG)"
+logical_id = "313374ce-38ad-4ee7-a974-0591941e3299"
 
 [[outputs]]
 id = "20gf-7xj68y6p6d8_Gkdl"
 uri = "file://deliverables/luisrc-textures/luisrc-textures-on-page.png"
 type = "image"
 title = "On-page arrangement (textures stacked in site order, with scrim)"
+logical_id = "00e1d073-85f3-40c0-9b52-e1cf6e63b189"
 
 [[outputs]]
 id = "pyQlyT8965by-TXj_ySbM"
 uri = "file://deliverables/luisrc-textures/luisrc-background-full-page.png"
 type = "image"
 title = "Full-page background (1920×6193, exact)"
+logical_id = "17c0187c-8a95-41f9-aa46-a04e3acf3fd2"
 
 [[outputs]]
 id = "K9GUrBuF1W9TKkHLHYwAP"
 uri = "file://artifacts/luisrc/public/opengraph-4x3.jpg"
 type = "image"
 title = "Google — standard version"
+logical_id = "37156e34-224d-4ce8-84b3-8e9176f28e46"
 
 [[outputs]]
 id = "HkZTvuV-DzrIvkOmAovM3"
 uri = "file://artifacts/luisrc/public/opengraph-1x1.jpg"
 type = "image"
 title = "Square Google thumbnail (1200×1200)"
+logical_id = "6bc1209e-6542-4fb7-bc50-de52f1211b7a"
 
 [[outputs]]
 id = "tUWbrQG9wA8LzJSLLkyai"
 uri = "file://attached_assets/search-chart.html"
-type = "text"
+type = "html"
 title = "Search Console — 3 Month Overview"
 description = "Daily clicks and impressions Jun 22 – Aug 19"
+logical_id = "561168b2-6123-4a68-bf06-3e7e6508638e"
+content_type = "text/html"
 
 [[outputs]]
 id = "C5Fj2Aoe2ZegCPkZiL6jz"
 uri = "file://attached_assets/serp-preview.html"
-type = "text"
+type = "html"
 title = "Search Result Preview"
 description = "How the homepage and shows page appear in Google"
+logical_id = "1ed1c848-78a5-436d-aac6-c5334ca42157"
+content_type = "text/html"
 
 [[outputs]]
 id = "-pN9pUsLkaS9ovrc0_PjF"
 uri = "file://attached_assets/og-comparison.html"
-type = "text"
+type = "html"
 title = "OG Image Options"
 description = "Before/after comparison of both fix options"
+logical_id = "e6a614b0-00af-4fe6-9cd2-235c437b49d4"
+content_type = "text/html"

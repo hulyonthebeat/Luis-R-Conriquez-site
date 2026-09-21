@@ -5,6 +5,7 @@ import { Reveal } from "@/components/site/Reveal";
 import { site, socials, navLinks, media, shopUrl } from "@/data/content";
 import { mediaUrl } from "@/lib/site";
 import { trackPageview } from "@/lib/analytics";
+import { artistJsonLd } from "@/lib/structuredData";
 
 export function Layout({ children }: { children: ReactNode }) {
   const [location, navigate] = useLocation();
@@ -81,6 +82,10 @@ export function Layout({ children }: { children: ReactNode }) {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: artistJsonLd }}
+      />
       <header
         className={`nav${scrolled ? " scrolled" : ""}${location === "/" && !pastHero ? " nav--home-top" : ""}`}
         id="siteNav"

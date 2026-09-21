@@ -22,7 +22,7 @@ A cinematic, dark/metallic official artist website for Luis R Conriquez ("El Rey
 - `artifacts/luisrc/src/components/site/` — reusable pieces (Icons, Reveal, Img, HeroPlayer, FeaturedVideo, StreamRow, Newsletter, HashLink, cards.tsx)
 - `artifacts/luisrc/src/pages/` — Home, Music, Shows (Videos/Reconocimientos/BTS/Suscríbete are home-page sections, not separate routes)
 - `artifacts/luisrc/public/media/` — all imagery
-- Routes: `/` `/biografia` `/shows` `/privacidad` `/terminos` (unknown paths fall through to NotFound). `/musica` was removed (now the `/#musica` home section); `prerender.mjs` emits a noindex redirect stub for it. Prerender-time meta in `prerender.mjs` overrides `index.html` meta at publish — update both.
+- Routes: `/` `/biografia` `/shows` `/privacidad` `/terminos`. Production has explicit static rewrites for real routes and no wildcard homepage fallback; `prerender.mjs` emits the existing NotFound screen as root `404.html`, which Replit Static Deployments serve with HTTP 404. `/musica` and `/bio` use noindex redirect stubs. Prerender-time meta in `prerender.mjs` overrides `index.html` meta at publish — update both.
 
 ## Architecture decisions
 
@@ -40,6 +40,8 @@ _Populate as you build._
 
 - Do NOT re-add a global `[data-reveal]{opacity:0}` rule — reveals are handled by the `Reveal` component, not CSS.
 - Media filenames in `content.ts` must match files in `public/media/`.
+- Keep exactly one canonical `MusicGroup` entity (`https://luisrconriquezofficial.com/#artist`) per page. WebSite, ProfilePage, and MusicEvent entities must reference it by `@id`, not embed duplicate artist objects.
+- Do not restore a production `/* → /index.html` rewrite: it converts unknown URLs into soft 404s. Unmatched production requests must fall through to the generated root `404.html`.
 
 ## Pointers
 

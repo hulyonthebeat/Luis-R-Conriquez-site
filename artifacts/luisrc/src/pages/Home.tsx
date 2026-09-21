@@ -10,50 +10,20 @@ import {
 } from "@/components/site/cards";
 import { AwardsCarousel } from "@/components/site/AwardsCarousel";
 import { Icon } from "@/components/site/Icons";
-import { releases, tours, awards, gallery, media, heroVideo, socials, navLinks, followLinks, site, platformUrls, entityProfiles } from "@/data/content";
+import { releases, tours, awards, gallery, media, heroVideo, socials, navLinks, followLinks } from "@/data/content";
 import { mediaUrl } from "@/lib/site";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { pageMeta } from "@/lib/pageMeta";
+import { ARTIST_ID } from "@/lib/structuredData";
 
-const artistJsonLd = JSON.stringify({
+const websiteJsonLd = JSON.stringify({
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": "https://luisrconriquezofficial.com/#website",
-      url: "https://luisrconriquezofficial.com/",
-      name: "Luis R Conriquez — Sitio Oficial",
-      inLanguage: "es-MX",
-      publisher: { "@id": "https://luisrconriquezofficial.com/#artist" },
-    },
-    {
-      "@type": "MusicGroup",
-      "@id": "https://luisrconriquezofficial.com/#artist",
-      name: site.name,
-      alternateName: "El Rey de los Corridos Bélicos",
-      url: "https://luisrconriquezofficial.com/",
-      description: "El Rey de los Corridos Bélicos. Música regional mexicana y corridos bélicos.",
-      image: [
-        "https://luisrconriquezofficial.com/opengraph.jpg?v=15",
-        "https://luisrconriquezofficial.com/opengraph-4x3.jpg?v=15",
-        "https://luisrconriquezofficial.com/opengraph-1x1.jpg?v=15",
-      ],
-      genre: ["Corridos Bélicos", "Regional Mexicano", "Corridos", "Música Norteña"],
-      foundingLocation: {
-        "@type": "Place",
-        name: "Caborca, Sonora, México",
-      },
-      sameAs: [
-        socials.find((s) => s.id === "instagram")!.url,
-        socials.find((s) => s.id === "youtube")!.url,
-        platformUrls.spotify,
-        socials.find((s) => s.id === "tiktok")!.url,
-        socials.find((s) => s.id === "facebook")!.url,
-        platformUrls.apple,
-        ...entityProfiles,
-      ],
-    },
-  ],
+  "@type": "WebSite",
+  "@id": "https://luisrconriquezofficial.com/#website",
+  url: "https://luisrconriquezofficial.com/",
+  name: "Luis R Conriquez — Sitio Oficial",
+  inLanguage: "es-MX",
+  publisher: { "@id": ARTIST_ID },
 });
 
 const heroNav = navLinks.filter((n) => n.href !== "/");
@@ -130,7 +100,7 @@ export default function Home() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: artistJsonLd }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: websiteJsonLd }} />
       {/* HERO = the latest video, sole focal point */}
       <section className="hero hero--video">
         <video

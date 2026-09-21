@@ -23,6 +23,10 @@ kind = "web"
   serve = "static"
 
   [[services.production.rewrites]]
+  from = "/"
+  to = "/index.html"
+
+  [[services.production.rewrites]]
   from = "/biografia"
   to = "/biografia/index.html"
 
@@ -63,8 +67,12 @@ kind = "web"
   to = "/musica/index.html"
 
   [[services.production.rewrites]]
-  from = "/*"
-  to = "/index.html"
+  from = "/bio"
+  to = "/bio/index.html"
+
+  [[services.production.rewrites]]
+  from = "/bio/"
+  to = "/bio/index.html"
 
   [services.env]
   PORT = "24999"

@@ -3,6 +3,7 @@ import { ShowRow } from "@/components/site/cards";
 import { tours, shows, site } from "@/data/content";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { pageMeta } from "@/lib/pageMeta";
+import { ARTIST_ID } from "@/lib/structuredData";
 
 const eventsJsonLd = JSON.stringify({
   "@context": "https://schema.org",
@@ -28,11 +29,7 @@ const eventsJsonLd = JSON.stringify({
         addressCountry: s.country,
       },
     },
-    performer: {
-      "@type": "MusicGroup",
-      name: "Luis R Conriquez",
-      url: "https://luisrconriquezofficial.com/",
-    },
+    performer: { "@id": ARTIST_ID },
     organizer: {
       "@type": "Organization",
       name: "K Music",

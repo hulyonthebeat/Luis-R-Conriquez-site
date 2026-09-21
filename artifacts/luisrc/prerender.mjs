@@ -174,10 +174,40 @@ for (const route of routes) {
 }
 
 /**
+ * Replit Static Deployments serve a root-level 404.html with HTTP 404 when no
+ * file or rewrite matches. Render the existing NotFound screen into that file.
+ */
+{
+  const appHtml = render("/404");
+  let html = template;
+
+  html = html.replace(
+    /<title>[^<]*<\/title>/,
+    "<title>Página no encontrada — Luis R Conriquez</title>",
+  );
+  html = html.replace(
+    /<meta\s+name="description"[^>]*>/,
+    '<meta name="description" content="Esta página no existe en el sitio oficial de Luis R Conriquez." />',
+  );
+  html = html.replace(
+    /<meta\s+name="robots"[^>]*>/,
+    '<meta name="robots" content="noindex, nofollow" />',
+  );
+  html = html.replace(/<link\s+rel="canonical"[^>]*>\s*/, "");
+  html = html.replace("<!--app-html-->", appHtml);
+
+  writeFileSync(resolve(__dirname, "dist/public/404.html"), html);
+  console.log("[prerender] /404 → dist/public/404.html");
+}
+
+/**
  * Legacy URLs that no longer exist as standalone pages.
  * Emit a tiny redirect page so crawlers treat them as moved, not soft-404s.
  */
-const redirects = [{ from: "/musica", to: `${SITE}/#musica` }];
+const redirects = [
+  { from: "/musica", to: `${SITE}/#musica`, canonical: `${SITE}/` },
+  { from: "/bio", to: `${SITE}/biografia/`, canonical: `${SITE}/biografia/` },
+];
 
 for (const r of redirects) {
   const outPath = resolve(__dirname, `dist/public${r.from}/index.html`);
@@ -190,7 +220,7 @@ for (const r of redirects) {
     <meta charset="UTF-8" />
     <title>Luis R Conriquez — Sitio Oficial</title>
     <meta http-equiv="refresh" content="0;url=${r.to}" />
-    <link rel="canonical" href="${SITE}/" />
+     <link rel="canonical" href="${r.canonical}" />
     <meta name="robots" content="noindex" />
   </head>
   <body>
